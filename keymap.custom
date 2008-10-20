@@ -67,11 +67,11 @@
 'Left': 'backward-char(wrap=0)'
 'Right': 'forward-char(wrap=0)'
 
-'Browse-h': 'backward-char(wrap=0)'
-'Browse-Ctrl-h': 'backward-char'
+'Browse-d': 'backward-char(wrap=0)'
+'Browse-Ctrl-d': 'backward-char'
 'Browse-BackSpace': 'backward-char'
 
-'Browse-l': 'forward-char(wrap=0)'
+'Browse-n': 'forward-char(wrap=0)'
 'Browse-Space': 'forward-char'
 
 'Browse-0': 'beginning-of-line'
@@ -88,18 +88,18 @@
 
 'Browse-F': 'search-char(dir=1, single_line=1)'
 'Browse-Shift-F': 'search-char(dir=-1, single_line=1)'
-'Browse-T': 'search-char(dir=1, pos=1, single_line=1)'
-'Browse-Shift-T': 'search-char(dir=-1, pos=1, single_line=1)'
+'Browse-L': 'search-char(dir=1, pos=1, single_line=1)'
+'Browse-Shift-L': 'search-char(dir=-1, pos=1, single_line=1)'
 'Browse-;': 'repeat-search-char'
 'Browse-,': 'repeat-search-char(opposite=1)'
 
 # Up/down motions
 
 # These differs slightly from VI when lines are wrapped
-'Browse-k': 'previous-line'
+'Browse-t': 'previous-line'
 'Browse-Ctrl-P': 'previous-line'
-'Browse-j': 'next-line'
-'Browse-Ctrl-J': 'next-line'
+'Browse-h': 'next-line'
+'Browse-Ctrl-h': 'next-line'
 'Browse-Ctrl-N': 'next-line'
 'Browse-Return': 'next-line(cursor="start")'
 
@@ -110,10 +110,10 @@
 'Browse-Shift-G': 'goto-nth-line-default-end(cursor="fnb")'
 'Browse-g Browse-g': 'goto-nth-line(cursor="fnb")'
 'Browse-%': 'goto-percent-line(cursor="fnb")'
-'Browse-g Browse-k': 'previous-line'
-'Browse-g Browse-j': 'next-line'
-'Browse-Shift-H': 'cursor-move-to-top'
-'Browse-Shift-L': 'cursor-move-to-bottom'
+'Browse-g Browse-t': 'previous-line'
+'Browse-g Browse-h': 'next-line'
+'Browse-Shift-D': 'cursor-move-to-top'
+'Browse-Shift-N': 'cursor-move-to-bottom'
 'Browse-Shift-M': 'cursor-move-to-center'
 
 # Text object motions
@@ -134,8 +134,8 @@
 
 'Browse-/': 'isearch-forward-regex'
 'Browse-?': 'isearch-backward-regex'
-'Browse-n': 'isearch-repeat'
-'Browse-Shift-N': 'isearch-repeat(reverse=1)'
+'Browse-j': 'isearch-repeat'
+'Browse-Shift-J': 'isearch-repeat(reverse=1)'
 'Browse-*': 'isearch-sel-forward(persist=0, whole_word=1)'
 'Browse-#': 'isearch-sel-backward(persist=0, whole_word=1)'
 'Browse-g Browse-d': 'goto-selected-symbol-defn'
@@ -162,19 +162,19 @@
 'Browse-z Browse-Plus': 'cursor-to-top'
 'Browse-z Browse-Minus': 'cursor-to-bottom'
 'Browse-z Browse-b': 'cursor-to-bottom'
-'Browse-z Browse-h': 'scroll-text-right'
-'Browse-z Browse-l': 'scroll-text-left'
-'Browse-z Browse-Shift-H': 'scroll-text-right(repeat=0.5)'
-'Browse-z Browse-Shift-L': 'scroll-text-left(repeat=0.5)'
+'Browse-z Browse-d': 'scroll-text-right'
+'Browse-z Browse-n': 'scroll-text-left'
+'Browse-z Browse-Shift-D': 'scroll-text-right(repeat=0.5)'
+'Browse-z Browse-Shift-N': 'scroll-text-left(repeat=0.5)'
 
 # Deleting text
 
 'Browse-x': 'forward-delete-char-within-line'
 'Browse-Shift-x': 'backward-delete-char'
-'Browse-d': 'delete-next-move'
-'Browse-Shift-D': 'delete-to-end-of-line(post_offset=-1)'
-'Browse-Shift-J': 'join-lines'
-'Browse-g Browse-Shift-J': 'join-lines(delim="")'
+'Browse-k': 'delete-next-move'
+'Browse-Shift-K': 'delete-to-end-of-line(post_offset=-1)'
+'Browse-Shift-H': 'join-lines'
+'Browse-g Browse-Shift-H': 'join-lines(delim="")'
 
 # Copying and moving text
 
@@ -233,8 +233,8 @@
 'Browse-Ctrl-W Browse-q': 'unsplit(action="close")', 'close(close_window=1)'
 'Browse-Ctrl-W Browse-c': 'unsplit(action="recent-or-close")' # Approximation
 'Browse-Ctrl-W Browse-o': 'unsplit'
-'Browse-Ctrl-W Browse-j': 'move-editor-focus(wrap=False)'
-'Browse-Ctrl-W Browse-k': 'move-editor-focus(dir=-1, wrap=False)'
+'Browse-Ctrl-W Browse-h': 'move-editor-focus(wrap=False)'
+'Browse-Ctrl-W Browse-t': 'move-editor-focus(dir=-1, wrap=False)'
 'Browse-Ctrl-W Browse-Down': 'move-editor-focus(wrap=False)'
 'Browse-Ctrl-W Browse-Up': 'move-editor-focus(dir=-1, wrap=False)'
 'Browse-Ctrl-W Browse-Ctrl-W': 'move-editor-focus'
@@ -262,7 +262,7 @@
 #----------------------------------------------------------------------------
 # Insert Mode commands
 
-'Insert-Esc': 'enter-browse-mode'
+'Insert-v Insert-w': 'enter-browse-mode'
 'Insert-Ctrl-[': 'enter-browse-mode'
 'Insert-Ctrl-O': 'enter-browse-mode(provisional=True)'
 'Insert-Ctrl-M': 'new-line'
