@@ -307,7 +307,7 @@
 
 'Visual-Esc': 'exit-visual-mode'
 'Visual-Ctrl-[': 'exit-visual-mode'
-'Visual-d': 'move-to-register(unit="sel", cut=1)'
+'Visual-k': 'move-to-register(unit="sel", cut=1)'
 'Visual-y': 'move-to-register(unit="sel")'
 'Visual-Shift-Y': 'move-to-register(unit="line")'
 'Visual-Shift-J': 'join-selection'
