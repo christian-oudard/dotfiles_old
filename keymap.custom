@@ -1,0 +1,327 @@
+# Key mapping for the 'vi' editor personality.  See the file 
+# keymap.basic for format and usage details.
+
+%include keymap.basic
+
+#----------------------------------------------------------------------------
+# Universal commands
+
+'Shift-Up': 'backward-page'
+'Shift-Down': 'forward-page'
+'Shift-Left': 'backward-word'
+'Shift-Right': 'forward-word'
+
+#----------------------------------------------------------------------------
+# Browse mode commands
+
+# ':' commands are handled by a key interaction class
+
+'Browse-colon': 'vi-command-by-name'
+
+# Copy/paste/cut overrides on win32 or by preference
+'Browse-Ctrl-X': 'vi-ctrl-x'
+'Browse-Ctrl-V': 'vi-ctrl-v'
+'Browse-Ctrl-C': 'vi-ctrl-c'
+
+# Changing modes
+
+'Browse-A': 'enter-insert-mode(pos="after")'
+'Browse-Shift-A': 'enter-insert-mode(pos="eol")'
+'Browse-I': 'enter-insert-mode(pos="before")'
+'Browse-Insert': 'enter-insert-mode(pos="before")'
+'Browse-Shift-I': 'enter-insert-mode(pos="fnb")'
+'Browse-G Browse-Shift-I': 'enter-insert-mode(pos="sol")'
+'Browse-O': 'enter-insert-mode(pos="new-below")'
+'Browse-Shift-O': 'enter-insert-mode(pos="new-above")'
+
+'Browse-v': 'start-select-char'
+'Browse-Shift-V': 'start-select-line'
+# 'Browse-Ctrl-V' is implemented by vi-ctrl-v binding above
+'Browse-Ctrl-Q': 'start-select-block'
+
+# Numeric modifier support
+
+'Browse-1': 'initiate-numeric-modifier(digit=1)'
+'Browse-2': 'initiate-numeric-modifier(digit=2)'
+'Browse-3': 'initiate-numeric-modifier(digit=3)'
+'Browse-4': 'initiate-numeric-modifier(digit=4)'
+'Browse-5': 'initiate-numeric-modifier(digit=5)'
+'Browse-6': 'initiate-numeric-modifier(digit=6)'
+'Browse-7': 'initiate-numeric-modifier(digit=7)'
+'Browse-8': 'initiate-numeric-modifier(digit=8)'
+'Browse-9': 'initiate-numeric-modifier(digit=9)'
+# Browse-Ctrl-x Browse-* are implemented by vi-ctrl-x binding above
+'Visual-1': 'initiate-numeric-modifier(digit=1)'
+'Visual-2': 'initiate-numeric-modifier(digit=2)'
+'Visual-3': 'initiate-numeric-modifier(digit=3)'
+'Visual-4': 'initiate-numeric-modifier(digit=4)'
+'Visual-5': 'initiate-numeric-modifier(digit=5)'
+'Visual-6': 'initiate-numeric-modifier(digit=6)'
+'Visual-7': 'initiate-numeric-modifier(digit=7)'
+'Visual-8': 'initiate-numeric-modifier(digit=8)'
+'Visual-9': 'initiate-numeric-modifier(digit=9)'
+
+# Left/right motions
+
+# Overridden from keymap.basic
+'Left': 'backward-char(wrap=0)'
+'Right': 'forward-char(wrap=0)'
+
+'Browse-h': 'backward-char(wrap=0)'
+'Browse-Ctrl-h': 'backward-char'
+'Browse-BackSpace': 'backward-char'
+
+'Browse-l': 'forward-char(wrap=0)'
+'Browse-Space': 'forward-char'
+
+'Browse-0': 'beginning-of-line'
+'Browse-^': 'beginning-of-line-text'
+'Browse-Underscore': 'beginning-of-line-text'
+'Browse-$': 'end-of-line'
+
+'Browse-g Browse-0': 'beginning-of-screen-line'
+'Browse-g Browse-^': 'beginning-of-screen-line-text'
+'Browse-g Browse-$': 'end-of-screen-line'
+'Browse-g Browse-m': 'middle-of-screen-line'
+
+'Browse-|': 'goto-column'
+
+'Browse-F': 'search-char(dir=1, single_line=1)'
+'Browse-Shift-F': 'search-char(dir=-1, single_line=1)'
+'Browse-T': 'search-char(dir=1, pos=1, single_line=1)'
+'Browse-Shift-T': 'search-char(dir=-1, pos=1, single_line=1)'
+'Browse-;': 'repeat-search-char'
+'Browse-,': 'repeat-search-char(opposite=1)'
+
+# Up/down motions
+
+# These differs slightly from VI when lines are wrapped
+'Browse-k': 'previous-line'
+'Browse-Ctrl-P': 'previous-line'
+'Browse-j': 'next-line'
+'Browse-Ctrl-J': 'next-line'
+'Browse-Ctrl-N': 'next-line'
+'Browse-Return': 'next-line(cursor="start")'
+
+# These match VI
+'Browse-Minus': 'previous-line-in-file(cursor="fnb")'
+'Browse-+': 'next-line-in-file(cursor="fnb")'
+'Browse-Ctrl-M': 'next-line-in-file(cursor="fnb")'
+'Browse-Shift-G': 'goto-nth-line-default-end(cursor="fnb")'
+'Browse-g Browse-g': 'goto-nth-line(cursor="fnb")'
+'Browse-%': 'goto-percent-line(cursor="fnb")'
+'Browse-g Browse-k': 'previous-line'
+'Browse-g Browse-j': 'next-line'
+'Browse-Shift-H': 'cursor-move-to-top'
+'Browse-Shift-L': 'cursor-move-to-bottom'
+'Browse-Shift-M': 'cursor-move-to-center'
+
+# Text object motions
+
+'Browse-w': 'forward-word'
+'Browse-Shift-W': 'forward-word(delimiters=" \t\n\r")'
+'Browse-e': 'forward-word(gravity="endm1")'
+'Browse-Shift-E': 'forward-word(delimiters=" \t\n\r", gravity="endm1")'
+'Browse-b': 'backward-word'
+'Browse-Shift-B': 'backward-word(delimiters=" \t\n\r")'
+'Browse-g Browse-e': 'backward-word(gravity="endm1")'
+'Browse-g Browse-Shift-E': 'backward-word(delimiters=" \t\n\r", gravity="endm1")'
+'Browse-{': 'backward-paragraph'
+'Browse-}': 'forward-paragraph'
+# Note: () and [] are not yet implemented
+
+# Pattern searches
+
+'Browse-/': 'isearch-forward-regex'
+'Browse-?': 'isearch-backward-regex'
+'Browse-n': 'isearch-repeat'
+'Browse-Shift-N': 'isearch-repeat(reverse=1)'
+'Browse-*': 'isearch-sel-forward(persist=0, whole_word=1)'
+'Browse-#': 'isearch-sel-backward(persist=0, whole_word=1)'
+'Browse-g Browse-d': 'goto-selected-symbol-defn'
+'Browse-g Browse-Shift-D': 'goto-selected-symbol-defn'
+
+# Marks and motions
+
+'Browse-m': 'vi-set-bookmark'
+'Browse-Grave': 'vi-goto-bookmark'
+'Browse-Apostrophe': 'vi-goto-bookmark'  # For swedish and other keyboards
+
+# Scrolling
+
+'Browse-Ctrl-E': 'scroll-text-down(move_cursor=False)'
+'Browse-Ctrl-D': 'scroll-text-down(repeat=0.5)'
+'Browse-Ctrl-F': 'forward-page'
+'Browse-Ctrl-Y': 'scroll-text-up(move_cursor=False)'
+'Browse-Ctrl-U': 'scroll-text-up(repeat=0.5)'
+'Browse-Ctrl-B': 'backward-page'
+'Browse-z Browse-Return': 'cursor-to-top'
+'Browse-z Browse-t': 'cursor-to-top'
+'Browse-z Browse-.': 'center-cursor'
+'Browse-z Browse-z': 'center-cursor'
+'Browse-z Browse-Plus': 'cursor-to-top'
+'Browse-z Browse-Minus': 'cursor-to-bottom'
+'Browse-z Browse-b': 'cursor-to-bottom'
+'Browse-z Browse-h': 'scroll-text-right'
+'Browse-z Browse-l': 'scroll-text-left'
+'Browse-z Browse-Shift-H': 'scroll-text-right(repeat=0.5)'
+'Browse-z Browse-Shift-L': 'scroll-text-left(repeat=0.5)'
+
+# Deleting text
+
+'Browse-x': 'forward-delete-char-within-line'
+'Browse-Shift-x': 'backward-delete-char'
+'Browse-d': 'delete-next-move'
+'Browse-Shift-D': 'delete-to-end-of-line(post_offset=-1)'
+'Browse-Shift-J': 'join-lines'
+'Browse-g Browse-Shift-J': 'join-lines(delim="")'
+
+# Copying and moving text
+
+'Browse-"': 'set-register'
+'Browse-y': 'move-to-register-next-move'
+'Browse-Shift-Y': 'move-to-register(unit="line")'
+'Browse-p': 'paste-register'
+'Browse-Shift-P': 'paste-register(pos=-1)'
+'Browse-] Browse-p': 'paste-register(indent=1)'
+'Browse-[ Browse-p': 'paste-register(pos=-1, indent=1)'
+'Browse-g Browse-p': 'paste-register(cursor=1)'
+'Browse-g Browse-Shift-P': 'paste-register(pos=-1, cursor=1)'
+
+# Changing text
+
+'Browse-r': 'replace-char(line_mode="restrict")'
+'Browse-g Browse-r': 'replace-char(line_mode="extend")'
+'Browse-Shift-R': 'enter-replace-mode'
+'Browse-c': 'delete-next-move-insert'
+'Browse-s': 'forward-delete-char-insert'
+'Browse-Shift-S': 'delete-line-insert'
+'Browse-Shift-C': 'delete-to-end-of-line-insert'
+'Browse->': 'indent-next-move'
+'Browse-<': 'outdent-next-move'
+'Browse-=': 'indent-to-match-next-move'
+'Browse-&': 'repeat-replace'
+'Browse-~': 'case-swap'
+'Browse-g Browse-~': 'case-swap-next-move'
+'Browse-g Browse-u': 'case-lower-next-move'
+'Browse-g Browse-Shift-U': 'case-upper-next-move'
+
+# Macros
+
+'Browse-q': 'start-kbd-macro(register=None)', 'stop-kbd-macro'
+'Browse-@': 'execute-kbd-macro(register=None)'
+'Browse-.': 'repeat-command'
+
+# Undo/redo
+
+'Browse-u': 'undo'
+'Browse-Ctrl-R': 'redo'
+
+# Writing and Quitting
+
+'Browse-Shift-Z Browse-Shift-Z': 'write-file-and-close(filename=None)'
+'Browse-Shift-Z Browse-Shift-Q': 'close(ignore_changes=1, close_window=1)'
+
+# Multi-window commands
+
+'Browse-Ctrl-W Browse-s': 'split-vertically'
+'Browse-Ctrl-W Browse-v': 'split-horizontally'
+'Browse-Ctrl-W Browse-Ctrl-^': 'vi-split-edit-alternate'
+'Browse-Ctrl-W Browse-n': 'split-vertically(new=1)'
+'Browse-Ctrl-W Browse-+': 'grow-split-vertically'
+'Browse-Ctrl-W Browse-Minus': 'shrink-split-vertically'
+'Browse-Ctrl-W Browse-q': 'unsplit(action="close")', 'close(close_window=1)'
+'Browse-Ctrl-W Browse-c': 'unsplit(action="recent-or-close")' # Approximation
+'Browse-Ctrl-W Browse-o': 'unsplit'
+'Browse-Ctrl-W Browse-j': 'move-editor-focus(wrap=False)'
+'Browse-Ctrl-W Browse-k': 'move-editor-focus(dir=-1, wrap=False)'
+'Browse-Ctrl-W Browse-Down': 'move-editor-focus(wrap=False)'
+'Browse-Ctrl-W Browse-Up': 'move-editor-focus(dir=-1, wrap=False)'
+'Browse-Ctrl-W Browse-Ctrl-W': 'move-editor-focus'
+'Browse-Ctrl-W Browse-W': 'move-editor-focus(dir=-1)'
+'Browse-Ctrl-W Browse-t': 'move-editor-focus-first'
+'Browse-Ctrl-W Browse-b': 'move-editor-focus-last'
+'Browse-Ctrl-W Browse-p': 'move-editor-focus-previous'
+
+# Changing documents
+'Browse-Ctrl-^': 'nth-document'
+'Browse-Ctrl-Shift-O': 'open-from-project'
+'Browse-Ctrl-Shift-T': 'find-symbol'
+
+# Folding
+
+'Browse-z Browse-c': 'fold-collapse-current'
+'Browse-z Browse-o': 'fold-expand-current'
+'Browse-z Browse-Shift-O': 'fold-expand-all-current'
+'Browse-z Browse-Shift-R': 'fold-expand-all'
+'Browse-z Browse-Shift-M': 'fold-collapse-all'
+'Browse-z Browse-r': 'vi-fold-more'
+'Browse-z Browse-m': 'vi-fold-less'
+
+
+#----------------------------------------------------------------------------
+# Insert Mode commands
+
+'Insert-Esc': 'enter-browse-mode'
+'Insert-Ctrl-[': 'enter-browse-mode'
+'Insert-Ctrl-O': 'enter-browse-mode(provisional=True)'
+'Insert-Ctrl-M': 'new-line'
+'Insert-Ctrl-J': 'new-line'
+'Insert-Ctrl-H': 'backward-delete-char'
+'Insert-Ctrl-W': 'backward-delete-word'
+'Insert-Ctrl-U': 'delete-to-start-of-line'
+'Insert-Ctrl-T': 'indent-region'
+'Insert-Ctrl-D': 'outdent-region'
+'Insert-Ctrl-Q': 'start-select-block'
+
+'Insert-Ctrl-X': 'vi-ctrl-x'
+'Insert-Ctrl-V': 'vi-ctrl-v'
+'Insert-Ctrl-C': 'vi-ctrl-c'
+
+# For now, these just approximate what vi does
+'Insert-Ctrl-P': 'show-autocompleter'
+'Insert-Ctrl-N': 'show-autocompleter'
+
+#----------------------------------------------------------------------------
+# Replace Mode Commands
+
+'Replace-Esc': 'enter-browse-mode'
+'Replace-Ctrl-[': 'enter-browse-mode'
+'Replace-Ctrl-C': 'enter-browse-mode'
+'Replace-Ctrl-M': 'new-line'
+'Replace-Ctrl-J': 'new-line'
+'Replace-Ctrl-H': 'backward-char'
+'Replace-Ctrl-W': 'backward-word'
+'Replace-Ctrl-U': 'delete-to-start-of-line'
+'Replace-Ctrl-T': 'indent-region'
+'Replace-Ctrl-D': 'outdent-region'
+
+#----------------------------------------------------------------------------
+# Complex changes
+
+'Browse-!': 'filter-next-move'
+
+#----------------------------------------------------------------------------
+# Visual Mode Commands
+
+'Visual-Esc': 'exit-visual-mode'
+'Visual-Ctrl-[': 'exit-visual-mode'
+'Visual-d': 'move-to-register(unit="sel", cut=1)'
+'Visual-y': 'move-to-register(unit="sel")'
+'Visual-Shift-Y': 'move-to-register(unit="line")'
+'Visual-Shift-J': 'join-selection'
+'Visual-g Visual-Shift-J': 'join-selection(delim="")'
+'Visual-r': 'replace-char'
+'Visual->': 'indent-lines(num=None)'
+'Visual-<': 'outdent-lines(num=None)'
+'Visual-o': 'exchange_point_and_mark'
+'Visual-v': 'enter-browse-mode'
+'Visual-Shift-V': 'enter-browse-mode'
+'Visual-Ctrl-V': 'enter-browse-mode'
+'Visual-colon': 'vi-command-by-name'
+'Visual-Shift-R': 'enter-insert-mode(pos="delete-lines")'
+'Visual-s': 'enter-insert-mode(pos="delete-sel")'
+'Visual-c': 'enter-insert-mode(pos="delete-sel")'
+'Visual-!': 'filter-selection'
+'Visual-Shift-I': 'enter-insert-mode(pos="before")'
+'Visual-Shift-A': 'enter-insert-mode(pos="after")'
