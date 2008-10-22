@@ -263,7 +263,6 @@
 # Insert Mode commands
 
 'Insert-Esc': 'enter-browse-mode'
-'Insert-v Insert-w': 'enter-browse-mode'
 'Insert-Ctrl-[': 'enter-browse-mode'
 'Insert-Ctrl-O': 'enter-browse-mode(provisional=True)'
 'Insert-Ctrl-M': 'new-line'
