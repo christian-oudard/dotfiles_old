@@ -6,15 +6,15 @@ imap vw <esc>
 
 " settings
 syntax on
-set tabstop=4
-set shiftwidth=4
-set expandtab
 set incsearch
 set ignorecase
 set hidden
 set linebreak
 set showbreak=> 
 set tags=tags;~/devel/
+
+" file types
+autocmd FileType python set ts=4 sw=4 et
 
 " remap movement keys for dvorak layout
 " use d, h, t, n to move left, up, down, and right
