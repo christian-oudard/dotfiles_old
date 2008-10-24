@@ -18,6 +18,8 @@ shopt -s histappend
 export HISTSIZE=65535
 export HISTFILESIZE=65535
 
+export HISTIGNORE=" *"
+
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
