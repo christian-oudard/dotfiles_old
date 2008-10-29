@@ -16,7 +16,7 @@ set tags=tags;~/devel/
 " file types
 autocmd FileType python set ts=4 sw=4 et
 autocmd FileType ruby set ts=2 sw=2 et
-autocmd FileType html,xhtml,xml,css,htmldjango set ts=2 sw=2 noet
+autocmd FileType html,htmldjango,xhtml,xml,css,javascript set ts=2 sw=2 noet
 
 " remap movement keys for dvorak layout
 " use d, h, t, n to move left, up, down, and right
