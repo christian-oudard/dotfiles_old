@@ -13,6 +13,9 @@ set linebreak
 set showbreak=> 
 set tags=tags;~/devel/
 
+" filetype plugin
+filetype on
+
 " file types
 autocmd FileType python set ts=4 sw=4 et
 autocmd FileType ruby set ts=2 sw=2 et
