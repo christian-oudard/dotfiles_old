@@ -12,6 +12,9 @@ set hidden
 set linebreak
 set showbreak=> 
 set tags=tags;~/devel/
+set tabstop=2
+set shiftwidth=2
+set noexpandtab
 
 " filetype plugin
 filetype on
