@@ -9,12 +9,13 @@
 
 # PYTHONSTARTUP does *not* expand "~", so you have to put the
 # full path to your home directory here:
-home_path = '/home/christian/'
 
 import atexit
 import os
 import readline
 import rlcompleter
+
+home_path = os.environ['HOME']
 
 readline.read_init_file(os.path.join(home_path, '.pyinputrc'))
 
