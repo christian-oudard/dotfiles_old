@@ -20,6 +20,9 @@ export HISTFILESIZE=65535
 
 export HISTIGNORE=" *"
 
+# reload history after every command
+export PROMPT_COMMAND="history -a; history -r; $PROMPT_COMMAND"
+
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
