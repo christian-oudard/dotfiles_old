@@ -15,8 +15,8 @@ export HISTCONTROL=ignoreboth
 shopt -s histappend
 
 # use a larger history size
-export HISTSIZE=65535
-export HISTFILESIZE=65535
+export HISTSIZE=4096
+export HISTFILESIZE=4096
 
 export HISTIGNORE=" *"
 
