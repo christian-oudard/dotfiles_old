@@ -12,8 +12,11 @@ set hidden
 set linebreak
 set showbreak=> 
 set tags=tags;~/devel/
-set tabstop=2
-set shiftwidth=2
+set smarttab
+
+" default indentation
+set tabstop=4
+set shiftwidth=4
 set noexpandtab
 
 " filetype plugin
