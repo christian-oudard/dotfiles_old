@@ -59,4 +59,5 @@ noremap gj g]
 noremap <C-s> :b#<cr>
 noremap <C-n> :bn<cr>
 noremap <C-p> :bp<cr>
+noremap <C-d> :bd<cr>
 
