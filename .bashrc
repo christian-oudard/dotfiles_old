@@ -110,3 +110,6 @@ fi
 
 # python startup script
 export PYTHONSTARTUP=$HOME/.pythonrc
+
+# activate virtualenvwrapper
+source /usr/local/bin/virtualenvwrapper_bashrc
