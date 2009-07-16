@@ -13,6 +13,8 @@ export HISTCONTROL=ignoreboth
 
 # append to the history file, don't overwrite it
 shopt -s histappend
+# write history after every command
+PROMPT_COMMAND='history -a'
 
 # use a larger history size
 export HISTSIZE=4096
