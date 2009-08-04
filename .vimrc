@@ -1,8 +1,4 @@
-" indentation plugin, settings in ~/.vim/indent/
-filetype plugin indent on
-
-" press v w to exit instead of escape 
-imap vw <esc>
+""" Behavior """
 
 " settings
 syntax on
@@ -13,6 +9,16 @@ set linebreak
 set showbreak=> 
 set tags=tags;~/devel/
 set smarttab
+
+" do tab completion for file names more like bash
+set wildmode=longest,list,full
+set wildmenu
+
+
+""" Indentation and Syntax """
+
+" indentation plugin, settings in ~/.vim/indent/
+filetype plugin indent on
 
 " default indentation
 set tabstop=4
@@ -26,6 +32,12 @@ filetype on
 autocmd FileType python set ts=4 sw=4 et
 autocmd FileType ruby set ts=2 sw=2 et
 autocmd FileType html,htmldjango,xhtml,xml,css,javascript set ts=2 sw=2 noet
+
+
+""" Key Mappings """
+
+" press v w to exit instead of escape 
+imap vw <esc>
 
 " remap movement keys for dvorak layout
 " use d, h, t, n to move left, up, down, and right
@@ -60,4 +72,3 @@ noremap <C-s> :b#<cr>
 noremap <C-n> :bn<cr>
 noremap <C-p> :bp<cr>
 noremap <C-d> :bd<cr>
-
