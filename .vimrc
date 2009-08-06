@@ -33,6 +33,12 @@ autocmd FileType python set ts=4 sw=4 et
 autocmd FileType ruby set ts=2 sw=2 et
 autocmd FileType html,htmldjango,xhtml,xml,css,javascript set ts=2 sw=2 noet
 
+" remove trailing whitespace on save
+function RemoveTrailingWhitespace()
+	:call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))
+:endfunction
+autocmd FileType c,cpp,java,php,python,ruby,html,htmldjango,xhtml,xml,css,javascript 
+			\autocmd BufWritePre <buffer> :call RemoveTrailingWhitespace()
 
 """ Key Mappings """
 
