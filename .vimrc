@@ -42,7 +42,7 @@ autocmd FileType c,cpp,java,php,python,ruby,html,htmldjango,xhtml,xml,css,javasc
 
 """ Key Mappings """
 
-" press v w to exit instead of escape 
+" press v w to exit instead of escape
 imap vw <esc>
 
 " remap movement keys for dvorak layout
