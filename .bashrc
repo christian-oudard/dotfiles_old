@@ -96,9 +96,9 @@ fi
 alias i='ls'
 alias ll='ls -lh'
 alias la='ls -A'
-alias lh='ls -d .*'
+alias lh='find -maxdepth 1 -name ".*" -not -name "." -printf "%f\n" | xargs ls -d --color=auto'
 alias lla='ls -lA'
-alias llh='ls -lhd .*'
+alias llh='lh -l'
 
 # bzr
 alias b='bzr'
