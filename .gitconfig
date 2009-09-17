@@ -5,3 +5,6 @@
 	status = auto
 [core]
 	excludesfile = /home/christian/.gitignore
+[user]
+	name = Christian Oudard
+	email = christian.oudard@gmail.com
