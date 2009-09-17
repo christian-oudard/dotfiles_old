@@ -1,8 +1,12 @@
-startup_message off
-escape ^zz
-autodetach on
+startup_message off # don't show startup screen
+escape ^zz # Use Ctrl-Z as the escape sequence
+autodetach on # detach and preserve screen session when terminal window closes
 defscrollback 5000
 termcapinfo xterm* ti@:te@
+
+markkeys h=d:j=h:k=t:l=n # use dvorak dhtn instead of qwerty hjkl for copy mode movement
+bind p paste . # use escape-p as paste, keep escape-^P as previous screen
+bind c copy # use escape-c as enter copy mode, keep escape-^C as create screen
 
 # remove unnecessary keybindings
 bind .
