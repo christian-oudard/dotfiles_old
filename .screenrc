@@ -5,6 +5,7 @@ defscrollback 5000
 termcapinfo xterm* ti@:te@
 
 markkeys h=d:j=h:k=t:l=n # use dvorak dhtn instead of qwerty hjkl for copy mode movement
+markkeys n=j # remap j as next search item
 bind p paste . # use escape-p as paste, keep escape-^P as previous screen
 bind c copy # use escape-c as enter copy mode, keep escape-^C as create screen
 
