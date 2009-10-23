@@ -90,3 +90,16 @@ noremap <C-s> :b#<cr>
 noremap <C-n> :bn<cr>
 noremap <C-p> :bp<cr>
 noremap <C-d> :bd<cr>
+
+
+""" Plugins """
+
+" use comma as leader key for custom bindings
+let mapleader = ","
+let g:mapleader = ","
+
+" fuzzy finder
+map <leader>f :FuzzyFinderTextMate<CR>
+let g:fuzzy_ceiling=20000 " max results
+let g:fuzzy_path_display = 'highlighted_path' " show full paths
+let g:fuzzy_ignore = "*.pyc;*.pyo;*.o;.svn/**;.git/**;.bzr/**;*.png;*.PNG;*.jpg;*.JPG;*.gif;*.GIF"
