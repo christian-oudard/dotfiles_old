@@ -1,18 +1,30 @@
+""" Appearance """
+
+set t_Co=256
+set background=dark
+let g:zenburn_high_Contrast = 1
+let g:zenburn_alternate_Visual = 1
+let g:zenburn_alternate_Include = 1
+colorscheme zenburn
+
+
 """ Behavior """
 
-" settings
-syntax on
-set incsearch
-set ignorecase
-set hidden
-set linebreak
-set showbreak=> 
-set tags=tags;~/devel/
+syntax on " use syntax highlighting
+set nocompatible " don't limit to vi-compatible features
+set incsearch " search as you type
+set ignorecase " case insensitive search
+set hidden " allow using multiple buffers
+set linebreak " wrap long lines
+set showbreak=> " show line wrapping with a > character
+set tags=tags " specify tag file name
 set smarttab
+set so=4 " set a margin of lines when scrolling
 
 " do tab completion for file names more like bash
 set wildmode=longest,list,full
 set wildmenu
+set wildignore+=*.pyc,*.pyo,.svn,.git,.bzr,*.o,*~
 
 
 """ Indentation and Syntax """
@@ -40,12 +52,12 @@ function RemoveTrailingWhitespace()
 autocmd FileType c,cpp,java,php,python,ruby,html,htmldjango,xhtml,xml,css,javascript 
 			\autocmd BufWritePre <buffer> :call RemoveTrailingWhitespace()
 
-""" Key Mappings """
+
+""" Key Mappings (Dvorak Layout) """
 
 " press v w to exit instead of escape
 imap vw <esc>
 
-" remap movement keys for dvorak layout
 " use d, h, t, n to move left, up, down, and right
 noremap d h
 noremap D H
