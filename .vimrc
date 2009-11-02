@@ -100,7 +100,7 @@ let g:mapleader = ","
 
 " fuzzy finder
 map <leader>f :FuzzyFinderTextMate<CR>
-let g:fuzzy_ceiling=20000 " max results
+let g:fuzzy_ceiling = 20000 " max results
 let g:fuzzy_path_display = 'highlighted_path' " show full paths
 let g:fuzzy_ignore = "*.pyc;*.pyo;*.o;.svn/**;.git/**;.bzr/**;*.png;*.PNG;*.jpg;*.JPG;*.gif;*.GIF"
 
