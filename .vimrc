@@ -103,3 +103,16 @@ map <leader>f :FuzzyFinderTextMate<CR>
 let g:fuzzy_ceiling=20000 " max results
 let g:fuzzy_path_display = 'highlighted_path' " show full paths
 let g:fuzzy_ignore = "*.pyc;*.pyo;*.o;.svn/**;.git/**;.bzr/**;*.png;*.PNG;*.jpg;*.JPG;*.gif;*.GIF"
+
+" surround
+let g:surround_no_mappings = 1
+nmap ks <Plug>Dsurround
+nmap cs <Plug>Csurround
+nmap ys <Plug>Ysurround
+nmap yS <Plug>YSurround
+nmap yss <Plug>Yssurround
+nmap ySs <Plug>YSsurround
+nmap ySS <Plug>YSsurround
+vmap s <Plug>Vsurround
+vmap S <Plug>VSurround
+imap <C-S> <Plug>Isurround
