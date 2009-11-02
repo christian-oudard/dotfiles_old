@@ -119,3 +119,6 @@ source /usr/local/bin/virtualenvwrapper_bashrc
 
 # don't allow Ctrl-S to stop terminal output
 stty stop ''
+
+# make gvim shut up about errors
+alias gvim='gvim 2>/dev/null'
