@@ -8,3 +8,11 @@
 [user]
 	name = Christian Oudard
 	email = christian.oudard@gmail.com
+[alias]
+	st = status
+	d = diff
+	dc = diff --cached
+	ci = commit -v
+	cia = commit -v -a
+	co = checkout
+	l = log
