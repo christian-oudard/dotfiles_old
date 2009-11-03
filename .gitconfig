@@ -15,6 +15,5 @@
 	ci = commit -v
 	cia = commit -v -a
 	co = checkout
-	l = log
 [push]
 	default = matching
