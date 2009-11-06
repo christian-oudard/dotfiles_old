@@ -1,2 +1,9 @@
+# Ignore case in tab completion.
+set completion-ignore-case on
+# Tab complete the first time.
+set show-all-if-ambiguous on
+# Turn off bell.
+set bell-style none
+# Line-complete history.
 "\C-p": history-search-backward
 "\C-n": history-search-forward
