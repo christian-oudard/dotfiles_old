@@ -92,18 +92,6 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-# some more ls aliases
-alias i='ls'
-alias ll='ls -lh'
-alias la='ls -A'
-alias lh='find -maxdepth 1 -name ".*" -not -name "." -printf "%f\n" | xargs ls -d --color=auto'
-alias lr='ls -R'
-alias lla='ls -lA'
-alias llh='lh -l'
-
-# bzr
-alias b='bzr'
-
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
@@ -119,6 +107,3 @@ source /usr/local/bin/virtualenvwrapper_bashrc
 
 # don't allow Ctrl-S to stop terminal output
 stty stop ''
-
-# make gvim shut up about errors
-alias gvim='gvim 2>/dev/null'
