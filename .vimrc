@@ -2,8 +2,10 @@
 
 set t_Co=256
 set background=dark
-let g:zenburn_high_Contrast = 1
-let g:zenburn_alternate_Visual = 1
+set cursorline
+unlet! g:zenburn_high_Contrast
+unlet! g:zenburn_alternate_Visual
+unlet! g:zenburn_alternate_Error
 let g:zenburn_alternate_Include = 1
 colorscheme zenburn
 
