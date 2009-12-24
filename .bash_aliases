@@ -7,8 +7,5 @@ alias lr='ls -R'
 alias lla='ls -lA'
 alias llh='lh -l'
 
-# make gvim shut up about errors
-alias gvim='gvim 2>/dev/null'
-
 # trash-put is a stupid command name
 alias trash='trash-put'
