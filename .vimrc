@@ -22,6 +22,7 @@ set showbreak=> " show line wrapping with a > character
 set tags=tags " specify tag file name
 set smarttab
 set so=4 " set a margin of lines when scrolling
+set virtualedit=block " free roaming cursor in block mode
 
 " do tab completion for file names more like bash
 set wildmode=longest,list,full
