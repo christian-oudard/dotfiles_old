@@ -111,3 +111,6 @@ source /usr/local/bin/virtualenvwrapper.sh
 
 # don't allow Ctrl-S to stop terminal output
 stty stop ''
+
+# Add ~/bin to executable search path.
+export PATH=$PATH:~/bin
