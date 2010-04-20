@@ -107,7 +107,7 @@ fi
 export PYTHONSTARTUP=$HOME/.pythonrc
 
 # activate virtualenvwrapper
-source /usr/local/bin/virtualenvwrapper_bashrc
+source /usr/local/bin/virtualenvwrapper.sh
 
 # don't allow Ctrl-S to stop terminal output
 stty stop ''
