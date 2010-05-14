@@ -3,3 +3,4 @@
 *.pyc
 .coverage
 *,cover
+.vim/doc/tags
