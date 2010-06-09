@@ -17,3 +17,5 @@
 	co = checkout
 [push]
 	default = matching
+[diff]
+    tool = meld
