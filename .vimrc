@@ -94,6 +94,9 @@ noremap <C-n> :bn<cr>
 noremap <C-p> :bp<cr>
 noremap <C-d> :bd<cr>
 
+" unmap frequently accidental commands
+nmap Q <Nop>
+
 
 """ Plugins """
 
