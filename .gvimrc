@@ -2,7 +2,7 @@
 au GUIEnter * set lines=40 columns=100
 
 " font
-set guifont=Monospace\ 9
+set guifont=Inconsolata\ 11
 
 " bare bones gui
 set guioptions=airL
