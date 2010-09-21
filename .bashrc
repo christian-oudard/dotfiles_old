@@ -15,8 +15,8 @@ shopt -s histappend
 PROMPT_COMMAND='history -a'
 
 # use a larger history size
-export HISTSIZE=5000
-export HISTFILESIZE=10000
+export HISTSIZE=25000
+export HISTFILESIZE=50000
 
 export HISTIGNORE=" *"
 
