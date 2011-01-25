@@ -48,7 +48,7 @@ filetype on
 
 " file types
 autocmd FileType python set ts=4 sw=4 et
-autocmd FileType ruby,scala set ts=2 sw=2 et
+autocmd FileType ruby,scala,coffee set ts=2 sw=2 et
 autocmd FileType html,htmldjango,xhtml,xml,css,javascript set ts=2 sw=2 noet
 
 " remove trailing whitespace on save
