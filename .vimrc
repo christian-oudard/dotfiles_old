@@ -32,7 +32,10 @@ set wildignore+=*.pyc,*.pyo,.svn,.git,.bzr,*.o,*~
 
 """ Indentation and Syntax """
 
-" indentation plugin, settings in ~/.vim/indent/
+
+" activate pathogen, bounce indentation plugin to force reload.
+filetype off
+call pathogen#runtime_append_all_bundles()
 filetype plugin indent on
 
 " default indentation
