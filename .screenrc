@@ -1,11 +1,12 @@
-startup_message off # don't show startup screen
-escape ^zz # Use Ctrl-Z as the escape sequence
-autodetach on # detach and preserve screen session when terminal window closes
+startup_message off # Don't show startup screen.
+escape ^zz # Use Ctrl-Z as the escape sequence.
+autodetach on # Detach and preserve screen session when terminal window closes.
 defscrollback 5000
 termcapinfo xterm* ti@:te@
 
-markkeys h=d:j=h:k=t:l=n # use dvorak dhtn instead of qwerty hjkl for copy mode movement
-markkeys n=j # remap j as next search item
+markkeys h=d:j=h:k=t:l=n # Use dvorak dhtn instead of qwerty hjkl for copy mode movement.
+markkeys H=D:L=N:J=H # Use dvorak DMN for top, middle, bottom, and H for join lines.
+markkeys n=j:N=J # Remap j and J as next and previous search item.
 bind p paste . # use escape-p as paste, keep escape-^P as previous screen
 bind c copy # use escape-c as enter copy mode, keep escape-^C as create screen
 

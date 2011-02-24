@@ -114,3 +114,8 @@ stty stop ''
 
 # Add ~/bin to executable search path.
 export PATH=$PATH:~/bin
+
+# Screeninator.
+export PATH=$PATH:~/.gem/ruby/1.9.1/bin
+if [[ -s $HOME/.screeninator/scripts/screeninator ]] ; then
+	source $HOME/.screeninator/scripts/screeninator ; fi
