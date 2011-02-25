@@ -5,8 +5,7 @@ autodetach on # Detach and preserve screen session when terminal window closes.
 defscrollback 10000
 
 # Fancy status line.
-hardstatus alwayslastline
-hardstatus string '%{= kg}%{g}[%= %{= kw}%?%-Lw%?%{r} (%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %m/%d %{W}%c %{g}]'
+hardstatus alwayslastline '%{= kg}%{g}[%= %{= kw}%?%-Lw%?%{r} (%{W}%n*%f %t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %m/%d %{W}%c %{g}]'
 
 markkeys h=d:j=h:k=t:l=n # Use dvorak dhtn instead of qwerty hjkl for copy mode movement.
 markkeys H=D:L=N:J=H # Use dvorak DMN for top, middle, bottom, and H for join lines.
