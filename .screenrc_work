@@ -1,0 +1,36 @@
+startup_message off # Don't show startup screen.
+vbell off
+escape ^zz # Use Ctrl-Z as the escape sequence.
+autodetach on # Detach and preserve screen session when terminal window closes.
+defscrollback 10000
+
+# Fancy status line.
+hardstatus alwayslastline '%{= kg}%{g}[%= %{= kw}%?%-Lw%?%{r} (%{W}%n*%f %t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %m/%d %{W}%c %{g}]'
+
+markkeys h=d:j=h:k=t:l=n # Use dvorak dhtn instead of qwerty hjkl for copy mode movement.
+markkeys H=D:L=N:J=H # Use dvorak DMN for top, middle, bottom, and H for join lines.
+markkeys n=j:N=J # Remap j and J as next and previous search item.
+bind p paste . # Use escape-p as paste, keep escape-^P as previous screen.
+bind c copy # Use escape-c as enter copy mode, keep escape-^C as create screen.
+# Remove unnecessary keybindings.
+bind .
+bind h
+
+# Terminfo and termcap for nice 256 color terminal
+# allow bold colors - necessary for some reason
+attrcolor b ".I"
+# tell screen how to set colors. AB = background, AF=foreground
+termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
+# erase background with current bg color
+defbce "on"
+
+# Work stuff
+chdir "~/work_devel/policystat/"
+
+screen -t dev 1
+stuff "cd ~/work_devel/policystat/pstat/ && workon pstat && clear\012"
+
+screen -t runserver 2
+stuff "cd ~/work_devel/policystat/pstat/ && workon pstat && clear && ./manage.py runserver 0.0.0.0:8000\012"
+
+select 1
