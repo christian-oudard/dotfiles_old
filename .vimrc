@@ -125,3 +125,11 @@ nmap ySS <Plug>YSsurround
 vmap s <Plug>Vsurround
 vmap S <Plug>VSurround
 imap <C-S> <Plug>Isurround
+
+" syntastic
+set statusline=%<%f\ %h%m%r%{fugitive#statusline()}\ %{SyntasticStatuslineFlag()}.%=%-14.(%l,%c%V%)\ %P
+let g:syntastic_enable_signs=1
+let g:syntastic_auto_jump=1
+let g:syntastic_auto_loc_list=1
+" syntastic, jslint
+let g:syntastic_jslint_conf=" --es5 false --white"
