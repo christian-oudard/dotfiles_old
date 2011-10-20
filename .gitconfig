@@ -19,3 +19,6 @@
 	default = matching
 [diff]
     tool = meld
+[github]
+	user = christian-oudard
+	token = <.replace github-token>
