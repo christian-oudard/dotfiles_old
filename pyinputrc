@@ -2,5 +2,5 @@ set editing-mode emacs
 
 set horizontal-scroll-mode On
 
-Control-n: complete
+tab: complete
 
