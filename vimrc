@@ -133,3 +133,12 @@ let g:syntastic_auto_jump = 0
 let g:syntastic_auto_loc_list = 1
 " syntastic, jslint
 let g:syntastic_jslint_conf=" --indent=4 --es5=false --white"
+
+" omnicompletion
+autocmd FileType python set omnifunc=pythoncomplete#Complete
+autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+
+" supertab
+let g:SuperTabDefaultCompletionType = "context" " context sensitive omnicompletion vs word completion
