@@ -107,13 +107,14 @@ fi
 export PYTHONSTARTUP=$HOME/.pythonrc
 
 # activate virtualenvwrapper
-source /usr/local/bin/virtualenvwrapper.sh
+# Temporarily disabled.
+#source /usr/local/bin/virtualenvwrapper.sh
 
 # don't allow Ctrl-S to stop terminal output
 stty stop ''
 
-# Add ~/bin to executable search path.
-export PATH=$PATH:~/bin
+# Add to executable search path.
+export PATH=$PATH:/usr/local/bin:~/bin
 
 # Set editor.
 export EDITOR='vim'
