@@ -114,7 +114,7 @@ export PYTHONSTARTUP=$HOME/.pythonrc
 stty stop ''
 
 # Add to executable search path.
-export PATH=$PATH:/usr/local/bin:~/bin
+export PATH=/usr/local/bin:~/bin:$PATH
 
 # Set editor.
 export EDITOR='vim'
