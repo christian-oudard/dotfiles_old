@@ -6,6 +6,3 @@ alias lh='find -maxdepth 1 -name ".*" -not -name "." -printf "%f\n" | xargs ls -
 alias lr='ls -R'
 alias lla='ls -lA'
 alias llh='lh -l'
-
-# trash-put is a stupid command name
-alias trash='trash-put'
