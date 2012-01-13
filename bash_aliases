@@ -6,3 +6,6 @@ alias lh='find -maxdepth 1 -name ".*" -not -name "." -printf "%f\n" | xargs ls -
 alias lr='ls -R'
 alias lla='ls -lA'
 alias llh='lh -l'
+
+# Start scribox and set_environment.sh
+alias scribox='cd ~/scribd_devel; source scribox/set_environment.sh;PS1="(scribox)$PS1"'
