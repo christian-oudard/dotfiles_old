@@ -9,3 +9,6 @@ set guioptions=airL
 
 " right-click menu with copy and paste
 behave mswin
+
+" always show tab line
+set showtabline=2

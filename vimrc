@@ -29,9 +29,17 @@ set wildmode=longest,list,full
 set wildmenu
 set wildignore+=*.pyc,*.pyo,.svn,.git,.bzr,*.o,*~
 
+" status line
+set laststatus=2 " always show status line
+set statusline=
+set statusline+=%< " if line overflows, truncate at start
+set statusline+=%f\  " current file name
+set statusline+=%h%m%r " flags: help, modified, read only
+set statusline+=%= " left/right separator
+set statusline+=%-14.(%l,%c%V%)\ %P " line, column, and percentage display.
+
 
 """ Indentation and Syntax """
-
 
 " activate pathogen, bounce indentation plugin to force reload.
 filetype off
@@ -127,7 +135,6 @@ vmap S <Plug>VSurround
 imap <C-S> <Plug>Isurround
 
 " syntastic
-set statusline=%<%f\ %h%m%r%{fugitive#statusline()}\ %{SyntasticStatuslineFlag()}.%=%-14.(%l,%c%V%)\ %P
 let g:syntastic_enable_signs = 1
 let g:syntastic_auto_jump = 0
 let g:syntastic_auto_loc_list = 1
