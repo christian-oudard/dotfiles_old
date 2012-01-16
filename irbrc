@@ -1,5 +1,6 @@
 begin
   # load wirble
+  require 'rubygems'
   require 'wirble'
 
   # start wirble (with color)
