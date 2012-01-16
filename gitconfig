@@ -17,6 +17,8 @@
 	co = checkout
 [push]
 	default = matching
+[branch]
+	autosetuprebase = always
 [diff]
     tool = meld
 [github]
