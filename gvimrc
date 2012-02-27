@@ -12,3 +12,9 @@ behave mswin
 
 " always show tab line
 set showtabline=2
+
+" peepopen keybindings
+if has("gui_macvim")
+	macmenu &File.New\ Tab key=<nop>
+	map <leader>f <Plug>PeepOpen
+end
