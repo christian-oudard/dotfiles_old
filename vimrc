@@ -115,19 +115,6 @@ nmap Q <Nop>
 let mapleader = ","
 let g:mapleader = ","
 
-" surround
-let g:surround_no_mappings = 1
-nmap ks <Plug>Dsurround
-nmap cs <Plug>Csurround
-nmap ys <Plug>Ysurround
-nmap yS <Plug>YSurround
-nmap yss <Plug>Yssurround
-nmap ySs <Plug>YSsurround
-nmap ySS <Plug>YSsurround
-vmap s <Plug>Vsurround
-vmap S <Plug>VSurround
-imap <C-S> <Plug>Isurround
-
 " syntastic
 let g:syntastic_enable_signs = 1
 let g:syntastic_auto_jump = 0
