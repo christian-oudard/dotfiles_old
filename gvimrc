@@ -4,8 +4,8 @@ au GUIEnter * set lines=55 columns=110
 " font
 set guifont=Inconsolata:h16
 
-" bare bones gui
-set guioptions=airL
+" tabs only in gui
+set guioptions=aeg
 
 " right-click menu with copy and paste
 behave mswin
@@ -15,6 +15,5 @@ set showtabline=2
 
 " peepopen keybindings
 if has("gui_macvim")
-	macmenu &File.New\ Tab key=<nop>
 	map <leader>f <Plug>PeepOpen
 end
