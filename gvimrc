@@ -1,8 +1,8 @@
 " set a larger initial size
-au GUIEnter * set lines=55 columns=110
+au GUIEnter * set lines=50 columns=100
 
 " font
-set guifont=Inconsolata\ 11
+set guifont=Inconsolata\ 12
 
 " tabs only in gui
 set guioptions=airL
