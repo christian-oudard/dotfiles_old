@@ -2,10 +2,10 @@
 au GUIEnter * set lines=55 columns=110
 
 " font
-set guifont=Inconsolata:h16
+set guifont=Inconsolata\ 11
 
 " tabs only in gui
-set guioptions=aeg
+set guioptions=airL
 
 " right-click menu with copy and paste
 behave mswin
@@ -13,7 +13,10 @@ behave mswin
 " always show tab line
 set showtabline=2
 
-" peepopen keybindings
+" mac-specific options
 if has("gui_macvim")
+	set guifont=Inconsolata:h16
+	set guioptions=aeg
+	" peepopen keybindings
 	map <leader>f <Plug>PeepOpen
 end
