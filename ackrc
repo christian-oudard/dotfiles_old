@@ -1,3 +1,5 @@
 --smart-case
 --type-add
-css=.sass,.scss
+css=.sass,.scss,.less
+--type-add
+html=.j2
