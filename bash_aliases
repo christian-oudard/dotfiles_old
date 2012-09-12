@@ -10,13 +10,15 @@ alias lr='ls -R'
 alias lla='ls -lA'
 alias llh='lh -l'
 
-# trash-cli
-alias trash='trash-put'
-
 # Start scribox and set_environment.sh
 alias scribox='cd ~/scribd_devel; source scribox/set_environment.sh;PS1="(scribox)$PS1"; cd ~/scribd_devel/rails'
 
 # Some other project got the name "ack" in the debian packages.
 if [ ! $(which ack) ]; then
 	alias ack='ack-grep'
+fi
+
+# trash-cli
+if [ ! $(which trash) ]; then
+	alias trash='trash-put'
 fi
