@@ -1,5 +1,9 @@
 # Color support of ls for BSD and Linux environments.
-alias ls='ls -G --color=auto'
+if [ $(uname -s) == 'Darwin' ]; then
+	alias ls='ls -Gp'
+else
+	alias ls='ls -Gp --color=auto'
+fi
 
 # Some more ls aliases.
 alias i='ls'
