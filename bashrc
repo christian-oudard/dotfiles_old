@@ -97,7 +97,7 @@ fi
 stty stop ''
 
 # Add to executable search path.
-export PATH=/usr/local/bin:~/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$PATH:/opt/local/sbin:/opt/local/bin
 
 # Set editor.
 export EDITOR='vim'
