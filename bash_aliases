@@ -1,8 +1,8 @@
 # Color support of ls for BSD and Linux environments.
 if [ $(uname -s) == 'Darwin' ]; then
-	alias ls='ls -Gp'
+    alias ls='ls -Gp'
 else
-	alias ls='ls -Gp --color=auto'
+    alias ls='ls -Gp --color=auto'
 fi
 
 # Some more ls aliases.
@@ -19,14 +19,14 @@ alias scribox='cd ~/scribd_devel; source scribox/set_environment.sh;PS1="(scribo
 
 # Some other project got the name "ack" in the debian packages.
 command -v ack >/dev/null 2>&1 || {
-	command -v ack-grep >/dev/null 2>&1 && {
-		alias ack='ack-grep'
-	}
+    command -v ack-grep >/dev/null 2>&1 && {
+        alias ack='ack-grep'
+    }
 }
 
 # trash-cli
 command -v trash >/dev/null 2>&1 || {
-	command -v trash-put >/dev/null 2>&1 && {
-		alias trash='trash-put'
-	}
+    command -v trash-put >/dev/null 2>&1 && {
+        alias trash='trash-put'
+    }
 }
