@@ -1,5 +1,4 @@
-" Forked versions of these plugins now live in ~/.janus
-call janus#disable_plugin('ack')
+-" A forked version of this plugin now lives in ~/.janus
 call janus#disable_plugin('buffergator')
 
 let mapleader = ","
