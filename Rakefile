@@ -59,7 +59,7 @@ task :install do
   info "Installing janus for vim."
   janus_folder = File.expand_path("~/.vim/janus")
   if File.exist?(janus_folder)
-    error "#{janus_folder} exists. Will not clobber existing janus installation. If you would like to upgrade, please remove ~/.vim manually."
+    info_cmd "#{janus_folder} exists. Will not overwrite existing janus installation. If you would like to upgrade, please remove ~/.vim manually."
   else
     `curl -Lo- https://bit.ly/janus-bootstrap | bash`
   end
