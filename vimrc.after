@@ -9,6 +9,7 @@ set cursorline
 """ Behavior """
 
 set hidden " allow using multiple unsaved buffers
+set timeoutlen=500 " use a shorter wait period for key combinations
 
 " do tab completion for file names more like bash
 "set wildmode=longest,list,full
@@ -65,5 +66,11 @@ imap <C-S> <Plug>Isurround
 imap <C-G>s <Plug>Isurround
 imap <C-G>S <Plug>ISurround
 
-" remove search highlighting with the enter key
-nnoremap <silent> <CR> :nohlsearch<CR>
+" buffergator plugin bindings
+"STUB
+
+" ack plugin bindings
+"STUB
+
+" unmap frequently accidental commands
+nmap Q <Nop>
