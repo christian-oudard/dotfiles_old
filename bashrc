@@ -72,7 +72,7 @@ if [ $(uname -s) != 'Darwin' ]; then
 fi
 
 # Colors for ls.
-if [ -f "$HOME/.dircolors" ] ; then
+if [ -x /usr/bin/dircolors ] && [ -f "$HOME/.dircolors" ]; then
     eval $(dircolors -b $HOME/.dircolors)
 fi
 
