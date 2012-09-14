@@ -1,0 +1,66 @@
+""" Appearance """
+
+set background=dark
+set t_Co=16
+colorscheme solarized
+
+
+""" Behavior """
+
+" do tab completion for file names more like bash
+"set wildmode=longest,list,full
+set wildmode=list:longest,list:full
+set wildmenu
+set wildignore+=*.pyc,*.pyo,.svn,.git,.bzr,
+
+" default indentation
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set expandtab
+
+
+""" Key Mappings (Dvorak Layout) """
+
+" press v w to exit instead of escape
+imap vw <esc>
+
+" use d, h, t, n to move left, up, down, and right
+noremap d h
+noremap D H
+noremap h j
+noremap H J
+noremap gh gj
+noremap t k
+noremap T K
+noremap gt gk
+noremap n l
+noremap N L
+
+" reassign the keys we overwrote
+noremap k d
+noremap K D
+noremap l t
+noremap L T
+noremap j n
+noremap J N
+
+" intuitive Y
+noremap Y y$
+
+" surround plugin bindings
+nmap ks  <Plug>Dsurround
+nmap cs  <Plug>Csurround
+nmap ys  <Plug>Ysurround
+nmap yS  <Plug>YSurround
+nmap yss <Plug>Yssurround
+nmap ySs <Plug>YSsurround
+nmap ySS <Plug>YSsurround
+xmap S   <Plug>VSurround
+xmap gS  <Plug>VgSurround
+imap <C-S> <Plug>Isurround
+imap <C-G>s <Plug>Isurround
+imap <C-G>S <Plug>ISurround
+
+" remove search highlighting with the enter key
+nnoremap <silent> <CR> :nohlsearch<CR>
