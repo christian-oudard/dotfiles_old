@@ -4,6 +4,9 @@ au GUIEnter * set lines=50 columns=100
 " font
 set guifont=Inconsolata\ 12
 
+" light color scheme
+set background=light
+
 " tabs only in gui
 set guioptions=airL
 

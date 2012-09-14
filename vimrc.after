@@ -8,6 +8,8 @@ set cursorline
 
 """ Behavior """
 
+set hidden " allow using multiple unsaved buffers
+
 " do tab completion for file names more like bash
 "set wildmode=longest,list,full
 set wildmode=list:longest,list:full
