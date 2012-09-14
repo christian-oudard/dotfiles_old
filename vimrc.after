@@ -63,6 +63,3 @@ xmap gS  <Plug>VgSurround
 imap <C-S> <Plug>Isurround
 imap <C-G>s <Plug>Isurround
 imap <C-G>S <Plug>ISurround
-
-" remove search highlighting with the enter key
-nnoremap <silent> <CR> :nohlsearch<CR>
