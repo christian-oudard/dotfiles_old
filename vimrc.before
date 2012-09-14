@@ -1,2 +1,5 @@
 let mapleader = ","
 let g:surround_no_mappings = 1
+let g:buffergator_viewport_split_policy="B"
+let g:buffergator_split_size=8
+let g:buffergator_autoexpand_on_split=0
