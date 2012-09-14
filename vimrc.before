@@ -1,3 +1,7 @@
+" Forked versions of these plugins now live in ~/.janus
+call janus#disable_plugin('ack')
+call janus#disable_plugin('buffergator')
+
 let mapleader = ","
 let g:surround_no_mappings = 1
 let g:buffergator_viewport_split_policy="B"
