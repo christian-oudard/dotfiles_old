@@ -7,3 +7,4 @@ let g:buffergator_viewport_split_policy="B"
 let g:buffergator_split_size=8
 let g:buffergator_autoexpand_on_split=0
 let g:ackprg="ack-grep -H --nocolor --nogroup --column"
+let g:ctrlp_working_path_mode = ''

@@ -68,11 +68,8 @@ imap <C-S> <Plug>Isurround
 imap <C-G>s <Plug>Isurround
 imap <C-G>S <Plug>ISurround
 
-" buffergator plugin bindings
-"STUB
-
-" ack plugin bindings
-"STUB
-
 " unmap frequently accidental commands
 nmap Q <Nop>
+
+" Add quotes when doing ,f for Ack plugin.
+noremap <Leader>f :Ack ''<Left>
