@@ -72,6 +72,7 @@ imap <C-G>S <Plug>ISurround
 nmap Q <Nop>
 unmap <Leader>fc
 unmap <Leader>fef
+unmap <C-f>
 
 " Add quotes when doing <Leader>f for Ack plugin.
 noremap <Leader>f :Ack ''<Left>
