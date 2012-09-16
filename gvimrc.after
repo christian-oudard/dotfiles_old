@@ -2,7 +2,9 @@
 au GUIEnter * set lines=50 columns=100
 
 " font
-set guifont=Inconsolata\ 12
+if has("unix")
+    set guifont=Inconsolata-dz\ 12,Inconsolata\ 12
+endif
 
 " light color scheme
 set background=light

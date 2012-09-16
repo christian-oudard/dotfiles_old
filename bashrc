@@ -109,5 +109,11 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH:/opt/local/sbin:/opt/local/bin
 # Set editor.
 export EDITOR='vim'
 
+# Fix ubuntu menu proxy warning in gvim.
+# From http://askubuntu.com/questions/132977/how-to-get-global-application-menu-for-gvim
+if [ -x /usr/bin/gvim ]; then
+    function gvim () { (/usr/bin/gvim -f "$@" &) }
+fi
+
 # Load RVM into a shell session *as a function*
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
