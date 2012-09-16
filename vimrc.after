@@ -68,8 +68,10 @@ imap <C-S> <Plug>Isurround
 imap <C-G>s <Plug>Isurround
 imap <C-G>S <Plug>ISurround
 
-" unmap frequently accidental commands
+" unmap frequently accidental or conflicting commands
 nmap Q <Nop>
+unmap <Leader>fc
+unmap <Leader>fef
 
-" Add quotes when doing ,f for Ack plugin.
+" Add quotes when doing <Leader>f for Ack plugin.
 noremap <Leader>f :Ack ''<Left>
