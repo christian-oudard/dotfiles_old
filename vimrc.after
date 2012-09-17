@@ -12,6 +12,7 @@ set hidden " allow using multiple unsaved buffers
 set timeoutlen=500 " use a shorter wait period for key combinations
 set scrolloff=3 " set a margin of lines when scrolling
 set virtualedit=block " free roaming cursor in block mode
+set sessionoptions=buffers " only save buffers with mksession
 
 " do tab completion for file names more like bash
 "set wildmode=longest,list,full
