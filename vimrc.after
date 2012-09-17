@@ -8,22 +8,30 @@ set cursorline
 
 """ Behavior """
 
-set hidden " allow using multiple unsaved buffers
-set timeoutlen=500 " use a shorter wait period for key combinations
-set scrolloff=3 " set a margin of lines when scrolling
-set virtualedit=block " free roaming cursor in block mode
+set hidden " Allow using multiple unsaved buffers.
+set timeoutlen=500 " Use a shorter wait period for key combinations.
+set scrolloff=3 " Set a margin of lines when scrolling.
+set virtualedit=block " Use a free roaming cursor in block mode.
 
-" do tab completion for file names more like bash
-"set wildmode=longest,list,full
+" Do tab completion for file names more like bash.
 set wildmode=list:longest,list:full
 set wildmenu
 set wildignore+=*.pyc,*.pyo,.svn,.git,.bzr,
 
-" default indentation
+" Default indentation.
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set expandtab
+
+" List chars
+set listchars=""                  " Reset the listchars
+set listchars=tab:\ \             " a tab should display as "  ", trailing whitespace as "."
+set listchars+=trail:·            " show trailing spaces as a middle dot
+set listchars+=extends:>          " The character to show in the last column when wrap is
+                                  " off and the line continues beyond the right of the screen
+set listchars+=precedes:<         " The character to show in the last column when wrap is
+                                  " off and the line continues beyond the right of the screen
 
 
 """ Key Mappings (Dvorak Layout) """

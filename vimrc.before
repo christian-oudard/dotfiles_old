@@ -16,3 +16,12 @@ let g:ctrlp_working_path_mode = ''
 
 " Changed surround mappings for dvorak.
 let g:surround_no_mappings = 1
+
+" Custom NERDtree mappings for dvorak.
+let g:NERDTreeMapJumpLastChild = "H"
+let g:NERDTreeMapJumpNextSibling = "<C-h>"
+let g:NERDTreeMapJumpFirstChild = "T"
+let g:NERDTreeMapJumpPrevSibling = "<C-t>"
+let g:NERDTreeMapDeleteBookmark = "K"
+let g:NERDTreeMapOpenInTab="l"
+let g:NERDTreeMapOpenInTabSilent="L"
