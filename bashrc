@@ -71,10 +71,26 @@ if [ $(uname -s) != 'Darwin' ]; then
     gconftool-2 --set "/apps/gnome-terminal/profiles/Default/foreground_color" --type string "#838394949696"
 fi
 
-# Colors for ls.
+# Color settings for ls.
 if [ -x /usr/bin/dircolors ] && [ -f "$HOME/.dircolors" ]; then
     eval $(dircolors -b $HOME/.dircolors)
 fi
+
+# Color support of ls for BSD and Linux environments.
+if [ $(uname -s) == 'Darwin' ]; then
+    alias ls='ls -Gp'
+else
+    alias ls='ls -Gp --color=auto'
+fi
+
+# Some more ls aliases.
+alias i='ls'
+alias ll='ls -lh'
+alias la='ls -A'
+alias lh='find -maxdepth 1 -name ".*" -not -name "." -printf "%f\n" | xargs ls -d --color=auto'
+alias lr='ls -R'
+alias lla='ls -lA'
+alias llh='lh -l'
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
