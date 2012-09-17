@@ -1,10 +1,27 @@
--" A forked version of this plugin now lives in ~/.janus
+" Disable unused plugins.
+call janus#disable_plugin('vimwiki')
+
+" A forked version of this plugin now lives in ~/.janus
 call janus#disable_plugin('buffergator')
 
 let mapleader = ","
-let g:surround_no_mappings = 1
+
+" Open buffergator in a horizontal split.
 let g:buffergator_viewport_split_policy="B"
 let g:buffergator_split_size=8
 let g:buffergator_autoexpand_on_split=0
-let g:ackprg="ack-grep -H --nocolor --nogroup --column"
+
+" Use current working directory for file search.
 let g:ctrlp_working_path_mode = ''
+
+" Changed surround mappings for dvorak.
+let g:surround_no_mappings = 1
+
+" Custom NERDtree mappings for dvorak.
+let g:NERDTreeMapJumpLastChild = "H"
+let g:NERDTreeMapJumpNextSibling = "<C-h>"
+let g:NERDTreeMapJumpFirstChild = "T"
+let g:NERDTreeMapJumpPrevSibling = "<C-t>"
+let g:NERDTreeMapDeleteBookmark = "K"
+let g:NERDTreeMapOpenInTab="l"
+let g:NERDTreeMapOpenInTabSilent="L"
