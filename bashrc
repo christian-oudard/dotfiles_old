@@ -51,7 +51,6 @@ if [ "$color_prompt" = yes ]; then
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\n\$ '
 fi
-unset color_prompt
 
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
@@ -61,6 +60,15 @@ xterm*|rxvt*)
 *)
     ;;
 esac
+
+# If coming in via ssh, show it in the prompt.
+if [ -n "$SSH_CLIENT" ]; then
+    if [ "$color_prompt" = yes ]; then
+        PS1="\[\033[00;36m\](ssh)\[\033[00m\]$PS1"
+    else
+        PS1="(ssh)$PS1"
+    fi
+fi
 
 # Set gnome-terminal colors
 if [ $(uname -s) != 'Darwin' ]; then
@@ -132,3 +140,7 @@ fi
 
 # Load RVM into a shell session *as a function*
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
+
+# Clean up variables.
+unset color_prompt
