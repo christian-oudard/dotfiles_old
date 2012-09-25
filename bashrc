@@ -5,6 +5,16 @@
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
+# Add to executable search path.
+export PATH="\
+$HOME/bin:\
+/usr/local/share/python:\
+/usr/local/bin:\
+$PATH:\
+/opt/local/\
+sbin:\
+/opt/local/bin"
+
 # Don't put duplicate lines in the history. See bash(1) for more options.
 HISTCONTROL=ignoredups:ignorespace
 
@@ -118,16 +128,8 @@ fi
 # python startup script
 export PYTHONSTARTUP=$HOME/.pythonrc
 
-# activate virtualenvwrapper
-if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
-    source /usr/local/bin/virtualenvwrapper.sh
-fi
-
 # don't allow Ctrl-S to stop terminal output
 stty stop ''
-
-# Add to executable search path.
-export PATH=$HOME/bin:/usr/local/share/python:/usr/local/bin:$PATH:/opt/local/sbin:/opt/local/bin
 
 # Set editor.
 export EDITOR='vim'
@@ -141,6 +143,10 @@ fi
 # Load RVM into a shell session *as a function*
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
+# Activate virtualenvwrapper.
+if [ -f $(which virtualenvwrapper.sh) ]; then
+    source $(which virtualenvwrapper.sh)
+fi
 
 # Clean up variables.
 unset color_prompt

@@ -1,3 +1,5 @@
+# Start terminal with screen -R to reattach if possible.
+
 startup_message off # Don't show startup screen.
 vbell off
 escape ^zz # Use Ctrl-Z as the escape sequence.
