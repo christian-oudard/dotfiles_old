@@ -117,6 +117,8 @@ alias gdc='git diff --cached'
 alias gci='git commit --verbose'
 alias gcia='git commit --verbose --all'
 alias gco='git checkout'
+alias gpush='git push'
+alias gpull='git pull'
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
