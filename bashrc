@@ -127,7 +127,7 @@ fi
 stty stop ''
 
 # Add to executable search path.
-export PATH=$HOME/bin:/usr/local/bin:$PATH:/opt/local/sbin:/opt/local/bin
+export PATH=$HOME/bin:/usr/local/share/python:/usr/local/bin:$PATH:/opt/local/sbin:/opt/local/bin
 
 # Set editor.
 export EDITOR='vim'
