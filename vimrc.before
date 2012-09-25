@@ -1,5 +1,6 @@
 " Disable unused plugins.
 call janus#disable_plugin('vimwiki')
+call janus#disable_plugin('syntastic')
 
 " A forked version of this plugin now lives in ~/.janus
 call janus#disable_plugin('buffergator')
