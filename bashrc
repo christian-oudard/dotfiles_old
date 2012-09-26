@@ -101,7 +101,7 @@ else
     alias ls='ls -Gp --color=auto'
 fi
 
-# Some more ls aliases.
+# Aliases.
 alias i='ls'
 alias ll='ls -lh'
 alias la='ls -A'
@@ -110,15 +110,9 @@ alias lr='ls -R'
 alias lla='ls -lA'
 alias llh='lh -l'
 
-# Git aliases.
-alias gs='git status'
-alias gd='git diff'
-alias gdc='git diff --cached'
-alias gci='git commit --verbose'
-alias gcia='git commit --verbose --all'
-alias gco='git checkout'
-alias gpush='git push'
-alias gpull='git pull'
+# Use "g" to mean "git", with correct tab completion.
+alias g='git'
+complete -o default -o nospace -F _git g
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
