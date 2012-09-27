@@ -1,6 +1,5 @@
 " Disable unused plugins.
 call janus#disable_plugin('vimwiki')
-call janus#disable_plugin('syntastic')
 
 " A forked version of this plugin now lives in ~/.janus
 call janus#disable_plugin('buffergator')
@@ -26,3 +25,7 @@ let g:NERDTreeMapJumpPrevSibling = "<C-t>"
 let g:NERDTreeMapDeleteBookmark = "K"
 let g:NERDTreeMapOpenInTab="l"
 let g:NERDTreeMapOpenInTabSilent="L"
+
+" Syntastic settings.
+"let g:syntastic_python_checker='flake8'
+let g:syntastic_python_checker='pyflakes'
