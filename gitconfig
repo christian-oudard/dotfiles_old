@@ -9,6 +9,7 @@
 	name = Christian Oudard
 	email = christian.oudard@gmail.com
 [alias]
+	s = status
 	st = status
 	d = diff
 	dc = diff --cached
