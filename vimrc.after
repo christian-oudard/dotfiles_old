@@ -40,8 +40,9 @@ au FileType ruby setlocal softtabstop=2 tabstop=2 shiftwidth=2 expandtab
 
 """ Key Mappings (Dvorak Layout) """
 
-" press v w to exit instead of escape
+" Use easier key combinations to exit insert mode.
 imap vw <esc>
+imap qj <esc>
 
 " use d, h, t, n to move left, up, down, and right
 noremap d h
