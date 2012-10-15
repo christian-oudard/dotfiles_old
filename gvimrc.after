@@ -1,16 +1,8 @@
 " set a larger initial size
 au GUIEnter * set lines=50 columns=100
 
-" font
-if has("unix")
-    set guifont=Inconsolata-dz\ 12,Inconsolata\ 12
-endif
-
 " light color scheme
 set background=light
-
-" tabs only in gui
-set guioptions=airL
 
 " right-click menu with copy and paste
 behave mswin
@@ -18,10 +10,16 @@ behave mswin
 " always show tab line
 set showtabline=2
 
-" mac-specific options
+" font
 if has("gui_macvim")
-	set guifont=Inconsolata:h16
+	set guifont=Inconsolata-dz:h14,Inconsolata:h14,Monaco:h14
+elseif has("unix")
+    set guifont=Inconsolata-dz\ 12,Inconsolata\ 12,Consolas\ 12
+endif
+
+" tabs only in gui
+if has("gui_macvim")
 	set guioptions=aeg
-	" peepopen keybindings
-	map <leader>f <Plug>PeepOpen
-end
+elseif has("unix")
+    set guioptions=airL
+endif

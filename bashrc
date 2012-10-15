@@ -5,6 +5,16 @@
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
+# Add to executable search path.
+export PATH="\
+$HOME/bin:\
+/usr/local/share/python:\
+/usr/local/bin:\
+$PATH:\
+/opt/local/\
+sbin:\
+/opt/local/bin"
+
 # Don't put duplicate lines in the history. See bash(1) for more options.
 HISTCONTROL=ignoredups:ignorespace
 
@@ -51,7 +61,6 @@ if [ "$color_prompt" = yes ]; then
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\n\$ '
 fi
-unset color_prompt
 
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
@@ -61,6 +70,15 @@ xterm*|rxvt*)
 *)
     ;;
 esac
+
+# If coming in via ssh, show it in the prompt.
+if [ -n "$SSH_CLIENT" ]; then
+    if [ "$color_prompt" = yes ]; then
+        PS1="\[\033[00;36m\](ssh)\[\033[00m\]$PS1"
+    else
+        PS1="(ssh)$PS1"
+    fi
+fi
 
 # Set gnome-terminal colors
 if [ $(uname -s) != 'Darwin' ]; then
@@ -83,7 +101,7 @@ else
     alias ls='ls -Gp --color=auto'
 fi
 
-# Some more ls aliases.
+# Aliases.
 alias i='ls'
 alias ll='ls -lh'
 alias la='ls -A'
@@ -92,13 +110,9 @@ alias lr='ls -R'
 alias lla='ls -lA'
 alias llh='lh -l'
 
-# Alias definitions.
-# You may want to put all your additions into a separate file like
-# ~/.bash_aliases, instead of adding them here directly.
-# See /usr/share/doc/bash-doc/examples in the bash-doc package.
-if [ -f ~/.bash_aliases ]; then
-    source ~/.bash_aliases
-fi
+# Use "g" to mean "git", with correct tab completion.
+alias g='git'
+complete -o default -o nospace -F _git g
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
@@ -110,16 +124,8 @@ fi
 # python startup script
 export PYTHONSTARTUP=$HOME/.pythonrc
 
-# activate virtualenvwrapper
-if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
-    source /usr/local/bin/virtualenvwrapper.sh
-fi
-
 # don't allow Ctrl-S to stop terminal output
 stty stop ''
-
-# Add to executable search path.
-export PATH=$HOME/bin:/usr/local/bin:$PATH:/opt/local/sbin:/opt/local/bin
 
 # Set editor.
 export EDITOR='vim'
@@ -132,3 +138,11 @@ fi
 
 # Load RVM into a shell session *as a function*
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
+# Activate virtualenvwrapper.
+if [ -f $(which virtualenvwrapper.sh) ]; then
+    source $(which virtualenvwrapper.sh)
+fi
+
+# Clean up variables.
+unset color_prompt

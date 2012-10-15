@@ -34,14 +34,18 @@ set listchars+=extends:>          " The character to show in the last column whe
 set listchars+=precedes:<         " The character to show in the last column when wrap is
                                   " off and the line continues beyond the right of the screen
 
+" Filetypes
+au FileType ruby setlocal softtabstop=2 tabstop=2 shiftwidth=2 expandtab
+
 
 """ Key Mappings (Dvorak Layout) """
 
 " Press semicolon for command prompt.
 nmap ; :
 
-" press v w to exit instead of escape
+" Use easier key combinations to exit insert mode.
 imap vw <esc>
+imap qj <esc>
 
 " use d, h, t, n to move left, up, down, and right
 noremap d h
@@ -83,9 +87,12 @@ imap <C-G>S <Plug>ISurround
 
 " unmap frequently accidental or conflicting commands
 nmap Q <Nop>
-unmap <Leader>fc
-unmap <Leader>fef
-unmap <C-f>
+try
+    unmap <Leader>fc
+    unmap <Leader>fef
+    unmap <C-f>
+catch
+endtry
 
 " Add quotes when doing <Leader>f for Ack plugin.
 noremap <Leader>f :Ack ''<Left>

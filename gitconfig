@@ -9,12 +9,15 @@
 	name = Christian Oudard
 	email = christian.oudard@gmail.com
 [alias]
+	s = status
 	st = status
 	d = diff
 	dc = diff --cached
 	ci = commit --verbose
 	cia = commit --verbose --all
 	co = checkout
+	si = submodule init
+	su = submodule update
 [push]
 	default = matching
 [branch]
