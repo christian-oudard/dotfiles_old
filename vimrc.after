@@ -37,6 +37,9 @@ set listchars+=precedes:<         " The character to show in the last column whe
 
 """ Key Mappings (Dvorak Layout) """
 
+" Press semicolon for command prompt.
+nmap ; :
+
 " press v w to exit instead of escape
 imap vw <esc>
 
@@ -52,13 +55,14 @@ noremap gt gk
 noremap n l
 noremap N L
 
-" reassign the keys we overwrote
+" Reassign the keys we overwrote.
 noremap k d
 noremap K D
 noremap l t
 noremap L T
-noremap j n
-noremap J N
+" Center line when searching.
+noremap j nzz
+noremap J Nzz
 
 " intuitive Y
 noremap Y y$
