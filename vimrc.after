@@ -35,7 +35,7 @@ set listchars+=precedes:<         " The character to show in the last column whe
                                   " off and the line continues beyond the right of the screen
 
 " Filetypes
-au FileType ruby setlocal softtabstop=2 tabstop=2 shiftwidth=2 expandtab
+au FileType ruby,yaml setlocal softtabstop=2 tabstop=2 shiftwidth=2 expandtab
 
 
 """ Key Mappings (Dvorak Layout) """
