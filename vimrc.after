@@ -40,6 +40,9 @@ au FileType ruby,yaml setlocal softtabstop=2 tabstop=2 shiftwidth=2 expandtab
 
 """ Key Mappings (Dvorak Layout) """
 
+" Press semicolon for command prompt.
+nmap ; :
+
 " Use easier key combinations to exit insert mode.
 imap vw <esc>
 imap qj <esc>
@@ -56,13 +59,14 @@ noremap gt gk
 noremap n l
 noremap N L
 
-" reassign the keys we overwrote
+" Reassign the keys we overwrote.
 noremap k d
 noremap K D
 noremap l t
 noremap L T
-noremap j n
-noremap J N
+" Center line when searching.
+noremap j nzz
+noremap J Nzz
 
 " intuitive Y
 noremap Y y$
