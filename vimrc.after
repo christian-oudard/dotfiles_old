@@ -64,9 +64,6 @@ noremap k d
 noremap K D
 noremap l t
 noremap L T
-" Center line when searching.
-noremap j nzz
-noremap J Nzz
 
 " intuitive Y
 noremap Y y$
