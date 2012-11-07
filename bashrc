@@ -151,3 +151,6 @@ unset color_prompt
 if [ $(cat /etc/hostname) == 'turnip' ]; then
     workon django
 fi
+if [ $(cat /etc/hostname) == 'peach' ]; then
+    workon django
+fi
