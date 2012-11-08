@@ -64,6 +64,8 @@ noremap k d
 noremap K D
 noremap l t
 noremap L T
+noremap j n
+noremap J N
 
 " intuitive Y
 noremap Y y$
