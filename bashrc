@@ -121,7 +121,8 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     source /etc/bash_completion
 fi
 
-# python startup script
+# Python startup script and encoding.
+export PYTHONIOENCODING=utf8
 export PYTHONSTARTUP=$HOME/.pythonrc
 
 # don't allow Ctrl-S to stop terminal output
