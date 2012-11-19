@@ -147,3 +147,11 @@ fi
 
 # Clean up variables.
 unset color_prompt
+
+# Computer-specific settings.
+if [ $(cat /etc/hostname) == 'turnip' ]; then
+    workon django
+fi
+if [ $(cat /etc/hostname) == 'peach' ]; then
+    workon django
+fi
