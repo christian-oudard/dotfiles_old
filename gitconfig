@@ -4,7 +4,7 @@
 	interactive = auto
 	status = auto
 [core]
-	excludesfile = /home/christian/.gitignore
+	excludesfile = ~/.gitignore
 [user]
 	name = Christian Oudard
 	email = christian.oudard@gmail.com
