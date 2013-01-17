@@ -1,0 +1,83 @@
+screen notes
+show all screen sessions:
+$ screen -list
+attach to existing session:
+$ screen -x
+command key is ctrl-Z (^Z)
+^Z? help
+^Zc copy mode
+    ctrl-B and ctrl-F in copy mode are page up or page down
+^Zp paste
+^Z^C create new window
+^Zk kill window
+^Z^N next window
+^Z^P previous window
+^Z^Z last window
+^Zd detach from current session
+^ZS split top/bottom
+^Z<Tab> switch splits
+^ZQ close split
+
+vim notes
+:map to check all bindings
+:map <binding> to check one key's bindings
+<C-^> to go to previous buffer
+:tag or <C-]> to follow tag
+:pop to go back to last tag
+:tags for tag stack
+q: for a command history buffer
+q/ for a search history buffer
+ctrl-C twice to exit history buffers
+zc to close a code folds
+zo to open a code fold
+zR to open all the cold folds
+<C-b> and <C-f> for scroll page up or page down
+
+janus notes
+core settings files are in .vim/janus/vim/core/before/plugin
+,f to do ack search
+    do :Ack -a 'regex' to search non-code files too
+,tw to toggle wordwrap
+
+unimpaired
+[l and ]l for previous and next marked location (e.g. syntastic errors)
+
+nerdtree
+,n to activate
+? to toggle help
+I to toggle hidden files
+<Enter> or o to open files
+C change root to selected directory
+cd change directory
+
+nerdcommenter
+,cc to comment
+,cu to un comment
+
+buffergator
+,b opens the buffer catalog
+Space and Ctrl-Space change select buffers
+d deletes buffer
+D deletes buffer unconditionally
+o or Enter opens a buffer
+s opens in new vertical split
+i opens in new horizontal split
+t opens in new tab
+,t opens tab list
+
+Ctrl-P
+<C-t> to open (janus custom binding)
+three modes, file, buffer, and recently used files
+press <C-f> and <C-b> to switch modes
+<C-p> and <C-n> for search history
+
+surround
+ds(object) = delete surrounding object
+cs(object)(new object) = change surrounding object to new object
+ys(motion)(new object) = create surrounding new object around motion
+objects are {, (, [, <, ', ", and t (for html tags)
+
+snipmate
+type in a snippet handle and press <Tab> to complete
+snippet files are in ~/.vim/janus/vim/tools/snipmate-snippets/snippets/
+custom snippets are in ~/dotfiles/janus/snipmate_snippets/snippets/_.snippets
