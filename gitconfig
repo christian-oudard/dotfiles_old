@@ -16,8 +16,7 @@
 	ci = commit --verbose
 	cia = commit --verbose --all
 	co = checkout
-	si = submodule init
-	su = submodule update
+	su = submodule update --init --recursive
 [push]
 	default = matching
 [branch]
