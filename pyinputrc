@@ -1,6 +1,0 @@
-set editing-mode emacs
-
-set horizontal-scroll-mode On
-
-tab: complete
-

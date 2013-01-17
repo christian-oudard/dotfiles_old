@@ -10,26 +10,37 @@
 # PYTHONSTARTUP does *not* expand "~", so you have to put the
 # full path to your home directory here:
 
-import atexit
-import os
-import readline
-import rlcompleter
-
-home_path = os.environ['HOME']
-
-readline.read_init_file(os.path.join(home_path, '.pyinputrc'))
-
-historyPath = os.path.expanduser(os.path.join(home_path, '.pyhistory'))
-
-def save_history(historyPath=historyPath):
+def activate_readline():
+    import rlcompleter
+    import atexit
+    import os
+    import sys
     import readline
-    readline.write_history_file(historyPath)
 
-if os.path.exists(historyPath):
-    readline.read_history_file(historyPath)
+    home_path = os.environ['HOME']
 
-atexit.register(save_history)
-del os, atexit, readline, rlcompleter, save_history, historyPath, home_path
+    # Set up inputrc and tab completion.
+    if(sys.platform == 'darwin'):
+        readline.parse_and_bind('bind ^I rl_complete')
+    else:
+        readline.parse_and_bind('tab: complete')
+    readline.parse_and_bind('"\C-p": history-search-backward')
+    readline.parse_and_bind('"\C-n": history-search-forward')
+    readline.parse_and_bind('set editing-mode emacs')
+    readline.parse_and_bind('set horizontal-scroll-mode On')
+    readline.parse_and_bind('set completion-ignore-case on')
+
+    # Save history at exit.
+    history_path = os.path.expanduser(os.path.join(home_path, '.pyhistory'))
+    def save_history(history_path=history_path):
+        import readline
+        readline.write_history_file(history_path)
+    atexit.register(save_history)
+    if os.path.exists(history_path):
+        readline.read_history_file(history_path)
+
+activate_readline()
+del activate_readline
 
 # docstring convenience function
 def doc(o):
