@@ -1,0 +1,22 @@
+#! /bin/sh
+
+# Synaptics touchpad settings.
+# Reference: http://www.x.org/archive/X11R7.5/doc/man/man4/synaptics.4.html
+
+# maximum touch sensitivity
+synclient FingerLow=1 FingerHigh=1
+
+# faster speed and acceleration
+synclient MinSpeed=1.5 MaxSpeed=3.5 AccelFactor=0.1
+
+# 2 fingers scroll (can be also enabled in System Settings)
+synclient VertTwoFingerScroll=1 HorizTwoFingerScroll=1
+
+# faster coasting
+synclient CoastingSpeed=10
+
+# enable tap to click (2 fingers for middle click, 3 fingers for right click)
+#synclient TapButton1=1 TapButton2=3 TapButton3=2
+
+# continue dragging movement when reaching the edge of the touchpad
+synclient EdgeMotionMinZ=30 EdgeMotionMaxZ=40 EdgeMotionMinSpeed=100 EdgeMotionMaxSpeed=400

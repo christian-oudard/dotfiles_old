@@ -1,0 +1,21 @@
+To install Programmer Dvorak Classic:
+
+- If you only have a .keylayout file and not a .bundle file, use Ukelele (intentionally misspelled) to save it as a .bundle file.
+- Keyboard layouts are stored in either the system /Library directory, or in the home directory Library directory. Copy the .bundle file to "/Users/USERNAME/Library/Keyboard Layouts/" to use your home Library directory.
+- Restart your computer.
+- The keyboard layout should now show up in the list under System Preferences -> Language & Text -> Input Sources.
+
+Layout diagram:
+
+$&[{}(=*)+]!#
+',.pyfgcrl/@\
+aoeuidhtns-
+;qjkxbmwvz
+
+~%7531902468`
+"<>PYFGCRL?^|
+AOEUIDHTNS_
+:QJKXBMWVZ
+
+
+
