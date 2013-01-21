@@ -84,9 +84,6 @@ imap <C-S> <Plug>Isurround
 imap <C-G>s <Plug>Isurround
 imap <C-G>S <Plug>ISurround
 
-" NERD Commenter bindings
-map <leader>/ <plug>NERDCommenterToggle<CR>
-
 " unmap frequently accidental or conflicting commands
 nmap Q <Nop>
 try
@@ -98,3 +95,18 @@ endtry
 
 " Add quotes when doing <Leader>f for Ack plugin.
 noremap <Leader>f :Ack ''<Left>
+
+" Bubble single lines
+nmap <C-Down> ]e
+nmap <C-Up> [e
+nmap <C-t> [e
+nmap <C-h> ]e
+
+" Bubble multiple lines
+vmap <C-Up> [egv
+vmap <C-Down> ]egv
+vmap <C-t> [egv
+vmap <C-h> ]egv
+
+" Toggle line comments
+map <leader>/ <plug>NERDCommenterToggle<CR>

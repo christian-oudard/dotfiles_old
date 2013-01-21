@@ -66,7 +66,7 @@ t opens in new tab
 ,t opens tab list
 
 Ctrl-P
-<C-t> to open (janus custom binding)
+<C-p> to open
 three modes, file, buffer, and recently used files
 press <C-f> and <C-b> to switch modes
 <C-p> and <C-n> for search history
