@@ -38,6 +38,7 @@ core settings files are in .vim/janus/vim/core/before/plugin
 ,f to do ack search
     do :Ack -a 'regex' to search non-code files too
 ,tw to toggle wordwrap
+<C-Up> and <C-Down> drags lines up and down
 
 unimpaired
 [l and ]l for previous and next marked location (e.g. syntastic errors)
@@ -51,8 +52,7 @@ C change root to selected directory
 cd change directory
 
 nerdcommenter
-,cc to comment
-,cu to un comment
+,/ to toggle comment
 
 buffergator
 ,b opens the buffer catalog

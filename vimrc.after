@@ -84,6 +84,9 @@ imap <C-S> <Plug>Isurround
 imap <C-G>s <Plug>Isurround
 imap <C-G>S <Plug>ISurround
 
+" NERD Commenter bindings
+map <leader>/ <plug>NERDCommenterToggle<CR>
+
 " unmap frequently accidental or conflicting commands
 nmap Q <Nop>
 try
