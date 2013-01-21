@@ -59,7 +59,7 @@
             <key code="15" output="p"/>
             <key code="16" output="f"/>
             <key code="17" action="y"/>
-            <key code="18" output="&#x0026"/>
+            <key code="18" output="&#x0026;"/>
             <key code="19" output="["/>
             <key code="20" output="{"/>
             <key code="21" output="}"/>
