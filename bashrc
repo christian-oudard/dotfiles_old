@@ -135,11 +135,6 @@ if [ -f $(which virtualenvwrapper.sh) ]; then
     source $(which virtualenvwrapper.sh)
 fi
 
-# Setup base directory for byobu if using brew.
-if [ -f $(which brew) ]; then
-    export BYOBU_PREFIX=$(brew --prefix)
-fi
-
 # Computer-specific settings.
 if [ $(cat /etc/hostname) == 'turnip' ]; then
     workon django
