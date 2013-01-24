@@ -56,7 +56,7 @@ $(date +%H:%M | tr -d '\n')\
 "
 }
 function prompt() {
-    compensate=13
+    compensate=12
     printf "%*s\r"\
         "$(($(tput cols)+${compensate}))"\
         "$(prompt_right)"
