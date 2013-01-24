@@ -20,8 +20,6 @@ HISTCONTROL=ignoredups:ignorespace
 
 # Append to the history file, don't overwrite it.
 shopt -s histappend
-# Write history after every command.
-PROMPT_COMMAND='history -a'
 
 # Use a larger history size.
 export HISTSIZE=25000
@@ -33,51 +31,43 @@ export HISTIGNORE=" *"
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
-# Make less more friendly for non-text input files, see lesspipe(1).
+# Make "less" more friendly for non-text input files, see lesspipe(1).
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
-# Set variable identifying the chroot you work in (used in the prompt below)
-if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
-    debian_chroot=$(cat /etc/debian_chroot)
-fi
+# Set the prompt.
+PS1="\
+\033[00;33m\
+\u@\h\
+\033[00m\
+:\
+\033[01;36m\
+\w\
+\033[00m\
+\n\$ \
+"
 
-# set a fancy prompt (non-color, unless we know we "want" color)
-case "$TERM" in
-    xterm-color) color_prompt=yes;;
-esac
-
-# Colored prompt.
-if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-    # We have color support; assume it's compliant with Ecma-48
-    # (ISO/IEC-6429). (Lack of such support is extremely rare, and such
-    # a case would tend to support setf rather than setaf.)
-    color_prompt=yes
-else
-    color_prompt=
-fi
-
-if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[00;33m\]\u@\h\[\033[00m\]:\[\033[01;36m\]\w\n\$ \[\033[00m\]'
-else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\n\$ '
-fi
-
-# If this is an xterm set the title to user@host:dir
-case "$TERM" in
-xterm*|rxvt*)
-    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
-    ;;
-*)
-    ;;
-esac
+# Display the time after the prompt, right aligned.
+# Reference: http://superuser.com/a/517110/15168
+function prompt_right() {
+    printf "\
+\033[01;32m\
+$(date +%H:%M | tr -d '\n')\
+\033[00m\
+"
+}
+function prompt() {
+    compensate=13
+    printf "%*s\r"\
+        "$(($(tput cols)+${compensate}))"\
+        "$(prompt_right)"
+    # Write history after every command.
+    history -a
+}
+PROMPT_COMMAND=prompt
 
 # If coming in via ssh, show it in the prompt.
 if [ -n "$SSH_CLIENT" ]; then
-    if [ "$color_prompt" = yes ]; then
-        PS1="\[\033[00;36m\](ssh)\[\033[00m\]$PS1"
-    else
-        PS1="(ssh)$PS1"
-    fi
+    PS1="\[\033[00;36m\](ssh)\[\033[00m\]$PS1"
 fi
 
 # Set gnome-terminal colors
@@ -145,8 +135,10 @@ if [ -f $(which virtualenvwrapper.sh) ]; then
     source $(which virtualenvwrapper.sh)
 fi
 
-# Clean up variables.
-unset color_prompt
+# Setup base directory for byobu if using brew.
+if [ -f $(which brew) ]; then
+    export BYOBU_PREFIX=$(brew --prefix)
+fi
 
 # Computer-specific settings.
 if [ $(cat /etc/hostname) == 'turnip' ]; then
