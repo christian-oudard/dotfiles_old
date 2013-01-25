@@ -1,0 +1,13 @@
+#! /bin/sh
+
+TMUX=/usr/bin/tmux
+
+# Use a different TERM setting to fix color issues. Replacing the current
+# process with "exec" will pick up the current env.
+TERM=screen-256color-bce
+
+if $TMUX has-session -t "terminal"; then
+    exec $TMUX attach-session -t "terminal"
+else
+    exec $TMUX new-session -s "terminal"
+fi
