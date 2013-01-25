@@ -1,3 +1,6 @@
+tmux notes
+source-file ~/.tmux.conf
+
 screen notes
 show all screen sessions:
 $ screen -list
