@@ -1,4 +1,4 @@
-# Blocked sites (TV)
+# Blocked sites.
 127.0.0.1 www.reddit.com
 127.0.0.1 m.reddit.com
 127.0.0.1 news.ycombinator.com
@@ -14,3 +14,4 @@
 127.0.0.1 www.smbc-comics.com
 127.0.0.1 trenchescomic.com
 127.0.0.1 thedailywtf.com
+127.0.0.1 goproblems.com
