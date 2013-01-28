@@ -1,5 +1,8 @@
 tmux notes
 source-file ~/.tmux.conf
+list-keys -t vi-copy
+show-options -g
+show-options -wg
 
 screen notes
 show all screen sessions:
