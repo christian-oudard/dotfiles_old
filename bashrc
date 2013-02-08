@@ -13,7 +13,8 @@ $HOME/bin:\
 $PATH:\
 /opt/local/\
 sbin:\
-/opt/local/bin"
+/opt/local/bin\
+"
 
 # Don't put duplicate lines in the history. See bash(1) for more options.
 HISTCONTROL=ignoredups:ignorespace
@@ -35,35 +36,52 @@ shopt -s checkwinsize
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 # Set the prompt.
-PS1="\
+# References:
+# http://superuser.com/a/517110/15168
+# http://superuser.com/questions/187455/right-align-part-of-prompt
+function prompt_left() {
+    # We have to calculate all the parts of the prompt explicitly instead of
+    # relying on PS1 escape codes, so we can get an accurate length.
+
+    # Determine the current directory, replacing occurences of home directory with "~".
+    pwd=$(echo -n "$PWD")
+    if [[ $pwd/ = "$HOME"/* ]]; then
+        pwd=\~${pwd#$HOME}
+    fi
+
+    printf "\
 \033[00;33m\
-\u@\h\
+$USER@$(hostname -s)\
 \033[00m\
 :\
 \033[01;36m\
-\w\
+$pwd\
 \033[00m\
-\n\$ \
 "
-
-# Display the time after the prompt, right aligned.
-# Reference: http://superuser.com/a/517110/15168
+}
 function prompt_right() {
     printf "\
 \033[01;32m\
-$(date +%H:%M | tr -d '\n')\
+$(date +%H:%M | tr -d '\n') \
 \033[00m\
 "
 }
-function prompt() {
-    compensate=12
-    printf "%*s\r"\
-        "$(($(tput cols)+${compensate}))"\
-        "$(prompt_right)"
+function prompt_command() {
     # Write history after every command.
     history -a
+
+    # Assemble the PS1 prompt.
+    left=$(prompt_left)
+    right=$(prompt_right)
+    compensate=39 # Compensate for special terminal characters in calculating string lengths.
+    space=$(\
+        printf "%*s"\
+            "$(($(tput cols)-${#left}-${#right}+${compensate}))"\
+            " "\
+    )
+    PS1="${left}${space}${right}\n\$ "
 }
-PROMPT_COMMAND=prompt
+PROMPT_COMMAND=prompt_command
 
 # If coming in via ssh, show it in the prompt.
 if [ -n "$SSH_CLIENT" ]; then
