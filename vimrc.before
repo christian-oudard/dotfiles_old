@@ -6,10 +6,11 @@ call janus#disable_plugin('buffergator')
 
 let mapleader = ","
 
-" Open buffergator in a horizontal split.
-let g:buffergator_viewport_split_policy="B"
-let g:buffergator_split_size=8
-let g:buffergator_autoexpand_on_split=0
+" Open buffergator in a horizontal split, and use new keymap.
+let g:buffergator_viewport_split_policy = "B"
+let g:buffergator_split_size = 8
+let g:buffergator_autoexpand_on_split = 0
+let g:buffergator_use_new_keymap = 1
 
 " Use current working directory for file search.
 let g:ctrlp_working_path_mode = ''

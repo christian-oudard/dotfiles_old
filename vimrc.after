@@ -86,6 +86,8 @@ imap <C-G>S <Plug>ISurround
 
 " unmap frequently accidental or conflicting commands
 nmap Q <Nop>
+nmap q: <Nop>
+nmap q/ <Nop>
 try
     unmap <Leader>fc
     unmap <Leader>fef

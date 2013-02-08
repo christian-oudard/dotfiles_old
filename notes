@@ -11,8 +11,6 @@ vim notes
 :tag or <C-]> to follow tag
 :pop to go back to last tag
 :tags for tag stack
-q: for a command history buffer
-q/ for a search history buffer
 ctrl-C twice to exit history buffers
 zc to close a code folds
 zo to open a code fold
@@ -54,10 +52,13 @@ t opens in new tab
 ,t opens tab list
 
 ctrlp
-<C-p> to open
+<C-p> to begin
+<C-c> to exit
 three modes, file, buffer, and recently used files
 press <C-f> and <C-b> to switch modes
 <C-p> and <C-n> for search history
+<C-r> toggles regex search
+<C-d> toggles filename-only search
 <C-z> to mark multiple files, then <C-o> to open them all
 
 surround
