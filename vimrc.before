@@ -14,6 +14,7 @@ let g:buffergator_autoexpand_on_split=0
 " Use current working directory for file search.
 let g:ctrlp_working_path_mode = ''
 let g:ctrlp_follow_symlinks = 1
+let g:ctrlp_open_multiple_files = '1vr'
 
 " Changed surround mappings for dvorak.
 let g:surround_no_mappings = 1

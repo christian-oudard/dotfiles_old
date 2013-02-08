@@ -4,26 +4,6 @@ list-keys -t vi-copy
 show-options -g
 show-options -wg
 
-screen notes
-show all screen sessions:
-$ screen -list
-attach to existing session:
-$ screen -x
-command key is ctrl-Z (^Z)
-^Z? help
-^Zc copy mode
-    ctrl-B and ctrl-F in copy mode are page up or page down
-^Zp paste
-^Z^C create new window
-^Zk kill window
-^Z^N next window
-^Z^P previous window
-^Z^Z last window
-^Zd detach from current session
-^ZS split top/bottom
-^Z<Tab> switch splits
-^ZQ close split
-
 vim notes
 :map to check all bindings
 :map <binding> to check one key's bindings
@@ -38,6 +18,8 @@ zc to close a code folds
 zo to open a code fold
 zR to open all the cold folds
 <C-b> and <C-f> for scroll page up or page down
+q: opens command-line window
+q/ opens search history window
 
 janus notes
 core settings files are in .vim/janus/vim/core/before/plugin
@@ -71,11 +53,12 @@ i opens in new horizontal split
 t opens in new tab
 ,t opens tab list
 
-Ctrl-P
+ctrlp
 <C-p> to open
 three modes, file, buffer, and recently used files
 press <C-f> and <C-b> to switch modes
 <C-p> and <C-n> for search history
+<C-z> to mark multiple files, then <C-o> to open them all
 
 surround
 ds(object) = delete surrounding object
