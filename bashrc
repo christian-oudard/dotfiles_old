@@ -35,58 +35,54 @@ shopt -s checkwinsize
 # Make "less" more friendly for non-text input files, see lesspipe(1).
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
+# Import color codes.
+source .colors.sh
+
 # Set the prompt.
 # References:
 # http://superuser.com/a/517110/15168
 # http://superuser.com/questions/187455/right-align-part-of-prompt
 function prompt_left() {
-    # We have to calculate all the parts of the prompt explicitly instead of
-    # relying on PS1 escape codes, so we can get an accurate length.
-
-    # Determine the current directory, replacing occurences of home directory with "~".
-    pwd=$(echo -n "$PWD")
-    if [[ $pwd/ = "$HOME"/* ]]; then
-        pwd=\~${pwd#$HOME}
-    fi
-
-    printf "\
-\033[00;33m\
-$USER@$(hostname -s)\
-\033[00m\
-:\
-\033[01;36m\
-$pwd\
-\033[00m\
-"
+    printf "$txtylw\u@\h$txtrst:$bldcyn\w$txtrst"
 }
 function prompt_right() {
-    printf "\
-\033[01;32m\
-$(date +%H:%M | tr -d '\n') \
-\033[00m\
-"
+    # We need to do the date handling explicitly here, so we can get an accurate width.
+    printf "$bldgrn$(date +%H:%M | tr -d '\n')$txtrst"
 }
 function prompt_command() {
     # Write history after every command.
     history -a
 
-    # Assemble the PS1 prompt.
+    # Calculate the proper spacing for the right aligned portion of the prompt.
     left=$(prompt_left)
     right=$(prompt_right)
-    compensate=39 # Compensate for special terminal characters in calculating string lengths.
+    compensate=10 # Compensate for special terminal characters in calculating string lengths.
     space=$(\
         printf "%*s"\
-            "$(($(tput cols)-${#left}-${#right}+${compensate}))"\
+            "$(($(tput cols)-${#right}+${compensate}))"\
             " "\
     )
-    PS1="${left}${space}${right}\n\$ "
+
+    # If working on a python virtualenv, show it in the prompt.
+    if [ -n "$VIRTUAL_ENV" ]; then
+        virtualenv="$txtgrn($(basename $VIRTUAL_ENV))$txtrst"
+    else
+        virtualenv=""
+    fi
+
+    # If coming in via ssh, show it in the prompt.
+    if [ -n "$SSH_CLIENT" ]; then
+        ssh="$txtcyn(ssh)$txtrst"
+    else
+        ssh=""
+    fi
+
+    # Assemble the prompt.
+    PS1="${space}${right}\r${virtualenv}${ssh}${left}\n\$ "
+
+    unset left right compensate space virtualenv ssh
 }
 PROMPT_COMMAND=prompt_command
-
-# If coming in via ssh, show it in the prompt.
-if [ -n "$SSH_CLIENT" ]; then
-    PS1="\[\033[00;36m\](ssh)\[\033[00m\]$PS1"
-fi
 
 # Set gnome-terminal colors
 if [ $(uname -s) != 'Darwin' ]; then
