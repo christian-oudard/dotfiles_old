@@ -54,10 +54,10 @@ function prompt_command() {
     history -a
 
     # Calculate the proper spacing for the right aligned portion of the prompt.
-    left=$(prompt_left)
-    right=$(prompt_right)
-    compensate=10 # Compensate for special terminal characters in calculating string lengths.
-    space=$(\
+    local left=$(prompt_left)
+    local right=$(prompt_right)
+    local compensate=10 # Compensate for special terminal characters in calculating string lengths.
+    local space=$(\
         printf "%*s"\
             "$(($(tput cols)-${#right}+${compensate}))"\
             " "\
@@ -65,22 +65,56 @@ function prompt_command() {
 
     # If working on a python virtualenv, show it in the prompt.
     if [ -n "$VIRTUAL_ENV" ]; then
-        virtualenv="$txtgrn($(basename $VIRTUAL_ENV))$txtrst"
+        local virtualenv="$txtgrn($(basename $VIRTUAL_ENV))$txtrst"
     else
-        virtualenv=""
+        local virtualenv=""
     fi
 
     # If coming in via ssh, show it in the prompt.
     if [ -n "$SSH_CLIENT" ]; then
-        ssh="$txtcyn(ssh)$txtrst"
+        local ssh="$txtcyn(ssh)$txtrst"
     else
-        ssh=""
+        local ssh=""
+    fi
+
+    # Show current git branch in the prompt.
+    function find_git_branch {
+       local dir=. head
+       until [ "$dir" -ef / ]; do
+          if [ -f "$dir/.git/HEAD" ]; then
+             head=$(< "$dir/.git/HEAD")
+             if [[ $head == ref:\ refs/heads/* ]]; then
+                git_branch="${head#*/*/}"
+             elif [[ $head != '' ]]; then
+                git_branch="detached"
+             else
+                git_branch="unknown"
+             fi
+             return
+          fi
+          dir="../$dir"
+       done
+       git_branch=''
+    }
+    function find_git_dirty {
+        local st=$(git status --untracked-files=no --porcelain 2>/dev/null)
+        if [[ $st == "" ]]; then
+            git_dirty=''
+        else
+            git_dirty='*'
+        fi
+    }
+
+    find_git_branch
+    find_git_dirty
+    if [ -n "$git_branch" ]; then
+        local git="$bldpur($git_branch$git_dirty)$txtrst"
+    else
+        local git=""
     fi
 
     # Assemble the prompt.
-    PS1="${space}${right}\r${virtualenv}${ssh}${left}\n\$ "
-
-    unset left right compensate space virtualenv ssh
+    PS1="${space}${right}\r${virtualenv}${ssh}${git}${left}\n\$ "
 }
 PROMPT_COMMAND=prompt_command
 
