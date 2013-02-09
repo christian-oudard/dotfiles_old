@@ -42,8 +42,6 @@ au FileType ruby,yaml setlocal softtabstop=2 tabstop=2 shiftwidth=2 expandtab
 
 " Unmap unused, frequently accidental, or conflicting commands.
 nmap Q <Nop>
-nmap q: <Nop>
-nmap q/ <Nop>
 nmap s <Nop>
 nmap S <Nop>
 try
