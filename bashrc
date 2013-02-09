@@ -42,37 +42,17 @@ source .colors.sh
 # References:
 # http://superuser.com/a/517110/15168
 # http://superuser.com/questions/187455/right-align-part-of-prompt
-function prompt_left() {
-    printf "$txtylw\u@\h$txtrst:$bldcyn\w$txtrst"
-}
-function prompt_right() {
-    # We need to do the date handling explicitly here, so we can get an accurate width.
-    printf "$bldgrn$(date +%H:%M | tr -d '\n')$txtrst"
-}
 function prompt_command() {
-    # Write history after every command.
-    history -a
-
-    # Calculate the proper spacing for the right aligned portion of the prompt.
-    local left=$(prompt_left)
-    local right=$(prompt_right)
-    local compensate=10 # Compensate for special terminal characters in calculating string lengths.
-    local space=$(\
-        printf "%*s"\
-            "$(($(tput cols)-${#right}+${compensate}))"\
-            " "\
-    )
-
     # If working on a python virtualenv, show it in the prompt.
     if [ -n "$VIRTUAL_ENV" ]; then
-        local virtualenv="$txtgrn($(basename $VIRTUAL_ENV))$txtrst"
+        local virtualenv="($(basename $VIRTUAL_ENV)) "
     else
         local virtualenv=""
     fi
 
     # If coming in via ssh, show it in the prompt.
     if [ -n "$SSH_CLIENT" ]; then
-        local ssh="$txtcyn(ssh)$txtrst"
+        local ssh="(ssh) "
     else
         local ssh=""
     fi
@@ -104,17 +84,44 @@ function prompt_command() {
             git_dirty='*'
         fi
     }
-
     find_git_branch
     find_git_dirty
     if [ -n "$git_branch" ]; then
-        local git="$bldpur($git_branch$git_dirty)$txtrst"
+        local git="($git_branch$git_dirty) "
     else
         local git=""
     fi
 
+    function prompt_left() {
+        printf "$txtylw\u@\h$txtrst:$bldcyn\w$txtrst"
+    }
+    function prompt_right() {
+        # We need to do the date handling explicitly here instead of with PS1
+        # escape codes, so we can get an accurate width.
+        printf "\
+$bldpur$git$txtrst\
+$txtgrn$virtualenv$txtrst\
+$txtcyn$ssh$txtrst\
+$bldylw$(date +%H:%M | tr -d '\n')$txtrst\
+"
+    }
+
+
+    # Calculate the proper spacing for the right aligned portion of the prompt.
+    local left=$(prompt_left)
+    local right=$(prompt_right)
+    local compensate=43 # Compensate for special terminal characters in calculating string lengths.
+    local space=$(\
+        printf "%*s"\
+            "$(($(tput cols)-${#right}+${compensate}))"\
+            " "\
+    )
+
     # Assemble the prompt.
-    PS1="${space}${right}\r${virtualenv}${ssh}${git}${left}\n\$ "
+    PS1="${space}${right}\r${left}\n\$ "
+
+    # Write history after every command.
+    history -a
 }
 PROMPT_COMMAND=prompt_command
 
