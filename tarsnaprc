@@ -1,0 +1,2 @@
+keyfile ~/.tarsnap/tarsnap.key
+cachedir ~/.tarsnap/tarsnap-cache
