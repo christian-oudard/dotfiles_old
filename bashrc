@@ -106,7 +106,6 @@ $bldylw$(date +%H:%M | tr -d '\n')$txtrst\
 "
     }
 
-
     # Calculate the proper spacing for the right aligned portion of the prompt.
     local left=$(prompt_left)
     local right=$(prompt_right)
