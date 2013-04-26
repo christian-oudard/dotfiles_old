@@ -154,6 +154,9 @@ alias lr='ls -R'
 alias lla='ls -lA'
 alias llh='lh -l'
 
+# Fix scrolling issue with tmux + irssi
+alias irssi='TERM=screen-256color irssi'
+
 # Use "g" to mean "git", with correct tab completion.
 alias g='git'
 complete -o default -o nospace -F _git g
