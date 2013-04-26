@@ -30,5 +30,5 @@ let g:NERDTreeMapOpenInTab="l"
 let g:NERDTreeMapOpenInTabSilent="L"
 
 " Syntastic settings.
-"let g:syntastic_python_checker='flake8'
-let g:syntastic_python_checker='pyflakes'
+let g:syntastic_python_checker='flake8'
+"let g:syntastic_python_checker='pyflakes'
