@@ -140,19 +140,20 @@ fi
 
 # Color support of ls for BSD and Linux environments.
 if [ $(uname -s) == 'Darwin' ]; then
-    alias ls='ls -Gp'
+    alias ls='ls -p'
 else
-    alias ls='ls -Gp --color=auto'
+    alias ls='ls -p --color=auto'
 fi
 
 # Aliases.
 alias i='ls'
-alias ll='ls -lh'
+alias ll='ls -lGh'
 alias la='ls -A'
 alias lh='find -maxdepth 1 -name ".*" -not -name "." -printf "%f\n" | xargs ls -d --color=auto'
 alias lr='ls -R'
-alias lla='ls -lA'
-alias llh='lh -l'
+alias lla='ls -lGA'
+alias lld='ls -ld'
+alias llh='lh -lG'
 
 # Fix scrolling issue with tmux + irssi
 alias irssi='TERM=screen-256color irssi'
