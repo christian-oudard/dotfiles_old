@@ -1,5 +1,5 @@
 " set a larger initial size
-au GUIEnter * set lines=50 columns=100
+au GUIEnter * set lines=35 columns=100
 
 " light color scheme
 set background=light
