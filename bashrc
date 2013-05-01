@@ -199,9 +199,9 @@ if command -v virtualenvwrapper.sh >/dev/null ]; then
 fi
 
 # Computer-specific settings.
-if [ $(cat /etc/hostname) == 'turnip' ]; then
+if [ $(cat /etc/hostname) == 'peach' ]; then
     workon django
 fi
-if [ $(cat /etc/hostname) == 'peach' ]; then
+if [ $(cat /etc/hostname) == 'Gauss' -a $USER == 'work' ]; then
     workon django
 fi
