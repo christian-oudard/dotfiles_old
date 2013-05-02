@@ -162,6 +162,12 @@ alias irssi='TERM=screen-256color irssi'
 alias g='git'
 complete -o default -o nospace -F _git g
 
+# Use "ack" instead of "ack-grep" on ubuntu.
+if command -v ack-grep >/dev/null; then
+    alias ack=$(command -v ack-grep)
+fi
+
+
 # Enable git command line completion in bash.
 if [ -f ~/.git-completion.bash ]; then
     source ~/.git-completion.bash
@@ -194,7 +200,7 @@ fi
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 # Activate virtualenvwrapper.
-if command -v virtualenvwrapper.sh >/dev/null ]; then
+if command -v virtualenvwrapper.sh >/dev/null; then
     source $(command -v virtualenvwrapper.sh)
 fi
 
