@@ -22,7 +22,7 @@
 [branch]
 	autosetuprebase = always
 [diff]
-    tool = meld
+	tool = meld
 [github]
 	user = christian-oudard
 	token = <.replace github-token>
