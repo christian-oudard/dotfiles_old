@@ -1,0 +1,3 @@
+[submodule "janus/puppet"]
+	path = janus/puppet
+	url = git://github.com/rodjek/vim-puppet.git
