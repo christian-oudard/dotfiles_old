@@ -93,7 +93,7 @@ function prompt_command() {
     fi
 
     function prompt_left() {
-        printf "$txtylw\\\\u@\h$txtrst:$bldcyn\w$txtrst"
+        printf "$txtylw\\\\u@\h$txtrst:$bldcyn\w$txtrst   "
     }
     function prompt_right() {
         # We need to do the date handling explicitly here instead of with PS1
