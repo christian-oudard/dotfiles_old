@@ -17,6 +17,7 @@
 	cia = commit --verbose --all
 	co = checkout
 	su = submodule update --init --recursive
+	logg = log --graph
 [push]
 	default = matching
 [branch]
