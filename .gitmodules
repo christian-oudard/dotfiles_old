@@ -1,3 +1,6 @@
 [submodule "janus/puppet"]
 	path = janus/puppet
 	url = git://github.com/rodjek/vim-puppet.git
+[submodule "janus/vim-python-pep8-indent"]
+	path = janus/vim-python-pep8-indent
+	url = https://github.com/christian-oudard/vim-python-pep8-indent.git
