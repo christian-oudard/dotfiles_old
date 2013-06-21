@@ -208,6 +208,6 @@ fi
 if [ $(cat /etc/hostname) == 'peach' ]; then
     workon django
 fi
-if [ $(cat /etc/hostname) == 'Gauss' -a $USER == 'work' ]; then
+if [ $(cat /etc/hostname) == 'gauss' -a $USER == 'work' ]; then
     workon django
 fi
