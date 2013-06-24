@@ -14,7 +14,7 @@ vim notes
 ctrl-C twice to exit history buffers
 zc to close a code folds
 zo to open a code fold
-zR to open all the cold folds
+zR to open all the code folds
 <C-b> and <C-f> for scroll page up or page down
 q: opens command-line window
 q/ opens search history window
