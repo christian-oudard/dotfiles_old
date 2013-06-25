@@ -8,6 +8,7 @@
 # Add to executable search path.
 export PATH="\
 $HOME/bin:\
+$HOME/.rvm/bin:\
 /usr/local/share/python:\
 /usr/local/bin:\
 $PATH:\
@@ -196,13 +197,13 @@ if [ -x /usr/bin/gvim ]; then
     function gvim () { (/usr/bin/gvim -f "$@" &) }
 fi
 
-# Load RVM into a shell session *as a function*
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-
 # Activate virtualenvwrapper.
 if command -v virtualenvwrapper.sh >/dev/null; then
     source $(command -v virtualenvwrapper.sh)
 fi
+
+# Load RVM into a shell session.
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 # Computer-specific settings.
 if [ $(cat /etc/hostname) == 'peach' ]; then
