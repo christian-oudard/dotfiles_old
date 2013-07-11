@@ -42,9 +42,9 @@ au FileType ruby,yaml setlocal softtabstop=2 tabstop=2 shiftwidth=2 expandtab
 """ Key Mappings (Dvorak Layout) """
 
 " Unmap unused, frequently accidental, or conflicting commands.
-nmap Q <Nop>
-nmap s <Nop>
-nmap S <Nop>
+nnoremap Q <Nop>
+nnoremap s <Nop>
+nnoremap S <Nop>
 try
     unmap <Leader>fc
     unmap <Leader>fef
@@ -53,11 +53,11 @@ catch
 endtry
 
 " Press semicolon for command prompt.
-nmap ; :
+nnoremap ; :
 
 " Use easier key combinations to exit insert mode.
-imap vw <esc>
-imap qj <esc>
+inoremap vw <esc>
+inoremap qj <esc>
 
 " use d, h, t, n to move left, up, down, and right
 noremap d h
@@ -83,27 +83,27 @@ noremap J N
 noremap Y y$
 
 " surround plugin bindings
-nmap sk <Plug>Dsurround
-nmap sc <Plug>Csurround
-nmap sm <Plug>Ysurround
-nmap ss <Plug>Yssurround
-xmap s  <Plug>VSurround
-xmap gs <Plug>VgSurround
+nnoremap sk <Plug>Dsurround
+nnoremap sc <Plug>Csurround
+nnoremap sm <Plug>Ysurround
+nnoremap ss <Plug>Yssurround
+xnoremap s  <Plug>VSurround
+xnoremap gs <Plug>VgSurround
 
 " Add quotes when doing <Leader>f for Ack plugin.
 noremap <Leader>f :Ack ''<Left>
 
 " Bubble single lines
-nmap <C-Down> ]e
-nmap <C-Up> [e
-nmap <C-t> [e
-nmap <C-h> ]e
+nnoremap <C-Down> ]e
+nnoremap <C-Up> [e
+nnoremap <C-t> [e
+nnoremap <C-h> ]e
 
 " Bubble multiple lines
-vmap <C-Up> [egv
-vmap <C-Down> ]egv
-vmap <C-t> [egv
-vmap <C-h> ]egv
+vnoremap <C-Up> [egv
+vnoremap <C-Down> ]egv
+vnoremap <C-t> [egv
+vnoremap <C-h> ]egv
 
 " Toggle line comments
-map <leader>/ <plug>NERDCommenterToggle<CR>
+noremap <leader>/ <plug>NERDCommenterToggle<CR>
