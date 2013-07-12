@@ -83,27 +83,27 @@ noremap J N
 noremap Y y$
 
 " surround plugin bindings
-nnoremap sk <Plug>Dsurround
-nnoremap sc <Plug>Csurround
-nnoremap sm <Plug>Ysurround
-nnoremap ss <Plug>Yssurround
-xnoremap s  <Plug>VSurround
-xnoremap gs <Plug>VgSurround
+nmap sd <Plug>Dsurround
+nmap sc <Plug>Csurround
+nmap sm <Plug>Ysurround
+nmap ss <Plug>Yssurround
+xmap s  <Plug>VSurround
+xmap gs <Plug>VgSurround
 
 " Add quotes when doing <Leader>f for Ack plugin.
 noremap <Leader>f :Ack ''<Left>
 
 " Bubble single lines
-nnoremap <C-Down> ]e
-nnoremap <C-Up> [e
-nnoremap <C-t> [e
-nnoremap <C-h> ]e
+nmap <C-Up> [e
+nmap <C-Down> ]e
+nmap <C-t> [e
+nmap <C-h> ]e
 
 " Bubble multiple lines
-vnoremap <C-Up> [egv
-vnoremap <C-Down> ]egv
-vnoremap <C-t> [egv
-vnoremap <C-h> ]egv
+vmap <C-Up> [egv
+vmap <C-Down> ]egv
+vmap <C-t> [egv
+vmap <C-h> ]egv
 
 " Toggle line comments
-noremap <leader>/ <plug>NERDCommenterToggle<CR>
+nmap <leader>/ <plug>NERDCommenterToggle<CR>
