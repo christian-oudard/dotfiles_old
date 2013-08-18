@@ -45,6 +45,7 @@ buffergator
 Space and Ctrl-Space change select buffers
 d deletes buffer
 D deletes buffer unconditionally
+cs changes sort
 o or Enter opens a buffer
 s opens in new vertical split
 i opens in new horizontal split
@@ -71,3 +72,8 @@ snipmate
 type in a snippet handle and press <Tab> to complete
 snippet files are in ~/.vim/janus/vim/tools/snipmate-snippets/snippets/
 custom snippets are in ~/dotfiles/janus/snipmate_snippets/snippets/_.snippets
+
+
+vim indent bugs:
+- when inside a multiline string, typing a colon key badly re-indents.
+- func_name('''<enter> lines up with paren instead of doing a single indent
