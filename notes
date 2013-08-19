@@ -18,6 +18,7 @@ zR to open all the code folds
 <C-b> and <C-f> for scroll page up or page down
 q: opens command-line window
 q/ opens search history window
+,i enters insert mode with :set paste
 
 janus notes
 core settings files are in .vim/janus/vim/core/before/plugin
