@@ -93,17 +93,5 @@ xmap gs <Plug>VgSurround
 " Add quotes when doing <Leader>f for Ack plugin.
 noremap <Leader>f :Ack ''<Left>
 
-" Bubble single lines
-nmap <C-Up> [e
-nmap <C-Down> ]e
-nmap <C-t> [e
-nmap <C-h> ]e
-
-" Bubble multiple lines
-vmap <C-Up> [egv
-vmap <C-Down> ]egv
-vmap <C-t> [egv
-vmap <C-h> ]egv
-
 " Toggle line comments
 nmap <leader>/ <plug>NERDCommenterToggle<CR>
