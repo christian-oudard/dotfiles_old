@@ -6,7 +6,7 @@
 [ -z "$PS1" ] && return
 
 # Add to executable search path.
-export PATH="\
+export PATH="\ #PATH
 $HOME/bin:\
 $HOME/.rvm/bin:\
 /usr/local/share/python:\
