@@ -78,3 +78,10 @@ custom snippets are in ~/dotfiles/janus/snipmate_snippets/snippets/_.snippets
 vim indent bugs:
 - when inside a multiline string, typing a colon key badly re-indents.
 - func_name('''<enter> lines up with paren instead of doing a single indent
+- gqq to reflow comments inside a docstring in a class method
+    class ClassName(object):
+        def method(arg):
+            """
+            really long line blah blah blah blah blah blah blah |<gqq>
+        <indents to here wtf>
+
