@@ -204,11 +204,3 @@ fi
 
 # Load RVM into a shell session.
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-
-# Computer-specific settings.
-if [ $(cat /etc/hostname) == 'peach' ]; then
-    workon django
-fi
-if [ $(cat /etc/hostname) == 'gauss' -a $USER == 'work' ]; then
-    workon django
-fi
