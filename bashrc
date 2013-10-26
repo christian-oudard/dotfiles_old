@@ -13,7 +13,7 @@ $HOME/.rvm/bin:\
 /usr/local/bin:\
 $PATH:\
 /opt/local/\
-sbin:\
+/sbin:\
 /opt/local/bin\
 "
 
