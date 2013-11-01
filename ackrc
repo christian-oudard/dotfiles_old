@@ -1,5 +1,4 @@
 --smart-case
---type-add
-css=.sass,.scss,.less
---type-add
-html=.j2
+--type-add=css=.sass,.scss,.less
+--type-add=html=.j2
+--type-set=puppet=.pp
