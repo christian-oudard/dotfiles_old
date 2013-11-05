@@ -9,7 +9,6 @@
 export PATH="\
 $HOME/bin:\
 $HOME/.rvm/bin:\
-/usr/local/share/python:\
 /usr/local/bin:\
 $PATH:\
 /opt/local/\
