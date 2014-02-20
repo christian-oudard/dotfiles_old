@@ -1,5 +1,8 @@
 tmux notes
+(see tmux.conf for bindings)
+bind-key : command-prompt
 source-file ~/.tmux.conf
+list-keys
 list-keys -t vi-copy
 show-options -g
 show-options -wg
