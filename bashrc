@@ -8,12 +8,13 @@
 # Add to executable search path.
 export PATH="\
 $HOME/bin:\
-$HOME/.rvm/bin:\
+$HOME/.rbenv/bin:\
+$HOME/.rbenv/plugins/ruby-build/bin:\
 /usr/local/bin:\
 $PATH:\
-/opt/local/\
+/opt/local/:\
 /sbin:\
-/opt/local/bin\
+/opt/local/bin:\
 "
 
 # Don't put duplicate lines in the history. See bash(1) for more options.
@@ -201,5 +202,5 @@ if command -v virtualenvwrapper.sh >/dev/null; then
     source $(command -v virtualenvwrapper.sh)
 fi
 
-# Load RVM into a shell session.
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+# Load rbenv
+eval "$(rbenv init -)"
