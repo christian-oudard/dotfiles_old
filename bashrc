@@ -163,11 +163,12 @@ alias irssi='TERM=screen-256color irssi'
 alias g='git'
 complete -o default -o nospace -F _git g
 
-# Use "ack" instead of "ack-grep" on ubuntu.
-if command -v ack-grep >/dev/null; then
+# Search in files with "ack".
+if command -v ag >/dev/null; then
+    alias ack=ag
+elif command -v ack-grep >/dev/null; then
     alias ack=$(command -v ack-grep)
 fi
-
 
 # Enable git command line completion in bash.
 if [ -f ~/.git-completion.bash ]; then
