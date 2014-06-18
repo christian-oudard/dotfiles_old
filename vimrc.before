@@ -1,4 +1,5 @@
 " Disable unused plugins.
+call janus#disable_plugin('vim-trailing-whitespace')
 call janus#disable_plugin('vimwiki')
 call janus#disable_plugin('unimpaired')
 
