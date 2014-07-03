@@ -678,23 +678,23 @@ xkb_symbols "dvpkinesis" {
     key <RTSH> { [ Shift_R ] };
 
     // bottom row, left side
-    key <TLDE> { [ ] };
-    key <LSGT> { [ ] };
+    key <TLDE> { [ Home ] };
+    key <LSGT> { [ End ] };
     key <LEFT> { [ Left ] };
     key <RGHT> { [ Right ] };
 
     // bottom row, right side
     key <UP>   { [ Down ] };
     key <DOWN> { [ Up ] };
-    key <AD11> { [ ] };
-    key <AD12> { [ ] };
+    key <AD11> { [ Next ] };
+    key <AD12> { [ Prior ] };
 
     // left thumb
-    key <BKSP> { [ BackSpace,       BackSpace,       BackSpace ] };
-    key <DELE> { [ Shift_L ] };
+    key <BKSP> { [ Shift_L ] };
+    key <DELE> { [ BackSpace,       BackSpace,       BackSpace ] };
     key <LCTL> { type[Group1]="ONE_LEVEL", symbols[Group1] = [ ISO_Level3_Shift ] };
     key <LALT> { type[Group1]="TWO_LEVEL", [ Multi_key, Multi_key ] };
-    key <HOME> { [ Tab,             ISO_Left_Tab ] };
+    key <HOME> { [ Super_R ] };
     key <END>  { [ Delete ] };
 
     // right thumb
