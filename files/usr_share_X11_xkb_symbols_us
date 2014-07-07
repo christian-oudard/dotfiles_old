@@ -645,11 +645,11 @@ xkb_symbols "dvt" {
     key <AD09> { [ t,               T,               5 ] };
     key <AD10> { [ n,               N,               6 ] };
     key <AD11> { [ s,               S,               slash ] };
-    key <AD12> { [ bar,             bar,             bar ] };
-    key <BKSL> { [ asciicircum,     asciicircum,     asciicircum ] };
+    key <AD12> { [ asciicircum,     asciicircum,     asciicircum ] };
+    key <BKSL> { [ bar,             bar,             bar ] };
 
     // lower row, left side
-    key <AC01> { [ semicolon,       colon,           greater ] };
+    key <AC01> { [ semicolon,       colon,           less ] };
     key <AC02> { [ q,               Q,               bracketright ] };
     key <AC03> { [ j,               J,               braceright ] };
     key <AC04> { [ k,               K,               parenright ] };
@@ -689,68 +689,68 @@ xkb_symbols "dvt-kinesis" {
     name[Group1] = "English (thumb-switch Dvorak for Kinesis)";
 
     // symbols row, left side
-    key <AE12> { [ ] };
-    key <AE01> { [ backslash,       bar ] };
-    key <AE02> { [ braceleft,       less ] };
-    key <AE03> { [ braceright,      greater ] };
-    key <AE04> { [ underscore,      dollar ] };
-    key <AE05> { [ equal,           percent ] };
+    key <AE12> { [ asciitilde,      asciitilde,      asciitilde ] };
+    key <AE01> { [ grave,           grave,           grave ] };
+    key <AE02> { [ ] };
+    key <AE03> { [ ] };
+    key <AE04> { [ ] };
+    key <AE05> { [ ] };
 
     // symbols row, right side
-    key <AE06> { [ asterisk,        asciicircum ] };
-    key <AE07> { [ minus,           plus ] };
-    key <AE08> { [ parenleft,       bracketleft ] };
-    key <AE09> { [ parenright,      bracketright ] };
-    key <AE10> { [ slash,           numbersign ] };
+    key <AE06> { [ ] };
+    key <AE07> { [ ] };
+    key <AE08> { [ ] };
+    key <AE09> { [ ] };
+    key <AE10> { [ ] };
     key <AE11> { [ ] };
 
     // upper row, left side
     key <TAB>  { [ Tab,             ISO_Left_Tab ] };
-    key <AD01> { [ apostrophe,      quotedbl,        grave ] };
-    key <AD02> { [ comma,           question ] };
-    key <AD03> { [ period,          exclam ] };
-    key <AD04> { [ p,               P ] };
-    key <AD05> { [ y,               Y ] };
+    key <AD01> { [ apostrophe,      quotedbl,        apostrophe ] };
+    key <AD02> { [ comma,           question,        comma ] };
+    key <AD03> { [ period,          exclam,          period ] };
+    key <AD04> { [ p,               P,               equal ] };
+    key <AD05> { [ y,               Y,               plus ] };
 
     // upper row, right side
-    key <AD06> { [ f,               F ] };
+    key <AD06> { [ f,               F,               asterisk ] };
     key <AD07> { [ g,               G,               7 ] };
     key <AD08> { [ c,               C,               8 ] };
     key <AD09> { [ r,               R,               9 ] };
-    key <AD10> { [ l,               L ] };
-    key <BKSL> { [ ] };
+    key <AD10> { [ l,               L,               numbersign ] };
+    key <BKSL> { [ dollar,          dollar,          dollar ] };
 
     // home row, left side
     key <CAPS> { [ Caps_Lock ] };
-    key <AC01> { [ a,               A,               at ] };
-    key <AC02> { [ o,               O ] };
-    key <AC03> { [ e,               E ] };
-    key <AC04> { [ u,               U ] };
-    key <AC05> { [ i,               I ] };
+    key <AC01> { [ a,               A,               less ] };
+    key <AC02> { [ o,               O,               bracketleft ] };
+    key <AC03> { [ e,               E,               braceleft ] };
+    key <AC04> { [ u,               U,               parenleft ] };
+    key <AC05> { [ i,               I,               minus ] };
 
     // home row, right side
-    key <AC06> { [ d,               D ] };
+    key <AC06> { [ d,               D,               underscore ] };
     key <AC07> { [ h,               H,               4 ] };
     key <AC08> { [ t,               T,               5 ] };
     key <AC09> { [ n,               N,               6 ] };
-    key <AC10> { [ s,               S ] };
-    key <AC11> { [ ] };
+    key <AC10> { [ s,               S,               slash ] };
+    key <AC11> { [ asciicircum,     asciicircum,     asciicircum ] };
 
     // lower row, left side
     key <LFSH> { [ Shift_L ] };
-    key <AB01> { [ semicolon,       colon,           asciitilde ] };
-    key <AB02> { [ q,               Q ] };
-    key <AB03> { [ j,               J ] };
-    key <AB04> { [ k,               K ] };
-    key <AB05> { [ x,               X ] };
+    key <AB01> { [ semicolon,       colon,           greater ] };
+    key <AB02> { [ q,               Q,               bracketright ] };
+    key <AB03> { [ j,               J,               braceright ] };
+    key <AB04> { [ k,               K,               parenright ] };
+    key <AB05> { [ x,               X,               percent ] };
 
     // lower row, right side
-    key <AB06> { [ b,               B ] };
+    key <AB06> { [ b,               B,               ampersand ] };
     key <AB07> { [ m,               M,               1 ] };
     key <AB08> { [ w,               W,               2 ] };
     key <AB09> { [ v,               V,               3 ] };
-    key <AB10> { [ z,               Z ] };
-    key <RTSH> { [ Shift_R ] };
+    key <AB10> { [ z,               Z,               backslash ] };
+    key <RTSH> { [ bar,             bar,             bar ] };
 
     // bottom row, left side
     key <TLDE> { [ Home ] };
@@ -766,11 +766,11 @@ xkb_symbols "dvt-kinesis" {
 
     // left thumb
     key <BKSP> { [ Shift_L ] };
-    key <DELE> { [ BackSpace,       BackSpace,       BackSpace ] };
-    key <LCTL> { type[Group1]="ONE_LEVEL", symbols[Group1] = [ ISO_Level3_Shift ] };
-    key <LALT> { type[Group1]="TWO_LEVEL", [ Multi_key, Multi_key ] };
-    key <HOME> { [ Super_R ] };
-    key <END>  { [ Delete ] };
+    key <DELE> { type[Group1]="ONE_LEVEL", symbols[Group1] = [ ISO_Level3_Shift ] };
+    key <LCTL> { [ BackSpace,       BackSpace,       BackSpace ] };
+    key <LALT> { [ Tab,             ISO_Left_Tab ] };
+    key <HOME> { [ Delete ] };
+    key <END>  { [ Escape ] };
 
     // right thumb
     key <SPCE> { [ space,           space,           0 ] };
@@ -778,7 +778,7 @@ xkb_symbols "dvt-kinesis" {
     key <RCTL> { [ Control_R ] };
     key <RWIN> { [ Alt_L ] };
     key <PGUP> { [ Super_R ] };
-    key <PGDN> { [ Escape ] };
+    key <PGDN> { type[Group1]="TWO_LEVEL", [ Multi_key, Multi_key ] };
 };
 
 
