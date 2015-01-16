@@ -14,7 +14,7 @@ set showtabline=2
 if has("gui_macvim")
 	set guifont=Inconsolata-dz:h14,Inconsolata:h14,Monaco:h14
 elseif has("unix")
-    set guifont=Inconsolata-dz\ 12,Inconsolata\ 12,Consolas\ 12
+    set guifont=Inconsolata-dz\ 14,Inconsolata\ 14,Consolas\ 14
 endif
 
 " tabs only in gui
