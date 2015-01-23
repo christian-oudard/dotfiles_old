@@ -103,7 +103,6 @@ function prompt_command() {
 $bldpur$git$txtrst\
 $txtgrn$virtualenv$txtrst\
 $txtcyn$ssh$txtrst\
-$bldylw$(date +%H:%M | tr -d '\n')$txtrst\
 "
     }
 
