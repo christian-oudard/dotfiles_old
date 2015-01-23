@@ -40,20 +40,17 @@ shopt -s checkwinsize
 source .colors.sh
 
 # Set the prompt.
-# References:
-# http://superuser.com/a/517110/15168
-# http://superuser.com/questions/187455/right-align-part-of-prompt
 function prompt_command() {
     # If working on a python virtualenv, show it in the prompt.
     if [ -n "$VIRTUAL_ENV" ]; then
-        local virtualenv="($(basename $VIRTUAL_ENV)) "
+        local virtualenv="  ($(basename $VIRTUAL_ENV)) "
     else
         local virtualenv=""
     fi
 
     # If coming in via ssh, show it in the prompt.
     if [ -n "$SSH_CLIENT" ]; then
-        local ssh="(ssh) "
+        local ssh="  (ssh)"
     else
         local ssh=""
     fi
@@ -88,36 +85,24 @@ function prompt_command() {
     find_git_branch
     find_git_dirty
     if [ -n "$git_branch" ]; then
-        local git="($git_branch$git_dirty) "
+        local git="  ($git_branch$git_dirty) "
     else
         local git=""
     fi
 
     function prompt_left() {
-        printf "$txtylw\\\\u@\h$txtrst:$bldcyn\w$txtrst   "
-    }
-    function prompt_right() {
-        # We need to do the date handling explicitly here instead of with PS1
-        # escape codes, so we can get an accurate width.
         printf "\
+$txtylw\\\\u@\h$txtrst:$bldcyn\w$txtrst\
 $bldpur$git$txtrst\
 $txtgrn$virtualenv$txtrst\
 $txtcyn$ssh$txtrst\
 "
     }
 
-    # Calculate the proper spacing for the right aligned portion of the prompt.
-    local left=$(prompt_left)
-    local right=$(prompt_right)
-    local compensate=43 # Compensate for special terminal characters in calculating string lengths.
-    local space=$(\
-        printf "%*s"\
-            "$(($(tput cols)-${#right}+${compensate}))"\
-            " "\
-    )
 
     # Assemble the prompt.
-    PS1="${space}${right}\r${left}\n\$ "
+    local left=$(prompt_left)
+    PS1="${left}\n\$ "
 
     # Write history after every command.
     history -a
