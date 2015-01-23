@@ -1,15 +1,33 @@
-""" Appearance """
 
-set background=dark
-set t_Co=16
-colorscheme solarized
-set cursorline
-set lazyredraw
+" Open buffergator in a horizontal split, and use new keymap.
+let g:buffergator_viewport_split_policy = "B"
+let g:buffergator_split_size = 8
+let g:buffergator_autoexpand_on_split = 0
+let g:buffergator_use_new_keymap = 1
+
+" Use current working directory for file search.
+let g:ctrlp_working_path_mode = ''
+let g:ctrlp_follow_symlinks = 1
+let g:ctrlp_open_multiple_files = '1vr'
+
+" Changed surround mappings for dvorak.
+let g:surround_no_mappings = 1
+
+" Custom NERDtree mappings for dvorak.
+let g:NERDTreeMapJumpLastChild = "H"
+let g:NERDTreeMapJumpNextSibling = "<C-h>"
+let g:NERDTreeMapJumpFirstChild = "T"
+let g:NERDTreeMapJumpPrevSibling = "<C-t>"
+let g:NERDTreeMapDeleteBookmark = "K"
+let g:NERDTreeMapOpenInTab="l"
+let g:NERDTreeMapOpenInTabSilent="L"
+
+" Syntastic settings.
+let g:syntastic_python_checkers=['flake8']
 
 
 """ Behavior """
 
-set hidden " Allow using multiple unsaved buffers.
 set timeoutlen=500 " Use a shorter wait period for key combinations.
 set scrolloff=3 " Set a margin of lines when scrolling.
 set virtualedit=block " Use a free roaming cursor in block mode.
@@ -52,8 +70,6 @@ try
 catch
 endtry
 
-" Press semicolon for command prompt.
-nnoremap ; :
 
 " Use easier key combinations to exit insert mode.
 inoremap vw <esc>
@@ -95,3 +111,28 @@ noremap <Leader>f :Ack ''<Left>
 
 " Toggle line comments
 nmap <leader>/ <plug>NERDCommenterToggle<CR>
+" set a larger initial size
+au GUIEnter * set lines=35 columns=100
+
+" light color scheme
+set background=light
+
+" right-click menu with copy and paste
+behave mswin
+
+" always show tab line
+set showtabline=2
+
+" font
+if has("gui_macvim")
+	set guifont=Inconsolata-dz:h14,Inconsolata:h14,Monaco:h14
+elseif has("unix")
+    set guifont=Inconsolata-dz\ 14,Inconsolata\ 14,Consolas\ 14
+endif
+
+" tabs only in gui
+if has("gui_macvim")
+	set guioptions=aeg
+elseif has("unix")
+    set guioptions=airL
+endif
