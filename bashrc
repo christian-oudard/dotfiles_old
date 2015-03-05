@@ -8,6 +8,7 @@
 # Add to executable search path.
 export PATH="\
 $HOME/bin:\
+$HOME/.cabal/bin:\
 $HOME/.rbenv/bin:\
 $HOME/.rbenv/plugins/ruby-build/bin:\
 /usr/local/bin:\
@@ -37,7 +38,7 @@ shopt -s checkwinsize
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 # Import color codes.
-source .colors.sh
+source ~/.colors.sh
 
 # Set the prompt.
 function prompt_command() {
