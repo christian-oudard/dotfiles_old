@@ -10,6 +10,10 @@ set hidden " Allow using multiple unsaved buffers.
 "" Behavior
 syntax on
 filetype plugin indent on	
+set incsearch
+set ignorecase
+set smartcase
+set whichwrap+=<,>,h,l,[,]
 
 "" Keyboard
 let mapleader = ","
