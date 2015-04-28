@@ -23,10 +23,52 @@ set shiftwidth=4
 "" Keyboard
 let mapleader = ","
 
+
+"" Key Mappings (Dvorak Layout) """
+
+" Unmap unused, frequently accidental, or conflicting commands.
+nnoremap Q <Nop>
+nnoremap s <Nop>
+nnoremap S <Nop>
+try
+    unmap <Leader>fc
+    unmap <Leader>fef
+    unmap <C-f>
+catch
+endtry
+
+" Use easier key combinations to exit insert mode.
+inoremap vw <esc>
+inoremap qj <esc>
+
+" use d, h, t, n to move left, up, down, and right
+noremap d h
+noremap D H
+noremap h j
+noremap H J
+noremap gh gj
+noremap t k
+noremap T K
+noremap gt gk
+noremap n l
+noremap N L
+
+" Reassign the keys we overwrote.
+noremap k d
+noremap K D
+noremap l t
+noremap L T
+noremap j n
+noremap J N
+
+" intuitive Y
+noremap Y y$
+
 " Press semicolon for command prompt.
 nnoremap ; :
 
-" Syntastic
+
+"" Syntastic
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
