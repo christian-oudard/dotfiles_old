@@ -67,6 +67,14 @@ noremap Y y$
 " Press semicolon for command prompt.
 nnoremap ; :
 
+" Change surround mappings for dvorak.
+let g:surround_no_mappings = 1
+nmap ks <Plug>Dsurround
+nmap cs <Plug>Csurround
+nmap s <Plug>Ysurround
+nmap ss <Plug>Yssurround
+xmap s  <Plug>VSurround
+xmap gs <Plug>VgSurround
 
 "" Syntastic
 set statusline+=%#warningmsg#
