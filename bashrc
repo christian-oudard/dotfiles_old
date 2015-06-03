@@ -189,4 +189,6 @@ if command -v virtualenvwrapper.sh >/dev/null; then
 fi
 
 # Load rbenv
-eval "$(rbenv init -)"
+if command -v rbenv >/dev/null; then
+    eval "$(rbenv init -)"
+fi
