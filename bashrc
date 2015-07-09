@@ -201,3 +201,8 @@ fi
 if command -v rbenv >/dev/null; then
     eval "$(rbenv init -)"
 fi
+
+# Computer-specific settings.
+if [ -f "$HOME/.bashrc_local" ]; then
+    . "$HOME/.bashrc_local"
+fi
