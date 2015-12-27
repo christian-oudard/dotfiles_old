@@ -1,4 +1,29 @@
-execute pathogen#infect()
+set nocompatible
+
+"" Vundle
+
+filetype off
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+" The following are examples of different formats supported.
+" Keep Plugin commands between vundle#begin/end.
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-surround'
+Plugin 'SirVer/ultisnips'
+Plugin 'scrooloose/syntastic'
+Plugin 'Twinside/vim-haskellConceal'
+Plugin 'hynek/vim-python-pep8-indent'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
 
 "" Appearance
 set background=light
@@ -16,9 +41,10 @@ set smartcase
 set whichwrap+=<,>,h,l,[,]
 set hidden
 set tabstop=8
-set softtabstop=4
+set softtabstop=2
 set expandtab
-set shiftwidth=4
+set shiftwidth=2
+set foldmethod=manual
 
 "" Keyboard
 let mapleader = ","
@@ -38,8 +64,8 @@ catch
 endtry
 
 " Use easier key combinations to exit insert mode.
-inoremap vw <esc>
 inoremap qj <esc>
+inoremap <del> <esc>
 
 " use d, h, t, n to move left, up, down, and right
 noremap d h
@@ -87,3 +113,6 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 let g:syntastic_haskell_checkers = ["hdevtools"]
+
+"" vim2hs
+let g:haskell_conceal = 0
