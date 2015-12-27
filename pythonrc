@@ -20,10 +20,17 @@ def activate_readline():
     home_path = os.environ['HOME']
 
     # Set up inputrc and tab completion.
-    if(sys.platform == 'darwin'):
-        readline.parse_and_bind('bind ^I rl_complete')
+    try:
+        import readline
+    except ImportError:
+        print "Module readline not available."
     else:
-        readline.parse_and_bind('tab: complete')
+        import rlcompleter
+        if 'libedit' in readline.__doc__:
+            readline.parse_and_bind("bind ^I rl_complete")
+        else:
+            readline.parse_and_bind("tab: complete")
+
     readline.parse_and_bind('"\C-p": history-search-backward')
     readline.parse_and_bind('"\C-n": history-search-forward')
     readline.parse_and_bind('set editing-mode emacs')

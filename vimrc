@@ -25,14 +25,12 @@ Plugin 'hynek/vim-python-pep8-indent'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 
-"" Appearance
-set background=light
+set background=dark
 set t_Co=16
 colorscheme solarized
 set lazyredraw
 set hidden " Allow using multiple unsaved buffers.
 
-"" Behavior
 syntax on
 filetype plugin indent on	
 set incsearch
@@ -44,7 +42,46 @@ set tabstop=8
 set softtabstop=2
 set expandtab
 set shiftwidth=2
-set foldmethod=manual
+set scrolloff=2 " Set a margin of lines when scrolling.
+set shellcmdflag=-ic
+set clipboard=unnamed
+set backspace=2
+
+autocmd FileType python setlocal shiftwidth=2 softtabstop=2 
+
+set laststatus=2
+set statusline=%t       "tail of the filename
+set statusline+=%h      "help file flag
+set statusline+=%m      "modified flag
+set statusline+=%r      "read only flag
+set statusline+=%=      "left/right separator
+set statusline+=%c,     "cursor column
+set statusline+=%l/%L   "cursor line/total lines
+
+set wildignore=*.o,*.obj,*~,*.pyc
+set wildignore+=.env
+set wildignore+=.env[0-9]+
+set wildignore+=.env-pypy
+set wildignore+=.git,.gitkeep
+set wildignore+=.tmp
+set wildignore+=.coverage
+set wildignore+=*DS_Store*
+set wildignore+=.sass-cache/
+set wildignore+=__pycache__/
+set wildignore+=.webassets-cache/
+set wildignore+=vendor/rails/**
+set wildignore+=vendor/cache/**
+set wildignore+=*.gem
+set wildignore+=log/**
+set wildignore+=tmp/**
+set wildignore+=.tox/**
+set wildignore+=.idea/**
+set wildignore+=.vagrant/**
+set wildignore+=.coverage/**
+set wildignore+=*.egg,*.egg-info
+set wildignore+=*.png,*.jpg,*.gif
+set wildignore+=*.so,*.swp,*.zip,*/.Trash/**,*.pdf,*.dmg,*/Library/**,*/.rbenv/**
+set wildignore+=*/.nx/**,*.app
 
 "" Keyboard
 let mapleader = ","
@@ -102,16 +139,16 @@ nmap ss <Plug>Yssurround
 xmap s  <Plug>VSurround
 xmap gs <Plug>VgSurround
 
-"" Syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+" Full text search
+noremap <Leader>f :Ag ''<Left>
 
+"" Syntastic
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
+let g:syntastic_python_checkers = ["flake8"]
 let g:syntastic_haskell_checkers = ["hdevtools"]
 
 "" vim2hs

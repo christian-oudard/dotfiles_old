@@ -11,6 +11,7 @@ $HOME/bin:\
 $HOME/.cabal/bin:\
 $HOME/.rbenv/bin:\
 $HOME/.rbenv/plugins/ruby-build/bin:\
+$HOME/.node/bin:\
 /usr/local/bin:\
 $PATH:\
 /opt/local/:\
@@ -47,6 +48,13 @@ function prompt_command() {
         local virtualenv="  ($(basename $VIRTUAL_ENV)) "
     else
         local virtualenv=""
+    fi
+
+    # If working on a node virtualenv, show it in the prompt.
+    if [ -n "$NODE_VIRTUAL_ENV" ]; then
+        local nodevirtualenv="  ($(basename $NODE_VIRTUAL_ENV)) "
+    else
+        local nodevirtualenv=""
     fi
 
     # If coming in via ssh, show it in the prompt.
@@ -96,6 +104,7 @@ function prompt_command() {
 $txtylw\\\\u@\h$txtrst:$bldcyn\w$txtrst\
 $bldpur$git$txtrst\
 $txtgrn$virtualenv$txtrst\
+$txtgrn$nodevirtualenv$txtrst\
 $txtcyn$ssh$txtrst\
 "
     }
@@ -190,4 +199,11 @@ if command -v virtualenvwrapper.sh >/dev/null; then
 fi
 
 # Load rbenv
-eval "$(rbenv init -)"
+if command -v rbenv >/dev/null; then
+    eval "$(rbenv init -)"
+fi
+
+# Computer-specific settings.
+if [ -f "$HOME/.bashrc_local" ]; then
+    . "$HOME/.bashrc_local"
+fi
