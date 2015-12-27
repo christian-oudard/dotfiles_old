@@ -140,6 +140,7 @@ alias lr='ls -R'
 alias lla='ls -lGA'
 alias lld='ls -ld'
 alias llh='lh -lG'
+alias ghci='ghci -XOverloadedStrings'
 
 # Fix scrolling issue with tmux + irssi
 alias irssi='TERM=screen-256color irssi'
