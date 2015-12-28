@@ -130,6 +130,14 @@ noremap Y y$
 " Press semicolon for command prompt.
 nnoremap ; :
 
+" Redo copy and paste mappings.
+vnoremap <C-X> "+x
+vnoremap <C-C> "+y
+map <C-V> "+gP
+cmap <C-V> <C-R>+
+" Use CTRL-Q to do what CTRL-V used to do
+noremap <C-Q> <C-V>
+
 " Change surround mappings for dvorak.
 let g:surround_no_mappings = 1
 nmap ks <Plug>Dsurround
