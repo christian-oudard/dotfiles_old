@@ -25,12 +25,14 @@ Plugin 'hynek/vim-python-pep8-indent'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 
-set background=dark
+"" Visual settings
+set background=light
 set t_Co=16
 colorscheme solarized
 set lazyredraw
 set hidden " Allow using multiple unsaved buffers.
 
+"" Behavior
 syntax on
 filetype plugin indent on	
 set incsearch
@@ -38,17 +40,22 @@ set ignorecase
 set smartcase
 set whichwrap+=<,>,h,l,[,]
 set hidden
+
+"" Whitespace
 set tabstop=8
 set softtabstop=2
-set expandtab
 set shiftwidth=2
+set expandtab
+
+autocmd FileType python setlocal softtabstop=4 shiftwidth=4
+autocmd FileType haskell setlocal softtabstop=2 shiftwidth=2
+
 set scrolloff=2 " Set a margin of lines when scrolling.
 set shellcmdflag=-ic
 set clipboard=unnamed
 set backspace=2
 
-autocmd FileType python setlocal shiftwidth=2 softtabstop=2 
-
+"" Status line
 set laststatus=2
 set statusline=%t       "tail of the filename
 set statusline+=%h      "help file flag
@@ -58,6 +65,7 @@ set statusline+=%=      "left/right separator
 set statusline+=%c,     "cursor column
 set statusline+=%l/%L   "cursor line/total lines
 
+"" Wildcards
 set wildignore=*.o,*.obj,*~,*.pyc
 set wildignore+=.env
 set wildignore+=.env[0-9]+
@@ -86,8 +94,7 @@ set wildignore+=*/.nx/**,*.app
 "" Keyboard
 let mapleader = ","
 
-
-"" Key Mappings (Dvorak Layout) """
+"" Key Mappings (Dvorak Layout)
 
 " Unmap unused, frequently accidental, or conflicting commands.
 nnoremap Q <Nop>
