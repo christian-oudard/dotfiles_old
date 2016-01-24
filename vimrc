@@ -110,6 +110,7 @@ endtry
 " Use easier key combinations to exit insert mode.
 inoremap qj <esc>
 inoremap <del> <esc>
+nnoremap <del> <esc>
 
 " use d, h, t, n to move left, up, down, and right
 noremap d h
