@@ -96,6 +96,7 @@ let mapleader = ","
 "" Key Mappings (Dvorak Layout)
 
 " Unmap unused, frequently accidental, or conflicting commands.
+nnoremap <C-z> <Nop>
 nnoremap Q <Nop>
 nnoremap s <Nop>
 nnoremap S <Nop>
