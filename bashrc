@@ -8,6 +8,8 @@
 # Add to executable search path.
 export PATH="\
 $HOME/bin:\
+/opt/ghc/7.10.3/bin:\
+/opt/cabal/1.22/bin:\
 $HOME/.cabal/bin:\
 $HOME/.rbenv/bin:\
 $HOME/.rbenv/plugins/ruby-build/bin:\
