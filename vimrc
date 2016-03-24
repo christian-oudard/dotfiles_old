@@ -22,6 +22,16 @@ Plugin 'scrooloose/syntastic'
 Plugin 'Twinside/vim-haskellConceal'
 Plugin 'hynek/vim-python-pep8-indent'
 
+" Recommendations from Minerva
+" Plugin 'kien/ctrlp.vim'
+" Plugin 'Lokaltog/vim-powerline'
+" Plugin 'mileszs/ack.vim'
+" Plugin 'sjl/gundo.vim'
+" Plugin 'vim-scripts/vim-javascript'
+" Plugin 'othree/html5-syntax.vim'
+" Plugin 'nono/vim-handlebars'
+" Plugin 'cakebaker/scss-syntax.vim'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 

@@ -14,6 +14,7 @@ $HOME/.cabal/bin:\
 $HOME/.rbenv/bin:\
 $HOME/.rbenv/plugins/ruby-build/bin:\
 $HOME/.node/bin:\
+$HOME/code-minerva/minerva-tools:\
 /usr/local/bin:\
 $PATH:\
 /opt/local/:\
@@ -135,9 +136,11 @@ if [ -x /usr/bin/dircolors ] && [ -f "$HOME/.dircolors" ]; then
     eval $(dircolors -b $HOME/.dircolors)
 fi
 
-# Color support of ls for BSD and Linux environments.
+# Mac vs Linux conditional aliases.
 if [ $(uname -s) == 'Darwin' ]; then
     alias ls='ls -p'
+    # For some reason, OS X will not use Brew-installed vim, even if it comes first in the $PATH.
+    alias vim='/usr/local/bin/vim'
 else
     alias ls='ls -p --color=auto'
 fi
