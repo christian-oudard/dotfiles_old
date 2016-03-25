@@ -202,9 +202,15 @@ if command -v virtualenvwrapper.sh >/dev/null; then
     source $(command -v virtualenvwrapper.sh)
 fi
 
-# Load rbenv
+# Load rbenv.
 if command -v rbenv >/dev/null; then
     eval "$(rbenv init -)"
+fi
+
+# Load nvm.
+export NVM_DIR="$HOME/.nvm"
+if [ -s "$NVM_DIR/nvm.sh" ]; then
+  source "$NVM_DIR/nvm.sh"
 fi
 
 # Computer-specific settings.
