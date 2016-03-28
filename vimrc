@@ -21,9 +21,9 @@ Plugin 'SirVer/ultisnips'
 Plugin 'scrooloose/syntastic'
 Plugin 'Twinside/vim-haskellConceal'
 Plugin 'hynek/vim-python-pep8-indent'
+Plugin 'kien/ctrlp.vim'
 
 " Recommendations from Minerva
-" Plugin 'kien/ctrlp.vim'
 " Plugin 'Lokaltog/vim-powerline'
 " Plugin 'mileszs/ack.vim'
 " Plugin 'sjl/gundo.vim'
