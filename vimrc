@@ -1,5 +1,4 @@
 set nocompatible
-
 "" Vundle
 
 filetype off
@@ -22,10 +21,10 @@ Plugin 'scrooloose/syntastic'
 Plugin 'Twinside/vim-haskellConceal'
 Plugin 'hynek/vim-python-pep8-indent'
 Plugin 'kien/ctrlp.vim'
+Plugin 'mileszs/ack.vim'
 
 " Recommendations from Minerva
 " Plugin 'Lokaltog/vim-powerline'
-" Plugin 'mileszs/ack.vim'
 " Plugin 'sjl/gundo.vim'
 " Plugin 'vim-scripts/vim-javascript'
 " Plugin 'othree/html5-syntax.vim'
@@ -165,8 +164,17 @@ nmap ss <Plug>Yssurround
 xmap s  <Plug>VSurround
 xmap gs <Plug>VgSurround
 
-" Full text search
-noremap <Leader>f :Ag ''<Left>
+" Full text search with ack.vim.
+noremap <Leader>f :Ack ''<Left>
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
+
+" File finding with Ctrl-P.
+let g:ctrlp_cache_dir = $HOME.'/.cache/ctrlp'
+if executable('ag')
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+endif
 
 "" Syntastic
 let g:syntastic_always_populate_loc_list = 1
