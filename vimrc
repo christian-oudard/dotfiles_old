@@ -35,15 +35,16 @@ Plugin 'mileszs/ack.vim'
 call vundle#end()            " required
 
 "" Visual settings
-set background=light
+set background=dark
 set t_Co=16
 colorscheme solarized
+
 set lazyredraw
 set hidden " Allow using multiple unsaved buffers.
 
 "" Behavior
 syntax on
-filetype plugin indent on	
+filetype plugin indent on
 set incsearch
 set ignorecase
 set smartcase
