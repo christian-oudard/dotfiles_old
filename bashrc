@@ -135,9 +135,11 @@ if [ -x /usr/bin/dircolors ] && [ -f "$HOME/.dircolors" ]; then
     eval $(dircolors -b $HOME/.dircolors)
 fi
 
-# Color support of ls for BSD and Linux environments.
+# Mac vs Linux conditional aliases.
 if [ $(uname -s) == 'Darwin' ]; then
     alias ls='ls -p'
+    # For some reason, OS X will not use Brew-installed vim, even if it comes first in the $PATH.
+    alias vim='/usr/local/bin/vim'
 else
     alias ls='ls -p --color=auto'
 fi
@@ -199,9 +201,15 @@ if command -v virtualenvwrapper.sh >/dev/null; then
     source $(command -v virtualenvwrapper.sh)
 fi
 
-# Load rbenv
+# Load rbenv.
 if command -v rbenv >/dev/null; then
     eval "$(rbenv init -)"
+fi
+
+# Load nvm.
+export NVM_DIR="$HOME/.nvm"
+if [ -s "$NVM_DIR/nvm.sh" ]; then
+  source "$NVM_DIR/nvm.sh"
 fi
 
 # Computer-specific settings.

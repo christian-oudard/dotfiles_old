@@ -1,5 +1,4 @@
 set nocompatible
-
 "" Vundle
 
 filetype off
@@ -21,20 +20,30 @@ Plugin 'SirVer/ultisnips'
 Plugin 'scrooloose/syntastic'
 Plugin 'Twinside/vim-haskellConceal'
 Plugin 'hynek/vim-python-pep8-indent'
+Plugin 'kien/ctrlp.vim'
+Plugin 'mileszs/ack.vim'
+
+" Plugin 'Lokaltog/vim-powerline'
+" Plugin 'sjl/gundo.vim'
+" Plugin 'vim-scripts/vim-javascript'
+" Plugin 'othree/html5-syntax.vim'
+" Plugin 'nono/vim-handlebars'
+" Plugin 'cakebaker/scss-syntax.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 
 "" Visual settings
-set background=light
+set background=dark
 set t_Co=16
 colorscheme solarized
+
 set lazyredraw
 set hidden " Allow using multiple unsaved buffers.
 
 "" Behavior
 syntax on
-filetype plugin indent on	
+filetype plugin indent on
 set incsearch
 set ignorecase
 set smartcase
@@ -155,8 +164,17 @@ nmap ss <Plug>Yssurround
 xmap s  <Plug>VSurround
 xmap gs <Plug>VgSurround
 
-" Full text search
-noremap <Leader>f :Ag ''<Left>
+" Full text search with ack.vim.
+noremap <Leader>f :Ack ''<Left>
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
+
+" File finding with Ctrl-P.
+let g:ctrlp_cache_dir = $HOME.'/.cache/ctrlp'
+if executable('ag')
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+endif
 
 "" Syntastic
 let g:syntastic_always_populate_loc_list = 1
