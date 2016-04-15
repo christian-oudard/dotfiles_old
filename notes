@@ -74,8 +74,6 @@ objects are {, (, [, <, ', ", and t (for html tags)
 
 snipmate
 type in a snippet handle and press <Tab> to complete
-snippet files are in ~/.vim/janus/vim/tools/snipmate-snippets/snippets/
-custom snippets are in ~/dotfiles/janus/snipmate_snippets/snippets/_.snippets
 
 
 vim indent bugs:
