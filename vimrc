@@ -141,6 +141,28 @@ noremap L T
 noremap j n
 noremap J N
 
+" Use dvorak directions for Netrw (:Explore) buffers too.
+augroup netrw_map
+  autocmd!
+  autocmd filetype netrw call NetrwMap()
+augroup END
+function! NetrwMap()
+  noremap <buffer> d h
+  noremap <buffer> D H
+  noremap <buffer> h j
+  noremap <buffer> H J
+  noremap <buffer> gh gj
+  noremap <buffer> t k
+  noremap <buffer> T K
+  noremap <buffer> gt gk
+  noremap <buffer> n l
+  noremap <buffer> N L
+  noremap <buffer> k d
+  noremap <buffer> K D
+  noremap <buffer> j n
+  noremap <buffer> J N
+endfunction
+
 " intuitive Y
 noremap Y y$
 
