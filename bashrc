@@ -40,6 +40,10 @@ shopt -s checkwinsize
 # Make "less" more friendly for non-text input files, see lesspipe(1).
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
+# Set terminal colors.
+BASE16_SHELL="$HOME/.config/base16-solarized.dark.sh"
+[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
+
 # Import color codes.
 source ~/.colors.sh
 
@@ -120,15 +124,6 @@ $txtcyn$ssh$txtrst\
     history -a
 }
 PROMPT_COMMAND=prompt_command
-
-# Set gnome-terminal colors
-if command -v gconftool-2 >/dev/null; then
-    gconftool-2 --set "/apps/gnome-terminal/profiles/Default/use_theme_background" --type bool false
-    gconftool-2 --set "/apps/gnome-terminal/profiles/Default/use_theme_colors" --type bool false
-    gconftool-2 --set "/apps/gnome-terminal/profiles/Default/palette" --type string "#070736364242:#D3D301010202:#858599990000:#B5B589890000:#26268B8BD2D2:#D3D336368282:#2A2AA1A19898:#EEEEE8E8D5D5:#00002B2B3636:#CBCB4B4B1616:#58586E6E7575:#65657B7B8383:#838394949696:#6C6C7171C4C4:#9393A1A1A1A1:#FDFDF6F6E3E3"
-    gconftool-2 --set "/apps/gnome-terminal/profiles/Default/background_color" --type string "#00002B2B3636"
-    gconftool-2 --set "/apps/gnome-terminal/profiles/Default/foreground_color" --type string "#838394949696"
-fi
 
 # Color settings for ls.
 if [ -x /usr/bin/dircolors ] && [ -f "$HOME/.dircolors" ]; then

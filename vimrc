@@ -12,7 +12,7 @@ Plugin 'VundleVim/Vundle.vim'
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
-Plugin 'altercation/vim-colors-solarized'
+Plugin 'chriskempson/base16-vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-surround'
@@ -34,9 +34,9 @@ Plugin 'mileszs/ack.vim'
 call vundle#end()            " required
 
 "" Visual settings
+let base16colorspace=256
 set background=dark
-set t_Co=16
-colorscheme solarized
+colorscheme base16-solarized
 
 set lazyredraw
 set hidden " Allow using multiple unsaved buffers.
