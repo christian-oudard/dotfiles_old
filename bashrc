@@ -209,5 +209,10 @@ fi
 
 # Computer-specific settings.
 if [ -f "$HOME/.bashrc_local" ]; then
-    . "$HOME/.bashrc_local"
+    source "$HOME/.bashrc_local"
+fi
+
+# Activate iterm2 shell integration.
+if [ -e "${HOME}/.iterm2_shell_integration.bash" ]; then
+    source "${HOME}/.iterm2_shell_integration.bash"
 fi
