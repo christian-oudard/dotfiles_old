@@ -20,6 +20,7 @@ Plug 'Twinside/vim-haskellConceal'
 Plug 'hynek/vim-python-pep8-indent'
 Plug 'kien/ctrlp.vim'
 Plug 'mileszs/ack.vim'
+Plug 'bronson/vim-trailing-whitespace'
 " Plug 'Lokaltog/vim-powerline'
 " Plug 'sjl/gundo.vim'
 " Plug 'vim-scripts/vim-javascript'
@@ -52,8 +53,6 @@ autocmd FileType python setlocal softtabstop=4 shiftwidth=4
 autocmd FileType haskell setlocal softtabstop=2 shiftwidth=2
 
 set scrolloff=2 " Set a margin of lines when scrolling.
-set shellcmdflag=-ic
-set clipboard=unnamed
 set backspace=2
 
 "" Status line
