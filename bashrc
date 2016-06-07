@@ -41,7 +41,7 @@ shopt -s checkwinsize
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 # Set terminal colors.
-BASE16_SHELL="$HOME/.config/base16-solarized.dark.sh"
+BASE16_SHELL="$HOME/.config/base16-railscasts.dark.sh"
 [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
 
 # Import color codes.
@@ -107,18 +107,17 @@ function prompt_command() {
 
     function prompt_left() {
         printf "\
-$txtylw\\\\u@\h$txtrst:$bldcyn\w$txtrst\
-$bldpur$git$txtrst\
-$txtgrn$virtualenv$txtrst\
-$txtgrn$nodevirtualenv$txtrst\
-$txtcyn$ssh$txtrst\
+$base02bg$base06\\\\u@\h$base04:$base0D\w$reset\
+$base0E$git$reset\
+$base0B$virtualenv$reset\
+$base0C$nodevirtualenv$reset\
+$base0D$ssh$reset\
 "
     }
 
-
     # Assemble the prompt.
     local left=$(prompt_left)
-    PS1="${left}\n\$ "
+    PS1="${left}\n$base02bg$base06\$$reset "
 
     # Write history after every command.
     history -a
