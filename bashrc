@@ -133,8 +133,6 @@ fi
 # Mac vs Linux conditional aliases.
 if [ $(uname -s) == 'Darwin' ]; then
     alias ls='ls -p'
-    # For some reason, OS X will not use Brew-installed vim, even if it comes first in the $PATH.
-    alias vim='/usr/local/bin/vim'
 else
     alias ls='ls -p --color=auto'
 fi
@@ -161,6 +159,11 @@ if command -v ag >/dev/null; then
     alias ack=ag
 elif command -v ack-grep >/dev/null; then
     alias ack=$(command -v ack-grep)
+fi
+
+# Use nvim if available, but call it "vim".
+if command -v nvim >/dev/null; then
+    alias vim=nvim
 fi
 
 # Enable git command line completion in bash.
