@@ -107,7 +107,7 @@ function prompt_command() {
 
     function prompt_left() {
         printf "\
-$base02bg$base06\\\\u@\h$base04:$base0D\w$reset\
+$base02bg$base06\\\\u@\h$base05:$base0D\w/$reset\
 $base0E$git$reset\
 $base0B$virtualenv$reset\
 $base0C$nodevirtualenv$reset\
