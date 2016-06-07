@@ -1,12 +1,12 @@
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-
-filetype off
-
 if has('nvim')
     let s:editor_root=expand("~/.config/nvim")
 else
     let s:editor_root=expand("~/.vim")
 endif
+
+" Point to Python interpreter. This only works if the system has the
+" python package "neovim" installed.
+let g:python_host_prog='/usr/local/bin/python'
 
 " vim-plug
 call plug#begin(s:editor_root . '/plugged')
@@ -29,6 +29,7 @@ Plug 'mileszs/ack.vim'
 call plug#end()
 
 "" Visual settings
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 set background=dark
 colorscheme base16-railscasts
 
@@ -36,9 +37,6 @@ set lazyredraw
 set hidden " Allow using multiple unsaved buffers.
 
 "" Behavior
-syntax on
-filetype plugin indent on
-set incsearch
 set ignorecase
 set smartcase
 set whichwrap+=<,>,h,l,[,]
