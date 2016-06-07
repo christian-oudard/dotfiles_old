@@ -21,12 +21,7 @@ Plug 'hynek/vim-python-pep8-indent'
 Plug 'kien/ctrlp.vim'
 Plug 'mileszs/ack.vim'
 Plug 'bronson/vim-trailing-whitespace'
-" Plug 'Lokaltog/vim-powerline'
-" Plug 'sjl/gundo.vim'
-" Plug 'vim-scripts/vim-javascript'
-" Plug 'othree/html5-syntax.vim'
-" Plug 'nono/vim-handlebars'
-" Plug 'cakebaker/scss-syntax.vim'
+Plug 'derekwyatt/vim-scala'
 call plug#end()
 
 "" Visual settings
