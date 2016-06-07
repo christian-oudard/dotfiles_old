@@ -1,42 +1,36 @@
-set nocompatible
-"" Vundle
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
 filetype off
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+if has('nvim')
+    let s:editor_root=expand("~/.config/nvim")
+else
+    let s:editor_root=expand("~/.vim")
+endif
 
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-
-" The following are examples of different formats supported.
-" Keep Plugin commands between vundle#begin/end.
-Plugin 'chriskempson/base16-vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-commentary'
-Plugin 'tpope/vim-surround'
-Plugin 'SirVer/ultisnips'
-Plugin 'scrooloose/syntastic'
-Plugin 'Twinside/vim-haskellConceal'
-Plugin 'hynek/vim-python-pep8-indent'
-Plugin 'kien/ctrlp.vim'
-Plugin 'mileszs/ack.vim'
-
-" Plugin 'Lokaltog/vim-powerline'
-" Plugin 'sjl/gundo.vim'
-" Plugin 'vim-scripts/vim-javascript'
-" Plugin 'othree/html5-syntax.vim'
-" Plugin 'nono/vim-handlebars'
-" Plugin 'cakebaker/scss-syntax.vim'
-
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
+" vim-plug
+call plug#begin(s:editor_root . '/plugged')
+Plug 'chriskempson/base16-vim'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
+Plug 'SirVer/ultisnips'
+Plug 'scrooloose/syntastic'
+Plug 'Twinside/vim-haskellConceal'
+Plug 'hynek/vim-python-pep8-indent'
+Plug 'kien/ctrlp.vim'
+Plug 'mileszs/ack.vim'
+" Plug 'Lokaltog/vim-powerline'
+" Plug 'sjl/gundo.vim'
+" Plug 'vim-scripts/vim-javascript'
+" Plug 'othree/html5-syntax.vim'
+" Plug 'nono/vim-handlebars'
+" Plug 'cakebaker/scss-syntax.vim'
+call plug#end()
 
 "" Visual settings
-let base16colorspace=256
 set background=dark
-colorscheme base16-solarized
+colorscheme base16-railscasts
 
 set lazyredraw
 set hidden " Allow using multiple unsaved buffers.
