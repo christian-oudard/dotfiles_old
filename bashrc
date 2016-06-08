@@ -115,9 +115,13 @@ $base0D$ssh$reset\
 "
     }
 
+    # Prompt line with dollar sign.
+    # We have to escape color codes so readline can correctly determine line length.
+    dollar="\[$base02bg$base06\]\$\[$reset\]"
+
     # Assemble the prompt.
     local left=$(prompt_left)
-    PS1="${left}\n$base02bg$base06\$$reset "
+    PS1="${left}\n${dollar} "
 
     # Write history after every command.
     history -a
@@ -185,7 +189,7 @@ export PYTHONSTARTUP=$HOME/.pythonrc
 stty stop ''
 
 # Set editor.
-export EDITOR='vim'
+export EDITOR='nvim'
 
 # Fix ubuntu menu proxy warning in gvim.
 # From http://askubuntu.com/questions/132977/how-to-get-global-application-menu-for-gvim
