@@ -218,7 +218,7 @@ if [ -f "$HOME/.bashrc_local" ]; then
     source "$HOME/.bashrc_local"
 fi
 
-# Activate iterm2 shell integration.
-if [ -e "${HOME}/.iterm2_shell_integration.bash" ]; then
-    source "${HOME}/.iterm2_shell_integration.bash"
+# Activate Haskell stack shell integration.
+if command -v stack >/dev/null; then
+  eval "$(stack --bash-completion-script stack)"
 fi
