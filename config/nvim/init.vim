@@ -52,7 +52,7 @@ set backspace=2
 
 "" Status line
 set laststatus=2
-set statusline=%t       "tail of the filename
+set statusline=%f       "relative filename
 set statusline+=%h      "help file flag
 set statusline+=%m      "modified flag
 set statusline+=%r      "read only flag
