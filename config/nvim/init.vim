@@ -27,7 +27,7 @@ call plug#end()
 "" Visual settings
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 set background=dark
-colorscheme base16-railscasts
+colorscheme base16-bright
 
 set lazyredraw
 set hidden " Allow using multiple unsaved buffers.
