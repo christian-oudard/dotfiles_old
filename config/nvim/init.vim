@@ -27,22 +27,25 @@ call plug#end()
 "" Visual settings
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 set background=dark
-colorscheme base16-railscasts
+colorscheme base16-bright
+
+highlight ExtraWhitespace guifg=#b0b0b0 guibg=#000000
+highlight IncSearch guifg=#fc6d24 guibg=#505050
+highlight Search guifg=#fda331 guibg=#505050
 
 set lazyredraw
 set hidden " Allow using multiple unsaved buffers.
 
-"" Behavior
 set ignorecase
 set smartcase
 set whichwrap+=<,>,h,l,[,]
 set hidden
 
-"" Whitespace
 set tabstop=8
 set softtabstop=2
 set shiftwidth=2
 set expandtab
+set list listchars=tab:»·,trail:·
 
 autocmd FileType python setlocal softtabstop=4 shiftwidth=4
 autocmd FileType haskell setlocal softtabstop=2 shiftwidth=2
@@ -52,7 +55,7 @@ set backspace=2
 
 "" Status line
 set laststatus=2
-set statusline=%t       "tail of the filename
+set statusline=%f       "relative filename
 set statusline+=%h      "help file flag
 set statusline+=%m      "modified flag
 set statusline+=%r      "read only flag

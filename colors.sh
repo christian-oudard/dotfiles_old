@@ -1,6 +1,6 @@
 reset="\033[0m"
 
-# Railscast color scheme from Chris Kempson's base16.
+# Chris Kempson's base16.
 
 # Foreground.
 base00="\033[38;5;0m"  # black 1
