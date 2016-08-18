@@ -110,8 +110,8 @@ function prompt_command() {
 $base01bg$base06\\\\u@\h$base05:$base0D\w/$reset\
 $base0E$git$reset\
 $base0B$virtualenv$reset\
-$base0C$nodevirtualenv$reset\
-$base0E$ssh$reset\
+$base0F$nodevirtualenv$reset\
+$base0C$ssh$reset\
 "
     }
 
