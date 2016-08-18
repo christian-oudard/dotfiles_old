@@ -111,13 +111,13 @@ $base01bg$base06\\\\u@\h$base05:$base0D\w/$reset\
 $base0E$git$reset\
 $base0B$virtualenv$reset\
 $base0C$nodevirtualenv$reset\
-$base0D$ssh$reset\
+$base0E$ssh$reset\
 "
     }
 
     # Prompt line with dollar sign.
     # We have to escape color codes so readline can correctly determine line length.
-    dollar="\[$base01bg$base06\]\$\[$reset\]"
+    dollar="\[$base01bg$base0D\]\$\[$reset\]"
 
     # Assemble the prompt.
     local left=$(prompt_left)
