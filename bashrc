@@ -41,7 +41,7 @@ shopt -s checkwinsize
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 # Set terminal colors.
-BASE16_SHELL="$HOME/.config/base16-railscasts.dark.sh"
+BASE16_SHELL="$HOME/.config/base16-bright.dark.sh"
 [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
 
 # Import color codes.
@@ -107,7 +107,7 @@ function prompt_command() {
 
     function prompt_left() {
         printf "\
-$base02bg$base06\\\\u@\h$base05:$base0D\w/$reset\
+$base01bg$base06\\\\u@\h$base05:$base0D\w/$reset\
 $base0E$git$reset\
 $base0B$virtualenv$reset\
 $base0C$nodevirtualenv$reset\
@@ -117,7 +117,7 @@ $base0D$ssh$reset\
 
     # Prompt line with dollar sign.
     # We have to escape color codes so readline can correctly determine line length.
-    dollar="\[$base02bg$base06\]\$\[$reset\]"
+    dollar="\[$base01bg$base06\]\$\[$reset\]"
 
     # Assemble the prompt.
     local left=$(prompt_left)

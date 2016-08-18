@@ -29,6 +29,10 @@ let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 set background=dark
 colorscheme base16-bright
 
+highlight ExtraWhitespace guifg=#b0b0b0 guibg=#000000
+highlight IncSearch guifg=#fc6d24 guibg=#505050
+highlight Search guifg=#fda331 guibg=#505050
+
 set lazyredraw
 set hidden " Allow using multiple unsaved buffers.
 
@@ -42,7 +46,6 @@ set softtabstop=2
 set shiftwidth=2
 set expandtab
 set list listchars=tab:»·,trail:·
-highlight ExtraWhitespace ctermfg=8 ctermbg=0 guifg=#5a647e guibg=#2b2b2b
 
 autocmd FileType python setlocal softtabstop=4 shiftwidth=4
 autocmd FileType haskell setlocal softtabstop=2 shiftwidth=2
