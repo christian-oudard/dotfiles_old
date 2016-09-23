@@ -45,7 +45,7 @@ set tabstop=8
 set softtabstop=2
 set shiftwidth=2
 set expandtab
-set list listchars=tab:»·,trail:·
+set list listchars=tab:\ \ ,trail:·
 
 autocmd FileType python setlocal softtabstop=4 shiftwidth=4
 autocmd FileType haskell setlocal softtabstop=2 shiftwidth=2
