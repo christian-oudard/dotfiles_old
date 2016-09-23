@@ -18,12 +18,14 @@
 	co = checkout
 	su = submodule update --init --recursive
 	logg = log --graph
+[diff]
+	tool = vimdiff
+[merge]
+	tool = vimdiff
 [push]
 	default = matching
 [branch]
 	autosetuprebase = always
-[diff]
-	tool = meld
 [github]
 	user = christian-oudard
 	token = <.replace github-token>
