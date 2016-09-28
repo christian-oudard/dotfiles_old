@@ -106,6 +106,7 @@ endtry
 
 " Use easier key combinations to exit insert mode.
 inoremap qj <esc>
+inoremap vw <esc>
 inoremap <del> <esc>
 nnoremap <del> <esc>
 
