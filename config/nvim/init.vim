@@ -16,7 +16,6 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'SirVer/ultisnips'
 Plug 'scrooloose/syntastic'
-Plug 'Twinside/vim-haskellConceal'
 Plug 'hynek/vim-python-pep8-indent'
 Plug 'kien/ctrlp.vim'
 Plug 'mileszs/ack.vim'
@@ -195,6 +194,3 @@ let g:syntastic_check_on_wq = 0
 
 let g:syntastic_python_checkers = ["flake8"]
 let g:syntastic_haskell_checkers = ["hdevtools"]
-
-"" vim2hs
-let g:haskell_conceal = 0
