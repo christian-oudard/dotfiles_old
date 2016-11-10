@@ -8,6 +8,7 @@
 # Add to executable search path.
 export PATH="\
 $HOME/bin:\
+$HOME/.bin:\
 /opt/ghc/7.10.3/bin:\
 /opt/cabal/1.22/bin:\
 $HOME/.cabal/bin:\
