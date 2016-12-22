@@ -26,6 +26,7 @@ call plug#end()
 "" Visual settings
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 set background=dark
+let base16colorspace=256
 colorscheme base16-bright
 
 highlight ExtraWhitespace guifg=#b0b0b0 guibg=#000000
@@ -86,6 +87,9 @@ set wildignore+=*.egg,*.egg-info
 set wildignore+=*.png,*.jpg,*.gif
 set wildignore+=*.so,*.swp,*.zip,*/.Trash/**,*.pdf,*.dmg,*/Library/**,*/.rbenv/**
 set wildignore+=*/.nx/**,*.app
+
+"" Behavior
+set backupdir=./.backup,.,/tmp
 
 "" Keyboard
 let mapleader = ","
