@@ -29,9 +29,9 @@ set background=dark
 let base16colorspace=256
 colorscheme base16-bright
 
-highlight ExtraWhitespace guifg=#b0b0b0 guibg=#000000
-highlight IncSearch guifg=#fc6d24 guibg=#505050
-highlight Search guifg=#fda331 guibg=#505050
+highlight ExtraWhitespace ctermfg=8 ctermbg=0
+highlight IncSearch ctermfg=18 ctermbg=12
+highlight Search ctermfg=18 ctermbg=12
 
 set lazyredraw
 set hidden " Allow using multiple unsaved buffers.
