@@ -10,6 +10,7 @@
 
 # Haskell
 .stack-work
+.cabal-sandbox
 
 # Compiled source
 *.com
