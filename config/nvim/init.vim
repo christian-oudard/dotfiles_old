@@ -24,39 +24,57 @@ Plug 'derekwyatt/vim-scala'
 Plug 'ap/vim-buftabline'
 call plug#end()
 
-"" Visual settings
+" Visual settings
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 set background=dark
 let base16colorspace=256
 colorscheme base16-bright
-
 highlight ExtraWhitespace ctermfg=8 ctermbg=0
 highlight IncSearch ctermfg=18 ctermbg=12
 highlight Search ctermfg=18 ctermbg=12
 highlight TabLineSel ctermfg=18 ctermbg=13
 highlight PmenuSel ctermfg=19 ctermbg=8
-
 set lazyredraw
-set hidden " Allow using multiple unsaved buffers.
 
+" Behavior settings
+set scrolloff=2 " Set a margin of lines when scrolling.
+set backspace=indent,eol,start
+set backupdir=./.backup,.,/tmp
+
+" automatic saving
+augroup save
+  au!
+  au FocusLost * wall
+augroup END
+set nohidden
+set nobackup
+set noswapfile
+set nowritebackup
+set autoread
+set autowrite
+set autowriteall
+
+" persistent undo
+set undofile
+set undodir=~/.vim/undo
+
+" search
 set ignorecase
 set smartcase
 set whichwrap+=<,>,h,l,[,]
 set hidden
-
+set hlsearch!
+nnoremap <Leader>hs :set hlsearch!<CR>
+" indentation
 set tabstop=8
-set softtabstop=2
-set shiftwidth=2
+set softtabstop=4
+set shiftwidth=4
 set expandtab
 set list listchars=tab:\ \ ,trail:·
-
 autocmd FileType python setlocal softtabstop=4 shiftwidth=4
 autocmd FileType haskell setlocal softtabstop=2 shiftwidth=2
 
-set scrolloff=2 " Set a margin of lines when scrolling.
-set backspace=2
-
-"" Status line
+" Status line
 set laststatus=2
 set statusline=%f       "relative filename
 set statusline+=%h      "help file flag
@@ -65,7 +83,7 @@ set statusline+=%r      "read only flag
 set statusline+=%=      "left/right separator
 set statusline+=%l/%L   "cursor line/total lines
 
-"" Wildcards
+" Wildcards
 set wildignore=*.o,*.obj,*~,*.pyc
 set wildignore+=.env
 set wildignore+=.env[0-9]+
@@ -91,14 +109,8 @@ set wildignore+=*.png,*.jpg,*.gif
 set wildignore+=*.so,*.swp,*.zip,*/.Trash/**,*.pdf,*.dmg,*/Library/**,*/.rbenv/**
 set wildignore+=*/.nx/**,*.app
 
-"" Behavior
-set backupdir=./.backup,.,/tmp
-
-"" Keyboard
+" Keyboard
 let mapleader = ","
-
-"" Key Mappings (Dvorak Layout)
-
 " Unmap unused, frequently accidental, or conflicting commands.
 nnoremap <C-z> <Nop>
 nnoremap Q <Nop>
@@ -110,13 +122,11 @@ try
     unmap <C-f>
 catch
 endtry
-
 " Use easier key combinations to exit insert mode.
 inoremap qj <esc>
 inoremap vw <esc>
 inoremap <del> <esc>
 nnoremap <del> <esc>
-
 " use d, h, t, n to move left, up, down, and right
 noremap d h
 noremap D H
@@ -128,7 +138,6 @@ noremap T K
 noremap gt gk
 noremap n l
 noremap N L
-
 " Reassign the keys we overwrote.
 noremap k d
 noremap K D
@@ -136,7 +145,6 @@ noremap l t
 noremap L T
 noremap j n
 noremap J N
-
 " Use dvorak directions for Netrw (:Explore) buffers too.
 augroup netrw_map
   autocmd!
@@ -158,13 +166,10 @@ function! NetrwMap()
   noremap <buffer> j n
   noremap <buffer> J N
 endfunction
-
 " intuitive Y
 noremap Y y$
-
 " Press semicolon for command prompt.
 nnoremap ; :
-
 " Redo copy and paste mappings.
 vnoremap <C-X> "+x
 vnoremap <C-C> "+y
@@ -192,17 +197,16 @@ endif
 noremap <Leader>p :bprev<CR>
 noremap <Leader>n :bnext<CR>
 noremap <Leader>, <C-^>
-nmap <leader>1 <Plug>BufTabLine.Go(1)
-nmap <leader>2 <Plug>BufTabLine.Go(2)
-nmap <leader>3 <Plug>BufTabLine.Go(3)
-nmap <leader>4 <Plug>BufTabLine.Go(4)
-nmap <leader>5 <Plug>BufTabLine.Go(5)
-nmap <leader>6 <Plug>BufTabLine.Go(6)
-nmap <leader>7 <Plug>BufTabLine.Go(7)
-nmap <leader>8 <Plug>BufTabLine.Go(8)
-nmap <leader>9 <Plug>BufTabLine.Go(9)
-nmap <leader>0 <Plug>BufTabLine.Go(10)
-
+nmap <Leader>1 <Plug>BufTabLine.Go(1)
+nmap <Leader>2 <Plug>BufTabLine.Go(2)
+nmap <Leader>3 <Plug>BufTabLine.Go(3)
+nmap <Leader>4 <Plug>BufTabLine.Go(4)
+nmap <Leader>5 <Plug>BufTabLine.Go(5)
+nmap <Leader>6 <Plug>BufTabLine.Go(6)
+nmap <Leader>7 <Plug>BufTabLine.Go(7)
+nmap <Leader>8 <Plug>BufTabLine.Go(8)
+nmap <Leader>9 <Plug>BufTabLine.Go(9)
+nmap <Leader>0 <Plug>BufTabLine.Go(10)
 
 " File finding with Ctrl-P.
 let g:ctrlp_cache_dir = $HOME.'/.cache/ctrlp'
@@ -210,11 +214,10 @@ if executable('ag')
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 endif
 
-"" Syntastic
+" Syntastic
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-
 let g:syntastic_python_checkers = ["pyflakes"]
 let g:syntastic_haskell_checkers = ["hdevtools"]
