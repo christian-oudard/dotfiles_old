@@ -21,6 +21,7 @@ Plug 'kien/ctrlp.vim'
 Plug 'mileszs/ack.vim'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'derekwyatt/vim-scala'
+Plug 'ap/vim-buftabline'
 call plug#end()
 
 "" Visual settings
@@ -32,6 +33,8 @@ colorscheme base16-bright
 highlight ExtraWhitespace ctermfg=8 ctermbg=0
 highlight IncSearch ctermfg=18 ctermbg=12
 highlight Search ctermfg=18 ctermbg=12
+highlight TabLineSel ctermfg=18 ctermbg=13
+highlight PmenuSel ctermfg=19 ctermbg=8
 
 set lazyredraw
 set hidden " Allow using multiple unsaved buffers.
@@ -184,6 +187,11 @@ noremap <Leader>f :Ack ''<Left>
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
+
+" Quick buffer switching with buftabline.
+noremap <Leader>p :bprev<CR>
+noremap <Leader>n :bnext<CR>
+noremap <Leader><Leader>, <C-^>
 
 " File finding with Ctrl-P.
 let g:ctrlp_cache_dir = $HOME.'/.cache/ctrlp'
