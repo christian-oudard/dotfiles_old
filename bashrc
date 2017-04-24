@@ -122,7 +122,7 @@ $base0C$ssh$reset\
 
     # Assemble the prompt.
     local left=$(prompt_left)
-    PS1="${left}\n${dollar} "
+    PS1="\n${left}\n${dollar} "
 
     # Write history after every command.
     history -a
