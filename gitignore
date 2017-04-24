@@ -6,7 +6,7 @@
 # Python
 *.pyc
 .coverage
-*,cover
+# *,cover  # This breaks the current version of CtrlP in vim.
 
 # Haskell
 .stack-work
