@@ -170,9 +170,6 @@ if command -v nvim >/dev/null; then
     alias vim=nvim
 fi
 
-# Use stack ghci in place of ghci
-alias ghci='stack ghci'
-
 # Enable git command line completion in bash.
 if [ -f ~/.git-completion.bash ]; then
     source ~/.git-completion.bash
