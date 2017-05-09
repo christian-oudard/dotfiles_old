@@ -71,7 +71,11 @@ set softtabstop=4
 set shiftwidth=4
 set expandtab
 set list listchars=tab:\ \ ,trail:·
+set wrap
+set textwidth=100
+
 autocmd FileType python setlocal softtabstop=4 shiftwidth=4
+autocmd FileType ruby setlocal softtabstop=2 shiftwidth=2
 autocmd FileType haskell setlocal softtabstop=2 shiftwidth=2
 
 " Status line
@@ -194,8 +198,9 @@ if executable('ag')
 endif
 
 " Quick buffer switching with buftabline.
-noremap <Leader>p :bprev<CR>
 noremap <Leader>n :bnext<CR>
+noremap <Leader>p :bprevious<CR>
+noremap <Leader>d :bdelete<CR>
 noremap <Leader>, <C-^>
 nmap <Leader>1 <Plug>BufTabLine.Go(1)
 nmap <Leader>2 <Plug>BufTabLine.Go(2)

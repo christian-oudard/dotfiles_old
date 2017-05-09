@@ -1,2 +1,2 @@
-keyfile ~/.tarsnap/tarsnap_zeal.key
+keyfile ~/.tarsnap/tarsnap.key
 cachedir ~/.tarsnap/tarsnap-cache
