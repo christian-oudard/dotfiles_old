@@ -47,6 +47,7 @@ BASE16_SHELL="$HOME/.config/base16-bright.dark.sh"
 
 # Import color codes.
 source ~/.colors.sh
+CLEAR_EOL="\033[K"
 
 # Set the prompt.
 function prompt_command() {
@@ -108,11 +109,12 @@ function prompt_command() {
 
     function prompt_left() {
         printf "\
-$base01bg$base06\\\\u@\h$base05:$base0D\w/$reset\
-$base0E$git$reset\
-$base0B$virtualenv$reset\
-$base0F$nodevirtualenv$reset\
-$base0C$ssh$reset\
+$base01bg$base06\\\\u@\h$base05:$base0D\w/\
+$base0E$git\
+$base0B$virtualenv\
+$base0F$nodevirtualenv\
+$base0C$ssh\
+$CLEAR_EOL$reset\
 "
     }
 
@@ -122,7 +124,7 @@ $base0C$ssh$reset\
 
     # Assemble the prompt.
     local left=$(prompt_left)
-    PS1="\n${left}\n${dollar} "
+    PS1="${left}\n${dollar} "
 
     # Write history after every command.
     history -a
