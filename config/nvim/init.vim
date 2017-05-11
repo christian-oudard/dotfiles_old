@@ -10,17 +10,18 @@ let g:python_host_prog='/usr/local/bin/python'
 
 " vim-plug
 call plug#begin(s:editor_root . '/plugged')
+Plug 'hynek/vim-python-pep8-indent'
+Plug 'derekwyatt/vim-scala'
+Plug 'saltstack/salt-vim'
 Plug 'chriskempson/base16-vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'SirVer/ultisnips'
 Plug 'scrooloose/syntastic'
-Plug 'hynek/vim-python-pep8-indent'
 Plug 'kien/ctrlp.vim'
 Plug 'mileszs/ack.vim'
 Plug 'bronson/vim-trailing-whitespace'
-Plug 'derekwyatt/vim-scala'
 Plug 'ap/vim-buftabline'
 call plug#end()
 
