@@ -225,3 +225,6 @@ fi
 if command -v stack >/dev/null; then
   eval "$(stack --bash-completion-script stack)"
 fi
+
+# Vagrant dotfiles outside of main tree.
+export VAGRANT_DOTFILE_PATH="$HOME/.vagrant_dotfiles"
