@@ -199,31 +199,32 @@ if [ -x /usr/bin/gvim ]; then
     function gvim () { (/usr/bin/gvim -f "$@" &) }
 fi
 
-# Activate virtualenvwrapper.
-if command -v virtualenvwrapper.sh >/dev/null; then
-    source $(command -v virtualenvwrapper.sh)
-fi
-
-# Load rbenv.
-if command -v rbenv >/dev/null; then
-    eval "$(rbenv init -)"
-fi
-
-# Load nvm.
-export NVM_DIR="$HOME/.nvm"
-if [ -s "$NVM_DIR/nvm.sh" ]; then
-  source "$NVM_DIR/nvm.sh"
-fi
-
 # Computer-specific settings.
 if [ -f "$HOME/.bashrc_local" ]; then
     source "$HOME/.bashrc_local"
 fi
 
-# Activate Haskell stack shell integration.
-if command -v stack >/dev/null; then
-  eval "$(stack --bash-completion-script stack)"
-fi
-
 # Vagrant dotfiles outside of main tree.
 export VAGRANT_DOTFILE_PATH="$HOME/.vagrant_dotfiles"
+
+# Activate virtualenvwrapper.
+# if command -v virtualenvwrapper.sh >/dev/null; then
+#     source $(command -v virtualenvwrapper.sh)
+# fi
+
+# Load rbenv.
+# if command -v rbenv >/dev/null; then
+#     eval "$(rbenv init -)"
+# fi
+
+# Load nvm.
+# export NVM_DIR="$HOME/.nvm"
+# if [ -s "/usr/local/opt/nvm/nvm.sh" ]; then
+#     source /usr/local/opt/nvm/nvm.sh
+# fi
+
+# Activate Haskell stack shell integration.
+# if command -v stack >/dev/null; then
+#   eval "$(stack --bash-completion-script stack)"
+# fi
+
