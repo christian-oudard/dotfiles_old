@@ -6,6 +6,10 @@
 [ -z "$PS1" ] && return
 
 # Add to executable search path.
+if [ -n "$(which brew)" ]; then
+    brew_coreutils_path="$(brew --prefix coreutils)/libexec/gnubin:"
+fi
+
 export PATH="\
 $HOME/bin:\
 $HOME/.bin:\
@@ -15,11 +19,12 @@ $HOME/.cargo/bin:\
 $HOME/.rbenv/bin:\
 $HOME/.rbenv/plugins/ruby-build/bin:\
 $HOME/.node/bin:\
+$brew_coreutils_path\
 /usr/local/bin:\
-$PATH:\
 /opt/local/:\
 /sbin:\
 /opt/local/bin:\
+${PATH}:\
 "
 
 # Don't put duplicate lines in the history. See bash(1) for more options.
