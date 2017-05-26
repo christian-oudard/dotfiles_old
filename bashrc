@@ -141,14 +141,12 @@ if [ -x /usr/bin/dircolors ] && [ -f "$HOME/.dircolors" ]; then
     eval $(dircolors -b $HOME/.dircolors)
 fi
 
-# Mac vs Linux conditional aliases.
-if [ $(uname -s) == 'Darwin' ]; then
-    alias ls='ls -p'
-else
-    alias ls='ls -p --color=auto'
-fi
-
 # Aliases.
+if [ -n "$(ls --version | grep GNU)" ] ; then
+    alias ls='ls -p --color=auto'
+else
+    alias ls='ls -p'
+fi
 alias i='ls'
 alias ll='ls -lGh'
 alias la='ls -A'
