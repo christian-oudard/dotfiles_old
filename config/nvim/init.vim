@@ -78,6 +78,7 @@ set textwidth=100
 autocmd FileType python setlocal softtabstop=4 shiftwidth=4
 autocmd FileType ruby setlocal softtabstop=2 shiftwidth=2
 autocmd FileType haskell setlocal softtabstop=2 shiftwidth=2
+autocmd FileType cabal setlocal softtabstop=2 shiftwidth=2
 
 " Status line
 set laststatus=2
