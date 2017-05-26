@@ -6,10 +6,6 @@
 [ -z "$PS1" ] && return
 
 # Add to executable search path.
-if [ -n "$(which brew)" ]; then
-    brew_coreutils_path="$(brew --prefix coreutils)/libexec/gnubin:"
-fi
-
 export PATH="\
 $HOME/bin:\
 $HOME/.bin:\
@@ -19,7 +15,7 @@ $HOME/.cargo/bin:\
 $HOME/.rbenv/bin:\
 $HOME/.rbenv/plugins/ruby-build/bin:\
 $HOME/.node/bin:\
-$brew_coreutils_path\
+/usr/local/opt/coreutils/libexec/gnubin:\
 /usr/local/bin:\
 /opt/local/:\
 /sbin:\
