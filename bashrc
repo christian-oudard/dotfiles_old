@@ -151,6 +151,7 @@ alias lr='ls -R'
 alias lla='ls -lGA'
 alias lld='ls -ld'
 alias llh='lh -lG'
+alias mv='mv -i'
 
 # Fix scrolling issue with tmux + irssi
 alias irssi='TERM=screen-256color irssi'
@@ -208,9 +209,9 @@ fi
 export VAGRANT_DOTFILE_PATH="$HOME/.vagrant_dotfiles"
 
 # Activate virtualenvwrapper.
-# if command -v virtualenvwrapper.sh >/dev/null; then
-#     source $(command -v virtualenvwrapper.sh)
-# fi
+if command -v virtualenvwrapper.sh >/dev/null; then
+    source $(command -v virtualenvwrapper.sh)
+fi
 
 # Load rbenv.
 # if command -v rbenv >/dev/null; then
