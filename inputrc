@@ -7,3 +7,5 @@ set bell-style none
 # Line-complete history.
 "\C-p": history-search-backward
 "\C-n": history-search-forward
+# Don't add trailing slashes when tab-completing.
+set mark-directories off
