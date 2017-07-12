@@ -18,7 +18,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'SirVer/ultisnips'
-Plug 'scrooloose/syntastic'
+Plug 'w0rp/ale'
 Plug 'kien/ctrlp.vim'
 Plug 'mileszs/ack.vim'
 Plug 'bronson/vim-trailing-whitespace'
@@ -221,10 +221,7 @@ if executable('ag')
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 endif
 
-" Syntastic
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_python_checkers = ["pyflakes"]
-let g:syntastic_haskell_checkers = ["hdevtools"]
+" ALE Asynchronous Lint Engine
+let g:ale_linters = {
+\   'python': ['flake8', 'mypy'],
+\}
