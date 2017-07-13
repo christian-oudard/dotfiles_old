@@ -19,7 +19,7 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'SirVer/ultisnips'
 Plug 'w0rp/ale'
-Plug 'kien/ctrlp.vim'
+Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
 Plug 'mileszs/ack.vim'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'ap/vim-buftabline'
@@ -215,11 +215,8 @@ nmap <Leader>8 <Plug>BufTabLine.Go(8)
 nmap <Leader>9 <Plug>BufTabLine.Go(9)
 nmap <Leader>0 <Plug>BufTabLine.Go(10)
 
-" File finding with Ctrl-P.
-let g:ctrlp_cache_dir = $HOME.'/.cache/ctrlp'
-if executable('ag')
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-endif
+" File finding with fzf.
+nmap <C-P> :FZF<CR>
 
 " ALE Asynchronous Lint Engine
 let g:ale_linters = {
