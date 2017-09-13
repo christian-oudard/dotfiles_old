@@ -208,10 +208,15 @@ fi
 # Vagrant dotfiles outside of main tree.
 export VAGRANT_DOTFILE_PATH="$HOME/.vagrant_dotfiles"
 
-# Activate virtualenvwrapper.
-if command -v virtualenvwrapper.sh >/dev/null; then
-    source $(command -v virtualenvwrapper.sh)
+# Load pyenv.
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
 fi
+
+# Activate virtualenvwrapper.
+# if command -v virtualenvwrapper.sh >/dev/null; then
+#     source $(command -v virtualenvwrapper.sh)
+# fi
 
 # Load rbenv.
 # if command -v rbenv >/dev/null; then
