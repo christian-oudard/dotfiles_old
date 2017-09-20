@@ -5,24 +5,6 @@
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
-# Add to executable search path.
-export PATH="\
-$HOME/bin:\
-$HOME/.bin:\
-$HOME/.local/bin:\
-$HOME/.cabal/bin:\
-$HOME/.cargo/bin:\
-$HOME/.rbenv/bin:\
-$HOME/.rbenv/plugins/ruby-build/bin:\
-$HOME/.node/bin:\
-/usr/local/opt/coreutils/libexec/gnubin:\
-/usr/local/bin:\
-/opt/local/:\
-/sbin:\
-/opt/local/bin:\
-${PATH}:\
-"
-
 # Don't put duplicate lines in the history. See bash(1) for more options.
 HISTCONTROL=ignoredups:ignorespace
 
@@ -137,41 +119,6 @@ if [ -x /usr/bin/dircolors ] && [ -f "$HOME/.dircolors" ]; then
     eval $(dircolors -b $HOME/.dircolors)
 fi
 
-# Aliases.
-if [ -n "$(ls --version | grep GNU)" ] ; then
-    alias ls='ls -p --color=auto'
-else
-    alias ls='ls -p'
-fi
-alias i='ls'
-alias ll='ls -lGh'
-alias la='ls -A'
-alias lh='find -maxdepth 1 -name ".*" -not -name "." -printf "%f\n" | xargs ls -d --color=auto'
-alias lr='ls -R'
-alias lla='ls -lGA'
-alias lld='ls -ld'
-alias llh='lh -lG'
-alias mv='mv -i'
-
-# Fix scrolling issue with tmux + irssi
-alias irssi='TERM=screen-256color irssi'
-
-# Use "g" to mean "git", with correct tab completion.
-alias g='git'
-complete -o default -o nospace -F _git g
-
-# Search in files with "ack".
-if command -v ag >/dev/null; then
-    alias ack=ag
-elif command -v ack-grep >/dev/null; then
-    alias ack=$(command -v ack-grep)
-fi
-
-# Use nvim if available, but call it "vim".
-if command -v nvim >/dev/null; then
-    alias vim=nvim
-fi
-
 # Enable git command line completion in bash.
 if [ -f ~/.git-completion.bash ]; then
     source ~/.git-completion.bash
@@ -233,4 +180,59 @@ fi
 # if command -v stack >/dev/null; then
 #   eval "$(stack --bash-completion-script stack)"
 # fi
+
+
+## Executable search path ##
+export PATH="\
+$HOME/bin:\
+$HOME/.bin:\
+$HOME/.local/bin:\
+$HOME/.cabal/bin:\
+$HOME/.cargo/bin:\
+$HOME/.rbenv/bin:\
+$HOME/.rbenv/plugins/ruby-build/bin:\
+$HOME/.node/bin:\
+/usr/local/opt/coreutils/libexec/gnubin:\
+/usr/local/bin:\
+/opt/local/:\
+/sbin:\
+/opt/local/bin:\
+${PATH}:\
+"
+
+## Aliases ##
+
+if [ -n "$(ls --version | grep GNU)" ] ; then
+    alias ls='ls -p --color=auto'
+else
+    alias ls='ls -p'
+fi
+alias i='ls'
+alias ll='ls -lGh'
+alias la='ls -A'
+alias lh='find -maxdepth 1 -name ".*" -not -name "." -printf "%f\n" | xargs ls -d --color=auto'
+alias lr='ls -R'
+alias lla='ls -lGA'
+alias lld='ls -ld'
+alias llh='lh -lG'
+alias mv='mv -i'
+
+# Fix scrolling issue with tmux + irssi
+alias irssi='TERM=screen-256color irssi'
+
+# Use "g" to mean "git", with correct tab completion.
+alias g='git'
+complete -o default -o nospace -F _git g
+
+# Search in files with "ack".
+if command -v ag >/dev/null; then
+    alias ack=ag
+elif command -v ack-grep >/dev/null; then
+    alias ack=$(command -v ack-grep)
+fi
+
+# Use nvim if available, but call it "vim".
+if command -v nvim >/dev/null; then
+    alias vim=nvim
+fi
 
