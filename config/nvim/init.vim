@@ -221,4 +221,5 @@ nmap <C-P> :FZF<CR>
 " ALE Asynchronous Lint Engine
 let g:ale_linters = {
 \   'python': ['flake8'],
+\   'haskell': ['hdevtools', 'hlint'],
 \}
