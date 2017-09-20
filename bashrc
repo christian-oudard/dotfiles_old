@@ -160,6 +160,9 @@ if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
 
+# Go path.
+export GOPATH=$HOME/go
+
 # Activate virtualenvwrapper.
 # if command -v virtualenvwrapper.sh >/dev/null; then
 #     source $(command -v virtualenvwrapper.sh)
@@ -181,7 +184,6 @@ fi
 #   eval "$(stack --bash-completion-script stack)"
 # fi
 
-
 ## Executable search path ##
 export PATH="\
 $HOME/bin:\
@@ -192,6 +194,7 @@ $HOME/.cargo/bin:\
 $HOME/.rbenv/bin:\
 $HOME/.rbenv/plugins/ruby-build/bin:\
 $HOME/.node/bin:\
+$GOPATH/bin:\
 /usr/local/opt/coreutils/libexec/gnubin:\
 /usr/local/bin:\
 /opt/local/:\
