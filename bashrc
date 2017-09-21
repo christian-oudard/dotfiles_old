@@ -155,11 +155,6 @@ fi
 # Vagrant dotfiles outside of main tree.
 export VAGRANT_DOTFILE_PATH="$HOME/.vagrant_dotfiles"
 
-# Load pyenv.
-if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init -)"
-fi
-
 # Go path.
 export GOPATH=$HOME/go
 
@@ -202,6 +197,12 @@ $GOPATH/bin:\
 /opt/local/bin:\
 ${PATH}:\
 "
+
+# Load pyenv after path modification.
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
+
 
 ## Aliases ##
 
