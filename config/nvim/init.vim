@@ -73,7 +73,7 @@ set shiftwidth=4
 set expandtab
 set list listchars=tab:\ \ ,trail:·
 set wrap
-set textwidth=100
+set textwidth=90
 
 autocmd FileType python setlocal softtabstop=4 shiftwidth=4
 autocmd FileType ruby setlocal softtabstop=2 shiftwidth=2
