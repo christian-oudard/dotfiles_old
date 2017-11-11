@@ -42,6 +42,12 @@ set scrolloff=2 " Set a margin of lines when scrolling.
 set backspace=indent,eol,start
 set backupdir=./.backup,.,/tmp
 
+" Always-on sign column for error indicators
+augroup mine
+    au BufWinEnter * sign define fakesign
+    au BufWinEnter * exe "sign place 1337 line=1 name=fakesign buffer=" . bufnr('%')
+augroup END
+
 " automatic saving
 augroup save
   au!
