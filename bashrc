@@ -240,3 +240,7 @@ if command -v nvim >/dev/null; then
     alias vim=nvim
 fi
 
+# Activate fzf fuzzy file finder.
+if [ -f ~/.fzf.bash ]; then
+    source ~/.fzf.bash
+fi
