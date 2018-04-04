@@ -224,6 +224,7 @@ nmap <Leader>0 <Plug>BufTabLine.Go(10)
 
 " File finding with fzf.
 nmap <C-P> :FZF<CR>
+set rtp+=~/.fzf
 
 " ALE Asynchronous Lint Engine
 let g:ale_linters = {
