@@ -141,12 +141,6 @@ stty stop ''
 # Set editor.
 export EDITOR='nvim'
 
-# Fix ubuntu menu proxy warning in gvim.
-# From http://askubuntu.com/questions/132977/how-to-get-global-application-menu-for-gvim
-if [ -x /usr/bin/gvim ]; then
-    function gvim () { (/usr/bin/gvim -f "$@" &) }
-fi
-
 # Computer-specific settings.
 if [ -f "$HOME/.bashrc_local" ]; then
     source "$HOME/.bashrc_local"
@@ -239,6 +233,14 @@ fi
 # Use nvim if available, but call it "vim".
 if command -v nvim >/dev/null; then
     alias vim=nvim
+fi
+
+# Call python3 when we type python.
+if command -v python3 >/dev/null; then
+    alias python=python3
+fi
+if command -v pip3 >/dev/null; then
+    alias pip=pip3
 fi
 
 # Activate fzf fuzzy file finder.
