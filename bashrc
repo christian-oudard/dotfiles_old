@@ -219,7 +219,8 @@ alias lr='ls -R'
 alias lla='ls -lGA'
 alias lld='ls -ld'
 alias llh='lh -lG'
-alias mv='mv -i'
+alias mv='mv --interactive'
+alias cp='cp --interactive'
 
 # Fix scrolling issue with tmux + irssi
 alias irssi='TERM=screen-256color irssi'
