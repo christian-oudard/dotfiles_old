@@ -34,6 +34,9 @@ fi
 source ~/.colors.sh
 CLEAR_EOL="\033[K"
 
+# Set cursor type to solid vertical bar.
+echo -ne '\e[6 q'
+
 # Set the prompt.
 function prompt_command() {
     # If working on a python virtualenv, show it in the prompt.
