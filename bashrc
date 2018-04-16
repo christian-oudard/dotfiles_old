@@ -26,7 +26,9 @@ shopt -s checkwinsize
 
 # Set terminal colors.
 BASE16_SHELL="$HOME/.config/base16-bright.dark.sh"
-[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
+if [[ -s $BASE16_SHELL ]]; then
+    source $BASE16_SHELL
+fi
 
 # Import color codes.
 source ~/.colors.sh
@@ -241,6 +243,9 @@ if command -v python3 >/dev/null; then
 fi
 if command -v pip3 >/dev/null; then
     alias pip=pip3
+fi
+if command -v pytest-3 >/dev/null; then
+    alias pytest=pytest-3
 fi
 
 # Activate fzf fuzzy file finder.
