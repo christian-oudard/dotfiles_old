@@ -26,16 +26,17 @@ Plug 'ap/vim-buftabline'
 call plug#end()
 
 " Visual settings
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+set lazyredraw
+set termguicolors
 set background=dark
 let base16colorspace=256
-colorscheme base16-bright
+syntax on
+colorscheme base16-woodland
 highlight ExtraWhitespace ctermfg=8 ctermbg=0
-highlight IncSearch ctermfg=18 ctermbg=12
-highlight Search ctermfg=18 ctermbg=12
-highlight TabLineSel ctermfg=18 ctermbg=13
-highlight PmenuSel ctermfg=19 ctermbg=8
-set lazyredraw
+highlight Search ctermfg=none ctermbg=19 guifg=none guibg=#48413a
+highlight IncSearch ctermfg=none ctermbg=19 guifg=none guibg=#48413a
+" Set background to none so transparent terminal works.
+highlight Normal ctermfg=7 ctermbg=none guibg=none
 
 " Behavior settings
 set scrolloff=2 " Set a margin of lines when scrolling.
@@ -70,7 +71,7 @@ set ignorecase
 set smartcase
 set whichwrap+=<,>,h,l,[,]
 set hidden
-set hlsearch!
+set nohlsearch
 nnoremap <Leader>hs :set hlsearch!<CR>
 " indentation
 set tabstop=8
