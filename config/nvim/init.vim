@@ -71,8 +71,7 @@ set ignorecase
 set smartcase
 set whichwrap+=<,>,h,l,[,]
 set hidden
-set nohlsearch
-nnoremap <Leader>hs :set hlsearch!<CR>
+set hlsearch
 " indentation
 set tabstop=8
 set softtabstop=4
@@ -191,6 +190,9 @@ map <C-V> "+gP
 cmap <C-V> <C-R>+
 " Use CTRL-Q to do what CTRL-V used to do
 noremap <C-Q> <C-V>
+
+" Toggle search highlighting.
+nnoremap <Leader>hs :set hlsearch!<CR>
 
 " Change surround mappings for dvorak.
 let g:surround_no_mappings = 1
