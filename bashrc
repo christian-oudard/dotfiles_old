@@ -252,6 +252,7 @@ if command -v pytest-3 >/dev/null; then
 fi
 
 # Activate fzf fuzzy file finder.
+export FZF_DEFAULT_COMMAND='fd --type f'
 if [ -f ~/.fzf.bash ]; then
     source ~/.fzf.bash
 fi
