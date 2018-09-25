@@ -251,6 +251,12 @@ if command -v pytest-3 >/dev/null; then
     alias pytest=pytest-3
 fi
 
+# Use stackage for haskell.
+alias ghc='stack ghc'
+alias ghci='stack ghci'
+alias runghc='stack runghc'
+alias runhaskell='stack runhaskell'
+
 # Activate fzf fuzzy file finder.
 export FZF_DEFAULT_COMMAND='fd --type f'
 if [ -f ~/.fzf.bash ]; then
