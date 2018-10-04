@@ -173,11 +173,6 @@ export GOPATH=$HOME/go
 #     source /usr/local/opt/nvm/nvm.sh
 # fi
 
-# Activate Haskell stack shell integration.
-# if command -v stack >/dev/null; then
-#   eval "$(stack --bash-completion-script stack)"
-# fi
-
 ## Executable search path ##
 export PATH="\
 $HOME/bin:\
@@ -256,6 +251,12 @@ alias ghc='stack ghc'
 alias ghci='stack ghci'
 alias runghc='stack runghc'
 alias runhaskell='stack runhaskell'
+alias hoogle='stack hoogle'
+
+# Activate Haskell stack shell integration.
+if command -v stack >/dev/null; then
+  eval "$(stack --bash-completion-script stack)"
+fi
 
 # Activate fzf fuzzy file finder.
 export FZF_DEFAULT_COMMAND='fd --type f'
