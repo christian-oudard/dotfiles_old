@@ -86,6 +86,7 @@ autocmd FileType ruby setlocal softtabstop=2 shiftwidth=2
 autocmd FileType haskell setlocal softtabstop=2 shiftwidth=2
 autocmd FileType cabal setlocal softtabstop=2 shiftwidth=2
 autocmd FileType go setlocal noexpandtab tabstop=2 softtabstop=2 shiftwidth=2
+autocmd FileType yaml setlocal softtabstop=2 shiftwidth=2
 
 " Status line
 set laststatus=2
