@@ -216,6 +216,9 @@ alias llh='lh -lG'
 alias mv='mv --interactive'
 alias cp='cp --interactive'
 
+# Set maximum width of returned lines for ag.
+alias ag='ag -W 300'
+
 # Fix scrolling issue with tmux + irssi
 alias irssi='TERM=screen-256color irssi'
 
@@ -223,12 +226,6 @@ alias irssi='TERM=screen-256color irssi'
 alias g='git'
 complete -o default -o nospace -F _git g
 
-# Search in files with "ack".
-if command -v ag >/dev/null; then
-    alias ack=ag
-elif command -v ack-grep >/dev/null; then
-    alias ack=$(command -v ack-grep)
-fi
 
 # Use nvim if available, but call it "vim".
 if command -v nvim >/dev/null; then
