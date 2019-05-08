@@ -249,6 +249,7 @@ alias ghci='stack ghci'
 alias runghc='stack runghc'
 alias runhaskell='stack runhaskell'
 alias hoogle='stack hoogle'
+alias haddock='stack haddock'
 
 # Activate Haskell stack shell integration.
 if command -v stack >/dev/null; then

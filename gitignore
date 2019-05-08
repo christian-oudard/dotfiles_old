@@ -15,6 +15,7 @@ __pycache__
 # Haskell
 .stack-work
 .cabal-sandbox
+*.cabal  # Use hpack and commit package.yaml instead.
 
 # Compiled source
 *.com
