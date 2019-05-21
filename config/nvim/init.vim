@@ -13,16 +13,17 @@ call plug#begin(s:editor_root . '/plugged')
 Plug 'hynek/vim-python-pep8-indent'
 Plug 'derekwyatt/vim-scala'
 Plug 'saltstack/salt-vim'
-Plug 'chriskempson/base16-vim'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-commentary'
+Plug 'chriskempson/base16-vim'  " color scheme
+Plug 'tpope/vim-fugitive'  " git
+Plug 'tpope/vim-commentary'  " commenting and uncommenting
 Plug 'tpope/vim-surround'
-Plug 'SirVer/ultisnips'
-Plug 'w0rp/ale'
-Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
-Plug 'mileszs/ack.vim'
-Plug 'bronson/vim-trailing-whitespace'
-Plug 'ap/vim-buftabline'
+Plug 'SirVer/ultisnips'  " snippets
+Plug 'w0rp/ale'  " syntax checker
+Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'  " file finder
+Plug 'mileszs/ack.vim'  " ag searching
+Plug 'bronson/vim-trailing-whitespace'  " delete trailing whitespace
+Plug 'ap/vim-buftabline'  " tabs for each buffer
+Plug 'bitc/vim-hdevtools'  " haskell auto-compile
 call plug#end()
 
 " Visual settings
@@ -233,5 +234,8 @@ set rtp+=~/.fzf
 " ALE Asynchronous Lint Engine
 let g:ale_linters = {
 \   'python': ['flake8'],
-\   'haskell': ['hdevtools', 'hlint'],
+\   'haskell': ['hdevtools', 'hlint']
 \}
+
+" vim-hdevtools
+let g:hdevtools_stack = 1
