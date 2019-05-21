@@ -239,3 +239,7 @@ let g:ale_linters = {
 
 " vim-hdevtools
 let g:hdevtools_stack = 1
+let g:hdevtools_options = '-g-fdefer-type-errors'
+au FileType haskell nnoremap <buffer> <Leader>t :HdevtoolsType<CR>
+au FileType haskell nnoremap <buffer> <silent> <Leader>i :HdevtoolsInfo<CR>
+au FileType haskell nnoremap <buffer> <silent> <Leader>c :HdevtoolsClear<CR>
