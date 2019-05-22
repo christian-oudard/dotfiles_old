@@ -24,6 +24,7 @@ Plug 'mileszs/ack.vim'  " ag searching
 Plug 'bronson/vim-trailing-whitespace'  " delete trailing whitespace
 Plug 'ap/vim-buftabline'  " tabs for each buffer
 Plug 'bitc/vim-hdevtools'  " haskell auto-compile
+Plug 'neovimhaskell/haskell-vim'  " haskell syntax
 call plug#end()
 
 " Visual settings
@@ -32,6 +33,7 @@ set termguicolors
 set background=dark
 let base16colorspace=256
 syntax on
+filetype plugin indent on
 colorscheme base16-woodland
 highlight ExtraWhitespace ctermfg=8 ctermbg=0
 highlight Search ctermfg=none ctermbg=19 guifg=none guibg=#48413a
@@ -243,3 +245,6 @@ let g:hdevtools_options = '-g-fdefer-type-errors'
 au FileType haskell nnoremap <buffer> <Leader>t :HdevtoolsType<CR>
 au FileType haskell nnoremap <buffer> <silent> <Leader>i :HdevtoolsInfo<CR>
 au FileType haskell nnoremap <buffer> <silent> <Leader>c :HdevtoolsClear<CR>
+
+" haskell-vim
+let g:haskell_indent_disable = 1
