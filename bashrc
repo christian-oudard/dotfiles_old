@@ -244,9 +244,9 @@ if command -v pytest-3 >/dev/null; then
 fi
 
 # Use stackage for haskell.
-alias ghc='stack ghc'
-alias ghci='stack ghci'
-alias runghc='stack runghc'
+alias ghc='stack exec -- ghc'
+alias ghci='stack exec -- ghci'
+alias runghc='stack exec -- runghc'
 alias runhaskell='stack runhaskell'
 alias hoogle='stack hoogle'
 alias haddock='stack haddock'
