@@ -23,8 +23,6 @@ Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'  " file finder
 Plug 'mileszs/ack.vim'  " ag searching
 Plug 'bronson/vim-trailing-whitespace'  " delete trailing whitespace
 Plug 'ap/vim-buftabline'  " tabs for each buffer
-Plug 'bitc/vim-hdevtools'  " haskell auto-compile
-Plug 'neovimhaskell/haskell-vim'  " haskell syntax
 call plug#end()
 
 " Visual settings
@@ -82,7 +80,7 @@ set shiftwidth=4
 set expandtab
 set list listchars=tab:\ \ ,trail:·
 set wrap
-set textwidth=90
+set textwidth=110
 
 autocmd FileType python setlocal softtabstop=4 shiftwidth=4
 autocmd FileType ruby setlocal softtabstop=2 shiftwidth=2
@@ -90,6 +88,7 @@ autocmd FileType haskell setlocal softtabstop=2 shiftwidth=2
 autocmd FileType cabal setlocal softtabstop=2 shiftwidth=2
 autocmd FileType go setlocal noexpandtab tabstop=2 softtabstop=2 shiftwidth=2
 autocmd FileType yaml setlocal softtabstop=2 shiftwidth=2
+autocmd FileType html setlocal softtabstop=2 shiftwidth=2
 
 " Status line
 set laststatus=2
