@@ -23,6 +23,7 @@ Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'  " file finder
 Plug 'mileszs/ack.vim'  " ag searching
 Plug 'bronson/vim-trailing-whitespace'  " delete trailing whitespace
 Plug 'ap/vim-buftabline'  " tabs for each buffer
+Plug '907th/vim-auto-save'
 call plug#end()
 
 " Visual settings
