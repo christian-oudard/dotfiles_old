@@ -51,10 +51,11 @@ augroup mine
     au BufWinEnter * exe "sign place 1337 line=1 name=fakesign buffer=" . bufnr('%')
 augroup END
 
-" automatic saving
-augroup save
+" vim-auto-save
+let g:auto_save = 0
+augroup ft_python
   au!
-  au FocusLost * wall
+  au FileType python let b:auto_save = 1
 augroup END
 set nohidden
 set nobackup
