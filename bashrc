@@ -255,9 +255,3 @@ alias haddock='stack haddock'
 if command -v stack >/dev/null; then
   eval "$(stack --bash-completion-script stack)"
 fi
-
-# Activate fzf fuzzy file finder.
-export FZF_DEFAULT_COMMAND='fd --type f'
-if [ -f ~/.fzf.bash ]; then
-    source ~/.fzf.bash
-fi

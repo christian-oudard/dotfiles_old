@@ -19,7 +19,7 @@ Plug 'tpope/vim-commentary'  " commenting and uncommenting
 Plug 'tpope/vim-surround'
 Plug 'SirVer/ultisnips'  " snippets
 Plug 'w0rp/ale'  " syntax checker
-Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'  " file finder
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'mileszs/ack.vim'  " ag searching
 Plug 'bronson/vim-trailing-whitespace'  " delete trailing whitespace
 Plug 'ap/vim-buftabline'  " tabs for each buffer
