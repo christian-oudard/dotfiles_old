@@ -41,6 +41,8 @@ highlight IncSearch ctermfg=none ctermbg=19 guifg=none guibg=#48413a
 highlight Normal ctermfg=7 ctermbg=none guibg=none
 
 " Behavior settings
+set fileformat=unix
+set fileformats=unix,dos
 set scrolloff=2 " Set a margin of lines when scrolling.
 set backspace=indent,eol,start
 set backupdir=./.backup,.,/tmp
