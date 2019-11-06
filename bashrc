@@ -226,6 +226,8 @@ alias irssi='TERM=screen-256color irssi'
 alias g='git'
 complete -o default -o nospace -F _git g
 
+# fd is called fdfind in ubuntu.
+alias fd=fdfind
 
 # Use nvim if available, but call it "vim".
 if command -v nvim >/dev/null; then
