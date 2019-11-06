@@ -24,6 +24,7 @@ Plug 'mileszs/ack.vim'  " ag searching
 Plug 'bronson/vim-trailing-whitespace'  " delete trailing whitespace
 Plug 'ap/vim-buftabline'  " tabs for each buffer
 Plug '907th/vim-auto-save'
+Plug 'ycm-core/YouCompleteMe'
 call plug#end()
 
 " Visual settings
@@ -241,6 +242,10 @@ let g:ale_linters = {
 \   'python': ['flake8'],
 \   'haskell': ['hdevtools', 'hlint']
 \}
+
+" YouCompleteMe
+let g:ycm_key_list_select_completion = ['<Down>']
+let g:ycm_key_list_previous_completion = ['<Up>']
 
 " vim-hdevtools
 let g:hdevtools_stack = 1
