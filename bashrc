@@ -151,6 +151,9 @@ if [ -f "$HOME/.bashrc_local" ]; then
     source "$HOME/.bashrc_local"
 fi
 
+# FZF fuzzy finder uses fdfind.
+export FZF_DEFAULT_COMMAND='fdfind --type f'
+
 # Vagrant dotfiles outside of main tree.
 export VAGRANT_DOTFILE_PATH="$HOME/.vagrant_dotfiles"
 
