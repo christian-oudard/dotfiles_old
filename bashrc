@@ -219,6 +219,9 @@ alias llh='lh -lG'
 alias mv='mv --interactive'
 alias cp='cp --interactive'
 
+# Keep environment variables for sudo.
+alias sudo='sudo -E'
+
 # Set maximum width of returned lines for ag.
 alias ag='ag -W 300'
 
