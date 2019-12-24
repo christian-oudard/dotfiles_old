@@ -24,6 +24,7 @@ Plug 'mileszs/ack.vim'  " ag searching
 Plug 'bronson/vim-trailing-whitespace'  " delete trailing whitespace
 Plug 'ap/vim-buftabline'  " tabs for each buffer
 Plug '907th/vim-auto-save'
+" Plug 'alfredodeza/pytest.vim'
 " Plug 'ycm-core/YouCompleteMe'
 call plug#end()
 
@@ -40,6 +41,10 @@ highlight Search ctermfg=none ctermbg=19 guifg=none guibg=#48413a
 highlight IncSearch ctermfg=none ctermbg=19 guifg=none guibg=#48413a
 " Set background to none so transparent terminal works.
 highlight Normal ctermfg=7 ctermbg=none guibg=none
+" For 'eol', 'extends' and 'precedes'.
+highlight NonText ctermfg=8 gui=bold guifg=#302b25
+" For 'nbsp', 'tab' and 'trail'.
+highlight SpecialKey ctermfg=8 guifg=#302b25
 
 " Behavior settings
 set fileformat=unix
@@ -83,7 +88,9 @@ set tabstop=8
 set softtabstop=4
 set shiftwidth=4
 set expandtab
-set list listchars=tab:\ \ ,trail:·
+set list
+set showbreak=↪
+set listchars=tab:→\ ,eol:↲,nbsp:␣,trail:•,extends:⟩,precedes:⟨
 set wrap
 set textwidth=110
 
