@@ -244,9 +244,6 @@ fi
 if command -v python3 >/dev/null; then
     alias python=python3
 fi
-if command -v pip3 >/dev/null; then
-    alias pip=pip3
-fi
 if command -v pytest-3 >/dev/null; then
     alias pytest=pytest-3
 fi
