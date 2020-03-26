@@ -54,22 +54,31 @@ set backspace=indent,eol,start
 set backupdir=./.backup,.,/tmp
 
 " Always-on sign column for error indicators
-augroup mine
-    au BufWinEnter * sign define fakesign
-    au BufWinEnter * exe "sign place 1337 line=1 name=fakesign buffer=" . bufnr('%')
+augroup error_column
+    autocmd!
+    autocmd BufWinEnter * sign define fakesign
+    autocmd BufWinEnter * exe "sign place 1337 line=1 name=fakesign buffer=" . bufnr('%')
 augroup END
 
 " vim-auto-save
 let g:auto_save = 0
-augroup ft_python
-  au!
-  au FileType python let b:auto_save = 1
+augroup auto_save
+    autocmd!
+    autocmd FileType python let b:auto_save = 1
+    autocmd FileType ruby let b:auto_save = 1
+    autocmd FileType haskell let b:auto_save = 1
+    autocmd FileType cabal let b:auto_save = 1
+    autocmd FileType go let b:auto_save = 1
+    autocmd FileType yaml let b:auto_save = 1
+    autocmd FileType html let b:auto_save = 1
+    autocmd FileType css let b:auto_save = 1
+    autocmd FileType markdown let b:auto_save = 1
 augroup END
 set nohidden
 set nobackup
 set noswapfile
 set nowritebackup
-set autoread
+set noautoread
 set autowrite
 set autowriteall
 
@@ -94,14 +103,18 @@ set listchars=tab:→\ ,eol:↲,nbsp:␣,trail:•,extends:⟩,precedes:⟨
 set wrap
 set textwidth=110
 
-autocmd FileType python setlocal softtabstop=4 shiftwidth=4
-autocmd FileType ruby setlocal softtabstop=2 shiftwidth=2
-autocmd FileType haskell setlocal softtabstop=2 shiftwidth=2
-autocmd FileType cabal setlocal softtabstop=2 shiftwidth=2
-autocmd FileType go setlocal noexpandtab tabstop=2 softtabstop=2 shiftwidth=2
-autocmd FileType yaml setlocal softtabstop=2 shiftwidth=2
-autocmd FileType html setlocal softtabstop=2 shiftwidth=2
-autocmd FileType markdown setlocal softtabstop=4 shiftwidth=4 textwidth=90
+augroup indentation
+    autocmd!
+    autocmd FileType python setlocal softtabstop=4 shiftwidth=4
+    autocmd FileType ruby setlocal softtabstop=2 shiftwidth=2
+    autocmd FileType haskell setlocal softtabstop=2 shiftwidth=2
+    autocmd FileType cabal setlocal softtabstop=2 shiftwidth=2
+    autocmd FileType go setlocal noexpandtab tabstop=2 softtabstop=2 shiftwidth=2
+    autocmd FileType yaml setlocal softtabstop=2 shiftwidth=2
+    autocmd FileType html setlocal softtabstop=2 shiftwidth=2
+    autocmd FileType css setlocal softtabstop=2 shiftwidth=2
+    autocmd FileType markdown setlocal softtabstop=4 shiftwidth=4 textwidth=90
+augroup END
 
 " Status line
 set laststatus=2
@@ -176,24 +189,24 @@ noremap j n
 noremap J N
 " Use dvorak directions for Netrw (:Explore) buffers too.
 augroup netrw_map
-  autocmd!
-  autocmd filetype netrw call NetrwMap()
+    autocmd!
+    autocmd filetype netrw call NetrwMap()
 augroup END
 function! NetrwMap()
-  noremap <buffer> d h
-  noremap <buffer> D H
-  noremap <buffer> h j
-  noremap <buffer> H J
-  noremap <buffer> gh gj
-  noremap <buffer> t k
-  noremap <buffer> T K
-  noremap <buffer> gt gk
-  noremap <buffer> n l
-  noremap <buffer> N L
-  noremap <buffer> k d
-  noremap <buffer> K D
-  noremap <buffer> j n
-  noremap <buffer> J N
+    noremap <buffer> d h
+    noremap <buffer> D H
+    noremap <buffer> h j
+    noremap <buffer> H J
+    noremap <buffer> gh gj
+    noremap <buffer> t k
+    noremap <buffer> T K
+    noremap <buffer> gt gk
+    noremap <buffer> n l
+    noremap <buffer> N L
+    noremap <buffer> k d
+    noremap <buffer> K D
+    noremap <buffer> j n
+    noremap <buffer> J N
 endfunction
 " intuitive Y
 noremap Y y$
@@ -258,9 +271,12 @@ let g:ycm_key_list_previous_completion = ['<Up>']
 " vim-hdevtools
 let g:hdevtools_stack = 1
 let g:hdevtools_options = '-g-fdefer-type-errors'
-au FileType haskell nnoremap <buffer> <Leader>t :HdevtoolsType<CR>
-au FileType haskell nnoremap <buffer> <silent> <Leader>i :HdevtoolsInfo<CR>
-au FileType haskell nnoremap <buffer> <silent> <Leader>c :HdevtoolsClear<CR>
+augroup hdevtools
+    autocmd!
+    autocmd FileType haskell nnoremap <buffer> <Leader>t :HdevtoolsType<CR>
+    autocmd FileType haskell nnoremap <buffer> <silent> <Leader>i :HdevtoolsInfo<CR>
+    autocmd FileType haskell nnoremap <buffer> <silent> <Leader>c :HdevtoolsClear<CR>
+augroup END
 
 " haskell-vim
 let g:haskell_indent_disable = 1
