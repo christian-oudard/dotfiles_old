@@ -24,6 +24,7 @@ Plug 'mileszs/ack.vim'  " ag searching
 Plug 'bronson/vim-trailing-whitespace'  " delete trailing whitespace
 Plug 'ap/vim-buftabline'  " tabs for each buffer
 Plug '907th/vim-auto-save'
+Plug 'hail2u/vim-css3-syntax'
 " Plug 'alfredodeza/pytest.vim'
 " Plug 'ycm-core/YouCompleteMe'
 call plug#end()
@@ -280,3 +281,9 @@ augroup END
 
 " haskell-vim
 let g:haskell_indent_disable = 1
+
+" vim-css3-syntax
+augroup VimCSS3Syntax
+  autocmd!
+  autocmd FileType css setlocal iskeyword+=-
+augroup END
