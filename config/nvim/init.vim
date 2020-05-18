@@ -62,19 +62,8 @@ augroup error_column
 augroup END
 
 " vim-auto-save
-let g:auto_save = 0
-augroup auto_save
-    autocmd!
-    autocmd FileType python let b:auto_save = 1
-    autocmd FileType ruby let b:auto_save = 1
-    autocmd FileType haskell let b:auto_save = 1
-    autocmd FileType cabal let b:auto_save = 1
-    autocmd FileType go let b:auto_save = 1
-    autocmd FileType yaml let b:auto_save = 1
-    autocmd FileType html let b:auto_save = 1
-    autocmd FileType css let b:auto_save = 1
-    autocmd FileType markdown let b:auto_save = 1
-augroup END
+let g:auto_save = 1
+
 set nohidden
 set nobackup
 set noswapfile
