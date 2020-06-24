@@ -181,17 +181,17 @@ export PATH="\
 $HOME/bin:\
 $HOME/.bin:\
 $HOME/.local/bin:\
-$HOME/.cabal/bin:\
 $HOME/.cargo/bin:\
 $HOME/.rbenv/bin:\
 $HOME/.rbenv/plugins/ruby-build/bin:\
 $HOME/.node/bin:\
 $GOPATH/bin:\
-/usr/local/opt/coreutils/libexec/gnubin:\
 /usr/local/bin:\
 /opt/local/:\
-/sbin:\
 /opt/local/bin:\
+/opt/ghc/bin:\
+/opt/cabal/bin:\
+/sbin:\
 ${PATH}:\
 "
 
@@ -249,17 +249,4 @@ if command -v pip3 >/dev/null; then
 fi
 if command -v pytest-3 >/dev/null; then
     alias pytest=pytest-3
-fi
-
-# Use stackage for haskell.
-alias ghc='stack exec -- ghc'
-alias ghci='stack exec -- ghci'
-alias runghc='stack exec -- runghc'
-alias runhaskell='stack runhaskell'
-alias hoogle='stack hoogle'
-alias haddock='stack haddock'
-
-# Activate Haskell stack shell integration.
-if command -v stack >/dev/null; then
-  eval "$(stack --bash-completion-script stack)"
 fi
