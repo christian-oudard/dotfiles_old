@@ -25,8 +25,8 @@ Plug 'bronson/vim-trailing-whitespace'  " delete trailing whitespace
 Plug 'ap/vim-buftabline'  " tabs for each buffer
 Plug '907th/vim-auto-save'
 Plug 'hail2u/vim-css3-syntax'
-" Plug 'alfredodeza/pytest.vim'
-" Plug 'ycm-core/YouCompleteMe'
+Plug 'leafgarland/typescript-vim'
+
 call plug#end()
 
 " Visual settings

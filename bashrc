@@ -201,6 +201,18 @@ if command -v pyenv 1>/dev/null 2>&1; then
 fi
 
 
+# Interactive move command.
+# Adapted from https://gist.github.com/premek/6e70446cfc913d3c929d7cdbfe896fef
+function mv() {
+  if [ "$#" -ne 1 ] || [ ! -e "$1" ]; then
+    command mv --interactive "$@"
+    return
+  fi
+  read -ei "$1" newfilename
+  command mv --interactive -v -- "$1" "$newfilename"
+}
+
+
 ## Aliases ##
 
 if [ -n "$(ls --version | grep GNU)" ] ; then
@@ -216,7 +228,6 @@ alias lr='ls -R'
 alias lla='ls -lGA'
 alias lld='ls -ld'
 alias llh='lh -lG'
-alias mv='mv --interactive'
 alias cp='cp --interactive'
 
 # Keep environment variables for sudo.
