@@ -103,7 +103,7 @@ augroup indentation
     autocmd FileType yaml setlocal softtabstop=2 shiftwidth=2
     autocmd FileType html setlocal softtabstop=2 shiftwidth=2
     autocmd FileType css setlocal softtabstop=2 shiftwidth=2
-    autocmd FileType markdown setlocal softtabstop=4 shiftwidth=4 textwidth=90
+    autocmd FileType markdown setlocal softtabstop=4 shiftwidth=4 textwidth=90 formatoptions-=t
 augroup END
 
 " Status line
