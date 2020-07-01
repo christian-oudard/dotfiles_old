@@ -93,6 +93,7 @@ set listchars=tab:→\ ,eol:↲,nbsp:␣,trail:•,extends:⟩,precedes:⟨
 set wrap
 set textwidth=110
 
+
 augroup indentation
     autocmd!
     autocmd FileType python setlocal softtabstop=4 shiftwidth=4
@@ -102,6 +103,8 @@ augroup indentation
     autocmd FileType go setlocal noexpandtab tabstop=2 softtabstop=2 shiftwidth=2
     autocmd FileType yaml setlocal softtabstop=2 shiftwidth=2
     autocmd FileType html setlocal softtabstop=2 shiftwidth=2
+    autocmd BufNewFile,BufRead *.ejs set filetype=html
+    autocmd FileType javascript setlocal softtabstop=2 shiftwidth=2
     autocmd FileType css setlocal softtabstop=2 shiftwidth=2
     autocmd FileType markdown setlocal softtabstop=4 shiftwidth=4 textwidth=90 formatoptions-=t
 augroup END
