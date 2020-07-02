@@ -254,7 +254,8 @@ set rtp+=~/.fzf
 " ALE Asynchronous Lint Engine
 let g:ale_linters = {
 \   'python': ['flake8'],
-\   'haskell': ['hdevtools', 'hlint']
+\   'haskell': ['hdevtools', 'hlint'],
+\   'javascript': ['eslint'],
 \}
 
 " YouCompleteMe
