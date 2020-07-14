@@ -105,6 +105,7 @@ augroup indentation
     autocmd FileType html setlocal softtabstop=2 shiftwidth=2
     autocmd BufNewFile,BufRead *.ejs set filetype=html
     autocmd FileType javascript setlocal softtabstop=2 shiftwidth=2
+    autocmd FileType typescript setlocal softtabstop=2 shiftwidth=2
     autocmd FileType css setlocal softtabstop=2 shiftwidth=2
     autocmd FileType markdown setlocal softtabstop=4 shiftwidth=4 textwidth=90 formatoptions-=t
 augroup END
