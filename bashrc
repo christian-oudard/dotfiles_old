@@ -31,7 +31,9 @@ if [[ -s $BASE16_SHELL ]]; then
 fi
 
 # Import color codes.
-source ~/.colors.sh
+if [ -f "$HOME/.colors.sh" ]; then
+    source ~/.colors.sh
+fi
 CLEAR_EOL="\033[K"
 
 # Set cursor type to solid vertical bar.
