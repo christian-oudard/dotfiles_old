@@ -26,26 +26,34 @@ Plug 'ap/vim-buftabline'  " tabs for each buffer
 Plug '907th/vim-auto-save'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'leafgarland/typescript-vim'
+Plug 'nikvdp/ejs-syntax'
 
 call plug#end()
 
 " Visual settings
+
 set lazyredraw
 set termguicolors
-set background=dark
 let base16colorspace=256
 syntax on
 filetype plugin indent on
-colorscheme base16-woodland
-highlight ExtraWhitespace ctermfg=8 ctermbg=0
-highlight Search ctermfg=none ctermbg=19 guifg=none guibg=#48413a
-highlight IncSearch ctermfg=none ctermbg=19 guifg=none guibg=#48413a
+
+" Colors
+
+" set background=dark
+" colorscheme base16-woodland
+set background=light
+colorscheme base16-atelier-forest-light
+
 " Set background to none so transparent terminal works.
-highlight Normal ctermfg=7 ctermbg=none guibg=none
-" For 'eol', 'extends' and 'precedes'.
-highlight NonText ctermfg=8 gui=bold guifg=#302b25
-" For 'nbsp', 'tab' and 'trail'.
-highlight SpecialKey ctermfg=8 guifg=#302b25
+call g:Base16hi("Normal", "", "none", "", "")
+" Search terms.
+call g:Base16hi("Search", "none", g:base16_gui01, "", "")
+call g:Base16hi("IncSearch", "none", g:base16_gui01, "", "")
+" Special whitespace characters.
+call g:Base16hi("NonText", g:base16_gui01, "none", "", "", "bold")
+call g:Base16hi("SpecialKey", g:base16_gui01, "none", "", "", "bold")
+call g:Base16hi("ExtraWhitespace", g:base16_gui01, "none", "", "", "bold")
 
 " Behavior settings
 set fileformat=unix
@@ -147,6 +155,7 @@ set wildignore+=*/.nx/**,*.app
 
 " Keyboard
 let mapleader = ","
+
 " Unmap unused, frequently accidental, or conflicting commands.
 nnoremap <C-z> <Nop>
 nnoremap Q <Nop>
@@ -247,6 +256,8 @@ nmap <Leader>7 <Plug>BufTabLine.Go(7)
 nmap <Leader>8 <Plug>BufTabLine.Go(8)
 nmap <Leader>9 <Plug>BufTabLine.Go(9)
 nmap <Leader>0 <Plug>BufTabLine.Go(10)
+
+noremap <Leader>r :source ~/.config/nvim/init.vim<CR>
 
 " File finding with fzf.
 nmap <C-P> :FZF<CR>

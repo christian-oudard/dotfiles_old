@@ -25,7 +25,9 @@ shopt -s checkwinsize
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 # Set terminal colors.
-BASE16_SHELL="$HOME/.config/base16-woodland.sh"
+# BASE16_SHELL="$HOME/.config/base16-woodland.sh"
+BASE16_SHELL="$HOME/.config/base16-atelier-forest-light.sh"
+
 if [[ -s $BASE16_SHELL ]]; then
     source $BASE16_SHELL
 fi
