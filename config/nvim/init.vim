@@ -54,6 +54,8 @@ call g:Base16hi("IncSearch", "none", g:base16_gui01, "", "")
 call g:Base16hi("NonText", g:base16_gui01, "none", "", "", "bold")
 call g:Base16hi("SpecialKey", g:base16_gui01, "none", "", "", "bold")
 call g:Base16hi("ExtraWhitespace", g:base16_gui01, "none", "", "", "bold")
+" Don't bold statements.
+call g:Base16hi("Statement", "", "none", "", "", "none")
 
 " Behavior settings
 set fileformat=unix
