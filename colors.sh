@@ -18,7 +18,7 @@ base0B="\033[38;5;10m" # yellow-green
 base0C="\033[38;5;14m" # green
 base0D="\033[38;5;12m" # blue
 base0E="\033[38;5;13m" # purple
-base0F="\033[38;5;17m" # brown
+base0F="\033[38;5;17m" # magenta
 
 # Background.
 base00bg="\033[48;5;0m"
@@ -37,3 +37,41 @@ base0Cbg="\033[48;5;14m"
 base0Dbg="\033[48;5;12m"
 base0Ebg="\033[48;5;13m"
 base0Fbg="\033[48;5;17m"
+
+function colortest() {
+    printf "\
+${base00}black 1${reset}
+${base01}black 2${reset}
+${base02}black 3${reset}
+${base03}black 4${reset}
+${base04}white 1${reset}
+${base05}white 2${reset}
+${base06}white 3${reset}
+${base07}white 4${reset}
+${base08}red${reset}
+${base09}orange${reset}
+${base0A}yellow${reset}
+${base0B}yellow-green${reset}
+${base0C}green${reset}
+${base0D}blue${reset}
+${base0E}purple${reset}
+${base0F}magenta${reset}
+
+${base07}${base00bg}black 1${reset}
+${base07}${base01bg}black 2${reset}
+${base07}${base02bg}black 3${reset}
+${base07}${base03bg}black 4${reset}
+${base07}${base04bg}white 1${reset}
+${base07}${base05bg}white 2${reset}
+${base07}${base06bg}white 3${reset}
+${base07}${base07bg}white 4${reset}
+${base07}${base08bg}red${reset}
+${base07}${base09bg}orange${reset}
+${base07}${base0Abg}yellow${reset}
+${base07}${base0Bbg}yellow-green${reset}
+${base07}${base0Cbg}green${reset}
+${base07}${base0Dbg}blue${reset}
+${base07}${base0Ebg}purple${reset}
+${base07}${base0Fbg}magenta${reset}
+"
+}
