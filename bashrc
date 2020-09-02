@@ -189,6 +189,7 @@ $HOME/.rbenv/bin:\
 $HOME/.rbenv/plugins/ruby-build/bin:\
 $HOME/.node/bin:\
 $HOME/.npm-global/bin:\
+$HOME/.poetry/bin:\
 $GOPATH/bin:\
 /usr/local/bin:\
 /opt/local/:\
@@ -203,7 +204,6 @@ ${PATH}:\
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
-
 
 # Interactive move command.
 # Adapted from https://gist.github.com/premek/6e70446cfc913d3c929d7cdbfe896fef

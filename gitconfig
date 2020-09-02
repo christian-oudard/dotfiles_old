@@ -8,6 +8,11 @@
 [user]
 	name = Christian Oudard
 	email = christian.oudard@gmail.com
+	signingkey = <.replace github-signingkey>
+[commit]
+	gpgsign = true
+[gpg]
+	program = gpg
 [alias]
 	s = status
 	st = status
