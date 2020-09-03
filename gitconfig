@@ -16,8 +16,8 @@
 [alias]
 	s = status
 	st = status
-	d = diff
-	dc = diff --cached
+	d = diff -w
+	dc = diff -w --cached
 	ci = commit --verbose
 	cia = commit --verbose --all
 	co = checkout
