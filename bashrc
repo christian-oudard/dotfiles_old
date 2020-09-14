@@ -189,6 +189,7 @@ $HOME/.rbenv/bin:\
 $HOME/.rbenv/plugins/ruby-build/bin:\
 $HOME/.node/bin:\
 $HOME/.npm-global/bin:\
+$HOME/.pyenv/bin:\
 $HOME/.poetry/bin:\
 $GOPATH/bin:\
 /usr/local/bin:\
