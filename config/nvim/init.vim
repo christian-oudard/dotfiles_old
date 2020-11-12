@@ -27,6 +27,7 @@ Plug '907th/vim-auto-save'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'leafgarland/typescript-vim'
 Plug 'nikvdp/ejs-syntax'
+Plug 'cespare/vim-toml'
 
 call plug#end()
 
@@ -98,6 +99,7 @@ set softtabstop=4
 set shiftwidth=4
 set expandtab
 set list
+set linebreak
 set showbreak=↪
 set listchars=tab:→\ ,eol:↲,nbsp:␣,trail:•,extends:⟩,precedes:⟨
 set wrap
