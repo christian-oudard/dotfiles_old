@@ -28,6 +28,7 @@ Plug 'hail2u/vim-css3-syntax'
 Plug 'leafgarland/typescript-vim'
 Plug 'nikvdp/ejs-syntax'
 Plug 'cespare/vim-toml'
+Plug 'tomlion/vim-solidity'
 
 call plug#end()
 
