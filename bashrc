@@ -185,6 +185,8 @@ $HOME/bin:\
 $HOME/.bin:\
 $HOME/.local/bin:\
 $HOME/.cargo/bin:\
+$HOME/.cabal/bin:\
+$HOME/.ghcup/bin:\
 $HOME/.rbenv/bin:\
 $HOME/.rbenv/plugins/ruby-build/bin:\
 $HOME/.node/bin:\
@@ -193,8 +195,6 @@ $GOPATH/bin:\
 /usr/local/bin:\
 /opt/local/:\
 /opt/local/bin:\
-/opt/ghc/bin:\
-/opt/cabal/bin:\
 /sbin:\
 ${PATH}:\
 "
