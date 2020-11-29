@@ -1,4 +1,11 @@
 :set prompt "\ESC[34mλ>\ESC[m "
 :set prompt-cont "\ESC[34mλ...\ESC[m "
-:set -fno-warn-unused-imports
+
 :def hoogle \s -> return $ ":! hoogle --count=15 \"" ++ s ++ "\""
+
+:set -fno-warn-unused-imports
+:set -ferror-spans -freverse-errors -fprint-expanded-synonyms
+
+:set -ignore-package pretty-simple -package pretty-simple
+:def! pretty \ _ -> pure ":set -interactive-print Text.Pretty.Simple.pPrint"
+:pretty

@@ -29,7 +29,7 @@ Plug 'leafgarland/typescript-vim'
 Plug 'nikvdp/ejs-syntax'
 Plug 'cespare/vim-toml'
 Plug 'tomlion/vim-solidity'
-
+Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' }
 call plug#end()
 
 " Visual settings
