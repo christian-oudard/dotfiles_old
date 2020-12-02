@@ -41,7 +41,7 @@ fi
 CLEAR_EOL="\033[K"
 
 # Set cursor type to solid vertical bar.
-echo -ne '\e[6 q'
+printf '\033[6 q'
 
 # Set the prompt.
 function prompt_command() {
