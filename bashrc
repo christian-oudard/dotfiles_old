@@ -17,6 +17,9 @@ export HISTFILESIZE=50000
 
 export HISTIGNORE=" *"
 
+# Suppress "bash is deprecated" warning on MacOS
+export BASH_SILENCE_DEPRECATION_WARNING=1
+
 # Check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
