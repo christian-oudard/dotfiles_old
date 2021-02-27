@@ -31,6 +31,7 @@ Plug 'cespare/vim-toml'
 Plug 'tomlion/vim-solidity'
 Plug 'udalov/kotlin-vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'rust-lang/rust.vim'
 call plug#end()
 
 " Visual settings
@@ -302,3 +303,6 @@ augroup END
 
 " CoC
 let b:coc_suggest_disable = 1
+
+" rust.vim
+let g:rustfmt_autosave = 1
