@@ -276,6 +276,7 @@ let g:ale_linters = {
 \   'python': ['flake8'],
 \   'haskell': ['hdevtools', 'hlint'],
 \   'javascript': ['eslint'],
+\   'rust': ['rls'],
 \}
 
 " YouCompleteMe
@@ -305,4 +306,4 @@ augroup END
 let b:coc_suggest_disable = 1
 
 " rust.vim
-let g:rustfmt_autosave = 1
+" let g:rustfmt_autosave = 1
