@@ -44,10 +44,10 @@ filetype plugin indent on
 
 " Colors
 
-" set background=dark
-" colorscheme base16-woodland
-set background=light
-colorscheme base16-solarized-light
+set background=dark
+colorscheme base16-woodland
+" set background=light
+" colorscheme base16-solarized-light
 
 " Set background to none so transparent terminal works.
 call g:Base16hi("Normal", "", "none", "", "")
