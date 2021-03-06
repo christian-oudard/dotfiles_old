@@ -276,7 +276,7 @@ let g:ale_linters = {
 \   'python': ['flake8'],
 \   'haskell': ['hdevtools', 'hlint'],
 \   'javascript': ['eslint'],
-\   'rust': ['rls'],
+\   'rust': ['cargo', 'rls'],
 \}
 
 " YouCompleteMe
