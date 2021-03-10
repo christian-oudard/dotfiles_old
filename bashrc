@@ -281,3 +281,10 @@ fi
 if [ -f /opt/intel/sgxsdk/environment ]; then
     source /opt/intel/sgxsdk/environment
 fi
+
+# Set environment variables from file.
+if [ -f "$HOME/.env" ]; then
+    set -o allexport
+    source "$HOME/.env"
+    set +o allexport
+fi
