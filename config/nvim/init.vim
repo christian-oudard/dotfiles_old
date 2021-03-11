@@ -31,6 +31,7 @@ Plug 'cespare/vim-toml'
 Plug 'tomlion/vim-solidity'
 Plug 'udalov/kotlin-vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'rust-lang/rust.vim'
 call plug#end()
 
 " Visual settings
@@ -43,10 +44,10 @@ filetype plugin indent on
 
 " Colors
 
-" set background=dark
-" colorscheme base16-woodland
-set background=light
-colorscheme base16-solarized-light
+set background=dark
+colorscheme base16-woodland
+" set background=light
+" colorscheme base16-solarized-light
 
 " Set background to none so transparent terminal works.
 call g:Base16hi("Normal", "", "none", "", "")
@@ -275,6 +276,7 @@ let g:ale_linters = {
 \   'python': ['flake8'],
 \   'haskell': ['hdevtools', 'hlint'],
 \   'javascript': ['eslint'],
+\   'rust': ['cargo', 'rls'],
 \}
 
 " YouCompleteMe
@@ -302,3 +304,6 @@ augroup END
 
 " CoC
 let b:coc_suggest_disable = 1
+
+" rust.vim
+" let g:rustfmt_autosave = 1
