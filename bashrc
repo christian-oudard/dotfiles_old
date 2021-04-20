@@ -199,6 +199,14 @@ $GOPATH/bin:\
 ${PATH}:\
 "
 
+# Support sqlite3 from Brew on MacOS.
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    export PATH="/usr/local/opt/sqlite/bin:$PATH"
+    export LDFLAGS="-L/usr/local/opt/sqlite/lib"
+    export CPPFLAGS="-I/usr/local/opt/sqlite/include"
+    export PKG_CONFIG_PATH="/usr/local/opt/sqlite/lib/pkgconfig"
+fi
+
 # Load pyenv (after path modification).
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
@@ -231,7 +239,9 @@ alias lr='ls -R'
 alias lla='ls -lGhA'
 alias lld='ls -lGhd'
 alias llh='ls -lGh'
-alias cp='cp --interactive'
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    alias cp='cp --interactive'
+fi
 
 # Keep environment variables for sudo.
 alias sudo='sudo -E'
