@@ -52,3 +52,8 @@ Thumbs.db
 
 # Silver Searcher (ag) ignore file.
 .ignore
+
+# Rust
+target/
+Cargo.lock
+**/*.rs.bk
