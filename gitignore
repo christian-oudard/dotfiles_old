@@ -54,6 +54,5 @@ Thumbs.db
 .ignore
 
 # Rust
-target/
 Cargo.lock
 **/*.rs.bk

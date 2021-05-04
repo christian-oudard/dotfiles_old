@@ -279,10 +279,6 @@ let g:ale_linters = {
 \   'rust': ['cargo', 'rls'],
 \}
 
-" YouCompleteMe
-let g:ycm_key_list_select_completion = ['<Down>']
-let g:ycm_key_list_previous_completion = ['<Up>']
-
 " vim-hdevtools
 let g:hdevtools_stack = 1
 let g:hdevtools_options = '-g-fdefer-type-errors'
