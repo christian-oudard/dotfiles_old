@@ -1,21 +1,18 @@
-# ~/.bashrc: executed by bash(1) for non-login shells.
-# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
-# for examples
-
 # If not running interactively, don't do anything
-[ -z "$PS1" ] && return
+case $- in
+    *i*) ;;
+      *) return;;
+esac
 
-# Don't put duplicate lines in the history. See bash(1) for more options.
-HISTCONTROL=ignoredups:ignorespace
+# Don't put duplicate lines or lines starting with space in the history.
+HISTCONTROL=ignoreboth
 
 # Append to the history file, don't overwrite it.
 shopt -s histappend
 
 # Use a larger history size.
-export HISTSIZE=25000
-export HISTFILESIZE=50000
-
-export HISTIGNORE=" *"
+export HISTSIZE=50000
+export HISTFILESIZE=100000
 
 # Suppress "bash is deprecated" warning on MacOS
 export BASH_SILENCE_DEPRECATION_WARNING=1

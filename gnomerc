@@ -1,9 +1,0 @@
-# Enable proper xinput settings for touchpad.
-
-deviceid=12 # Run "xinput" to determine the device id for the touchpad.
-
-# Enable clickpad functionality.
-xinput set-prop "$deviceid" "Synaptics ClickPad" 1
-
-# Enable right click with touchpad region.
-xinput set-prop "$deviceid" "Synaptics Soft Button Areas" 1630.00000000000000000000 3260.000000 1737.58000000 4238.000000 0 0 0 0
