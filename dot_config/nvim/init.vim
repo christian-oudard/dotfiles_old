@@ -8,6 +8,28 @@ endif
 " python package "neovim" installed.
 let g:python_host_prog='/usr/local/bin/python'
 
+" ALE Asynchronous Lint Engine
+let g:ale_linters = {
+\   'python': ['flake8'],
+\   'haskell': ['hdevtools', 'hlint'],
+\   'javascript': ['eslint'],
+\   'rust': ['cargo', 'rls'],
+\}
+let g:ale_fixers = {
+\   '*': ['trim_whitespace'],
+\}
+set omnifunc=ale#completion#OmniFunc
+let g:ale_completion_enabled = 1
+let g:ale_completion_autoimport = 1
+let g:ale_sign_column_always = 1
+let g:ale_fix_on_save = 1
+let g:ale_sign_error = '!'
+let g:ale_sign_warning = '?'
+nmap <Leader>l :ALEGoToDefinition<CR>
+nmap <Leader>r :ALEFindReferences<CR>
+nmap <silent> <Leader>[ <Plug>(ale_previous_wrap)
+nmap <silent> <Leader>] <Plug>(ale_next_wrap)
+
 " vim-plug
 call plug#begin(s:editor_root . '/plugged')
 Plug 'hynek/vim-python-pep8-indent'
@@ -18,7 +40,7 @@ Plug 'tpope/vim-fugitive'  " git
 Plug 'tpope/vim-commentary'  " commenting and uncommenting
 Plug 'tpope/vim-surround'
 Plug 'SirVer/ultisnips'  " snippets
-Plug 'w0rp/ale'  " syntax checker
+Plug 'dense-analysis/ale'  " syntax checker
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'mileszs/ack.vim'  " ag searching
 Plug 'bronson/vim-trailing-whitespace'  " delete trailing whitespace
@@ -30,7 +52,6 @@ Plug 'nikvdp/ejs-syntax'
 Plug 'cespare/vim-toml'
 Plug 'tomlion/vim-solidity'
 Plug 'udalov/kotlin-vim'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'rust-lang/rust.vim'
 call plug#end()
 
@@ -265,19 +286,9 @@ nmap <Leader>8 <Plug>BufTabLine.Go(8)
 nmap <Leader>9 <Plug>BufTabLine.Go(9)
 nmap <Leader>0 <Plug>BufTabLine.Go(10)
 
-noremap <Leader>r :source ~/.config/nvim/init.vim<CR>
-
 " File finding with fzf.
 nmap <C-P> :FZF<CR>
 set rtp+=~/.fzf
-
-" ALE Asynchronous Lint Engine
-let g:ale_linters = {
-\   'python': ['flake8'],
-\   'haskell': ['hdevtools', 'hlint'],
-\   'javascript': ['eslint'],
-\   'rust': ['cargo', 'rls'],
-\}
 
 " vim-hdevtools
 let g:hdevtools_stack = 1
@@ -298,8 +309,5 @@ augroup VimCSS3Syntax
   autocmd FileType css setlocal iskeyword+=-
 augroup END
 
-" CoC
-let b:coc_suggest_disable = 1
-
 " rust.vim
-" let g:rustfmt_autosave = 1
+let g:rustfmt_autosave = 0
