@@ -26,7 +26,8 @@
 [diff]
 	tool = vimdiff
 [merge]
-	tool = vimdiff
+	tool = meld
+	conflictstyle = diff3
 [push]
 	default = matching
 [branch]
@@ -34,3 +35,5 @@
 [github]
 	user = christian-oudard
 	token = <.replace github-token>
+[pull]
+	ff = only

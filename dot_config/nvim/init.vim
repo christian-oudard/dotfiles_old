@@ -16,7 +16,6 @@ let g:ale_linters = {
 \   'rust': ['cargo', 'rls'],
 \}
 let g:ale_fixers = {
-\   '*': ['trim_whitespace'],
 \}
 set omnifunc=ale#completion#OmniFunc
 let g:ale_completion_enabled = 1
