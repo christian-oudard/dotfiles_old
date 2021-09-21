@@ -81,6 +81,10 @@ call g:Base16hi("ExtraWhitespace", g:base16_gui01, "none", "", "", "bold")
 " Don't bold statements.
 call g:Base16hi("Statement", "", "none", "", "", "none")
 
+" Enable Italics
+let &t_ZH="\e[3m"
+let &t_ZR="\e[23m"
+
 " Behavior settings
 set fileformat=unix
 set fileformats=unix,dos
