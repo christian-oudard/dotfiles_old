@@ -80,10 +80,10 @@ call g:Base16hi("SpecialKey", g:base16_gui01, "none", "", "", "bold")
 call g:Base16hi("ExtraWhitespace", g:base16_gui01, "none", "", "", "bold")
 " Don't bold statements.
 call g:Base16hi("Statement", "", "none", "", "", "none")
-
 " Enable Italics
 let &t_ZH="\e[3m"
 let &t_ZR="\e[23m"
+call g:Base16hi("Keyword", g:base16_gui0E, "none", "", "", "italic")
 
 " Behavior settings
 set fileformat=unix
