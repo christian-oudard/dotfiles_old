@@ -181,6 +181,7 @@ export PATH="\
 $HOME/bin:\
 $HOME/.bin:\
 $HOME/.local/bin:\
+$HOME/.local/share/solana/install/active_release/bin:\
 $HOME/.cargo/bin:\
 $HOME/.cabal/bin:\
 $HOME/.ghcup/bin:\
