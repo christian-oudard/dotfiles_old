@@ -273,6 +273,9 @@ if command -v pytest-3 >/dev/null; then
     alias pytest='pytest-3'
 fi
 
+# Android SDK location.
+export ANDROID_SDK_ROOT=/usr/lib/android-sdk
+
 # Use sudo for docker.
 if command -v docker >/dev/null; then
     alias docker='sudo docker'
