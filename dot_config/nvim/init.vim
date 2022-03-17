@@ -8,27 +8,6 @@ endif
 " python package "neovim" installed.
 let g:python_host_prog='/usr/local/bin/python'
 
-" ALE Asynchronous Lint Engine
-let g:ale_linters = {
-\   'python': ['flake8'],
-\   'haskell': ['hdevtools', 'hlint'],
-\   'javascript': ['eslint'],
-\   'rust': ['cargo', 'rls'],
-\}
-let g:ale_fixers = {
-\}
-set omnifunc=ale#completion#OmniFunc
-let g:ale_completion_enabled = 1
-let g:ale_completion_autoimport = 1
-let g:ale_sign_column_always = 1
-let g:ale_fix_on_save = 1
-let g:ale_sign_error = '!'
-let g:ale_sign_warning = '?'
-nmap <Leader>l :ALEGoToDefinition<CR>
-nmap <Leader>r :ALEFindReferences<CR>
-nmap <silent> <Leader>[ <Plug>(ale_previous_wrap)
-nmap <silent> <Leader>] <Plug>(ale_next_wrap)
-
 " vim-plug
 call plug#begin(s:editor_root . '/plugged')
 Plug 'hynek/vim-python-pep8-indent'
@@ -39,7 +18,6 @@ Plug 'tpope/vim-fugitive'  " git
 Plug 'tpope/vim-commentary'  " commenting and uncommenting
 Plug 'tpope/vim-surround'
 Plug 'SirVer/ultisnips'  " snippets
-Plug 'dense-analysis/ale'  " syntax checker
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'mileszs/ack.vim'  " ag searching
 Plug 'bronson/vim-trailing-whitespace'  " delete trailing whitespace
@@ -53,7 +31,6 @@ Plug 'tomlion/vim-solidity'
 Plug 'udalov/kotlin-vim'
 Plug 'rust-lang/rust.vim'
 Plug 'neovim/nvim-lspconfig'
-
 call plug#end()
 
 
@@ -75,15 +52,15 @@ colorscheme base16-woodland
 " Set background to none so transparent terminal works.
 call g:Base16hi("Normal", "", "none", "", "")
 " Search terms.
-call g:Base16hi("Search", "none", g:base16_gui01, "", "")
-call g:Base16hi("IncSearch", "none", g:base16_gui01, "", "")
+call g:Base16hi("Search", "none", g:base16_gui02, "", "")
+call g:Base16hi("IncSearch", "none", g:base16_gui02, "", "")
 " Special whitespace characters.
-call g:Base16hi("NonText", g:base16_gui01, "none", "", "", "bold")
-call g:Base16hi("SpecialKey", g:base16_gui01, "none", "", "", "bold")
-call g:Base16hi("ExtraWhitespace", g:base16_gui01, "none", "", "", "bold")
+call g:Base16hi("NonText", g:base16_gui02, "none", "", "", "bold")
+call g:Base16hi("SpecialKey", g:base16_gui02, "none", "", "", "bold")
+call g:Base16hi("ExtraWhitespace", g:base16_gui02, "none", "", "", "bold")
 " Don't bold statements.
 call g:Base16hi("Statement", "", "none", "", "", "none")
-" Enable Italics
+ " Enable Italics
 let &t_ZH="\e[3m"
 let &t_ZR="\e[23m"
 call g:Base16hi("Keyword", g:base16_gui0E, "none", "", "", "italic")
@@ -128,10 +105,10 @@ set tabstop=8
 set softtabstop=4
 set shiftwidth=4
 set expandtab
-set list
 set linebreak
 set showbreak=↪
-set listchars=tab:→\ ,eol:↲,nbsp:␣,trail:•,extends:⟩,precedes:⟨
+set listchars=tab:→\ ,nbsp:␣,trail:•,extends:⟩,precedes:⟨
+set list
 set wrap
 set textwidth=110
 
@@ -296,19 +273,6 @@ nmap <Leader>0 <Plug>BufTabLine.Go(10)
 nmap <C-P> :FZF<CR>
 set rtp+=~/.fzf
 
-" vim-hdevtools
-let g:hdevtools_stack = 1
-let g:hdevtools_options = '-g-fdefer-type-errors'
-augroup hdevtools
-    autocmd!
-    autocmd FileType haskell nnoremap <buffer> <Leader>t :HdevtoolsType<CR>
-    autocmd FileType haskell nnoremap <buffer> <silent> <Leader>i :HdevtoolsInfo<CR>
-    autocmd FileType haskell nnoremap <buffer> <silent> <Leader>c :HdevtoolsClear<CR>
-augroup END
-
-" haskell-vim
-let g:haskell_indent_disable = 1
-
 " vim-css3-syntax
 augroup VimCSS3Syntax
   autocmd!
@@ -320,3 +284,6 @@ let g:rustfmt_autosave = 0
 
 " LSP config
 lua require'lspconfig'.rust_analyzer.setup({})
+nnoremap gi <cmd>lua vim.lsp.buf.hover()<CR>
+nnoremap gd <cmd>lua vim.lsp.buf.definition()<CR>
+nnoremap gr <cmd>lua vim.lsp.buf.references()<CR>
