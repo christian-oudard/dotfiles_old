@@ -52,7 +52,10 @@ Plug 'cespare/vim-toml'
 Plug 'tomlion/vim-solidity'
 Plug 'udalov/kotlin-vim'
 Plug 'rust-lang/rust.vim'
+Plug 'neovim/nvim-lspconfig'
+
 call plug#end()
+
 
 " Visual settings
 
@@ -314,3 +317,6 @@ augroup END
 
 " rust.vim
 let g:rustfmt_autosave = 0
+
+" LSP config
+lua require'lspconfig'.rust_analyzer.setup({})
