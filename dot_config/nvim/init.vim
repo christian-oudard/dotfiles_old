@@ -17,7 +17,6 @@ Plug 'chriskempson/base16-vim'  " color scheme
 Plug 'tpope/vim-fugitive'  " git
 Plug 'tpope/vim-commentary'  " commenting and uncommenting
 Plug 'tpope/vim-surround'
-Plug 'SirVer/ultisnips'  " snippets
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'mileszs/ack.vim'  " ag searching
 Plug 'bronson/vim-trailing-whitespace'  " delete trailing whitespace
@@ -31,6 +30,11 @@ Plug 'tomlion/vim-solidity'
 Plug 'udalov/kotlin-vim'
 Plug 'rust-lang/rust.vim'
 Plug 'neovim/nvim-lspconfig'
+Plug 'hrsh7th/nvim-cmp'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-vsnip'
+Plug 'hrsh7th/vim-vsnip'
+Plug 'hrsh7th/cmp-path'
 call plug#end()
 
 
@@ -71,13 +75,7 @@ set fileformats=unix,dos
 set scrolloff=2 " Set a margin of lines when scrolling.
 set backspace=indent,eol,start
 set backupdir=./.backup,.,/tmp
-
-" Always-on sign column for error indicators
-augroup error_column
-    autocmd!
-    autocmd BufWinEnter * sign define fakesign
-    autocmd BufWinEnter * exe "sign place 1337 line=1 name=fakesign buffer=" . bufnr('%')
-augroup END
+set signcolumn=yes " Always-on sign column for error indicators
 
 " vim-auto-save
 let g:auto_save = 1
@@ -287,3 +285,37 @@ lua require'lspconfig'.rust_analyzer.setup({})
 nnoremap gi <cmd>lua vim.lsp.buf.hover()<CR>
 nnoremap gd <cmd>lua vim.lsp.buf.definition()<CR>
 nnoremap gr <cmd>lua vim.lsp.buf.references()<CR>
+
+" Autocomplete for Rust.
+" See https://github.com/hrsh7th/nvim-cmp#basic-configuration
+set completeopt=menuone,noinsert,noselect
+set shortmess+=c
+lua <<EOF
+local cmp = require'cmp'
+cmp.setup({
+  snippet = {
+    expand = function(args)
+      vim.fn["vsnip#anonymous"](args.body)
+    end,
+  },
+  mapping = {
+    ['<C-p>'] = cmp.mapping.select_prev_item(),
+    ['<C-n>'] = cmp.mapping.select_next_item(),
+    ['<S-Tab>'] = cmp.mapping.select_prev_item(),
+    ['<Tab>'] = cmp.mapping.select_next_item(),
+    ['<C-d>'] = cmp.mapping.scroll_docs(-4),
+    ['<C-f>'] = cmp.mapping.scroll_docs(4),
+    ['<C-Space>'] = cmp.mapping.complete(),
+    ['<C-e>'] = cmp.mapping.close(),
+    ['<CR>'] = cmp.mapping.confirm({
+      behavior = cmp.ConfirmBehavior.Insert,
+      select = true,
+    })
+  },
+  sources = {
+    { name = 'nvim_lsp' },
+    { name = 'vsnip' },
+    { name = 'path' },
+  },
+})
+EOF
