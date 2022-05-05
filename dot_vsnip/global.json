@@ -5,5 +5,12 @@
             "$CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE"
         ],
         "description": ""
+    },
+    "time": {
+        "prefix": "time",
+        "body": [
+            "$CURRENT_HOUR:$CURRENT_MINUTE"
+        ],
+        "description": ""
     }
 }
